@@ -1,0 +1,60 @@
+\hypertarget{data_8h_source}{}\doxysection{data.\+h}
+\label{data_8h_source}\index{EDA-\/FJSSP/data.h@{EDA-\/FJSSP/data.h}}
+\mbox{\hyperlink{data_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{9 \textcolor{comment}{//prevenir declaração dupla de quaisquer identificadores (tipos, etc)}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef DATA}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define DATA}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <stdbool.h>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <stdlib.h>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <string.h>}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{comment}{//evita MSG ERROS: \_CRT\_SECURE\_NO\_WARNINGS}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#pragma warning( disable : 4996 ) }}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#pragma region Structs}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{27 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{28     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_maquina_a145c60b413f7dce90bbbe60f6cf2a406}{id}};}
+\DoxyCodeLine{29 \} \mbox{\hyperlink{struct_maquina}{Maquina}};}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{36 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{37     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_produto_a4e1f150fa0cc84776ba28939fb547bf1}{id}};}
+\DoxyCodeLine{38     \textcolor{keywordtype}{char} nome[50];}
+\DoxyCodeLine{39 \} \mbox{\hyperlink{struct_produto}{Produto}};}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{49 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{50     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_operacao_afed1badd2f20901c43a7b332cf857070}{id}};}
+\DoxyCodeLine{51     \mbox{\hyperlink{struct_maquina}{Maquina}} \mbox{\hyperlink{struct_operacao_a0bb20773651d7b58a4fb940430734b65}{maquinaId}};}
+\DoxyCodeLine{52     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_operacao_ae8c65de6cc9f6763236bf10b10b0b937}{tempoTotal}};}
+\DoxyCodeLine{53 \} \mbox{\hyperlink{struct_operacao}{Operacao}};}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{62 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{63     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_job_a9d524fc8246b893613b42ed6b8ca070c}{id}};}
+\DoxyCodeLine{64     \textcolor{keywordtype}{char} nome[50];}
+\DoxyCodeLine{65     \mbox{\hyperlink{struct_operacao}{Operacao}} operacoes[7];}
+\DoxyCodeLine{66     \textcolor{keyword}{struct }\mbox{\hyperlink{struct_job}{Job}}* \mbox{\hyperlink{struct_job_a1e361275d4a7d8aea298a6129260a41b}{next}}; \textcolor{comment}{// apontador para o proximo bloco de memoria/node do tipo Job}}
+\DoxyCodeLine{67 \} \mbox{\hyperlink{struct_job}{Job}};}
+\DoxyCodeLine{68 }
+\DoxyCodeLine{75 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_job_file}{JobFile}} \{}
+\DoxyCodeLine{76     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_job_file_acfc76dac52247eceb42a26e531e19c88}{id}};}
+\DoxyCodeLine{77     \textcolor{keywordtype}{char} \mbox{\hyperlink{struct_job_file_a6f56c235841b644c5e98e550a562a3d7}{nome}}[50];}
+\DoxyCodeLine{78     \mbox{\hyperlink{struct_operacao}{Operacao}} \mbox{\hyperlink{struct_job_file_a3c6c30f672e97bef39a1f6945fe5fc31}{operacoes}}[7];}
+\DoxyCodeLine{79 \}\mbox{\hyperlink{data_8h_a26c88d957828aee55329497a30aff969}{JobFile}};}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#pragma region AssinaturasFunções}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 \mbox{\hyperlink{struct_job}{Job}}* \mbox{\hyperlink{data_8h_a87208e1c4dceb7c0dd02e1355488e9a5}{CriaJob}}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id}, \textcolor{keywordtype}{char}* nome, \mbox{\hyperlink{struct_operacao}{Operacao}} operacoes[7]);}
+\DoxyCodeLine{86 \mbox{\hyperlink{struct_job}{Job}}* \mbox{\hyperlink{data_8h_ad5d10bab822d9159ac964c99b878120f}{RemoveOperacao}}(\mbox{\hyperlink{struct_job}{Job}}* h, \textcolor{keywordtype}{int} jobId, \textcolor{keywordtype}{int} operacaoId);}
+\DoxyCodeLine{87 }
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

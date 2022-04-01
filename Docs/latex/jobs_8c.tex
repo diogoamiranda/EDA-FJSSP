@@ -1,0 +1,73 @@
+\hypertarget{jobs_8c}{}\doxysection{EDA-\/\+FJSSP/jobs.c File Reference}
+\label{jobs_8c}\index{EDA-\/FJSSP/jobs.c@{EDA-\/FJSSP/jobs.c}}
+
+
+Métodos para manipular Lista Ligada Simples (\mbox{\hyperlink{struct_job}{Job}})  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}data.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_job}{Job}} $\ast$ \mbox{\hyperlink{jobs_8c_a87208e1c4dceb7c0dd02e1355488e9a5}{Cria\+Job}} (int id, char $\ast$nome, \mbox{\hyperlink{struct_operacao}{Operacao}} operacoes\mbox{[}7\mbox{]})
+\begin{DoxyCompactList}\small\item\em Cria novo \mbox{\hyperlink{struct_job}{Job}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_job}{Job}} $\ast$ \mbox{\hyperlink{jobs_8c_ad5d10bab822d9159ac964c99b878120f}{Remove\+Operacao}} (\mbox{\hyperlink{struct_job}{Job}} $\ast$h, int job\+Id, int operacao\+Id)
+\begin{DoxyCompactList}\small\item\em Remove operação de um job. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Métodos para manipular Lista Ligada Simples (\mbox{\hyperlink{struct_job}{Job}}) 
+
+\begin{DoxyAuthor}{Author}
+diogo miranda 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2022 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{jobs_8c_a87208e1c4dceb7c0dd02e1355488e9a5}\label{jobs_8c_a87208e1c4dceb7c0dd02e1355488e9a5}} 
+\index{jobs.c@{jobs.c}!CriaJob@{CriaJob}}
+\index{CriaJob@{CriaJob}!jobs.c@{jobs.c}}
+\doxysubsubsection{\texorpdfstring{CriaJob()}{CriaJob()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_job}{Job}} $\ast$ Cria\+Job (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{char $\ast$}]{nome,  }\item[{\mbox{\hyperlink{struct_operacao}{Operacao}}}]{operacoes\mbox{[}7\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Cria novo \mbox{\hyperlink{struct_job}{Job}}. 
+
+Aloca memória necessária para armazenar um job em memória
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Identificador do \mbox{\hyperlink{struct_job}{Job}} \\
+\hline
+{\em nome} & Nome do \mbox{\hyperlink{struct_job}{Job}} \\
+\hline
+{\em operacoes} & Array de operações \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{jobs_8c_ad5d10bab822d9159ac964c99b878120f}\label{jobs_8c_ad5d10bab822d9159ac964c99b878120f}} 
+\index{jobs.c@{jobs.c}!RemoveOperacao@{RemoveOperacao}}
+\index{RemoveOperacao@{RemoveOperacao}!jobs.c@{jobs.c}}
+\doxysubsubsection{\texorpdfstring{RemoveOperacao()}{RemoveOperacao()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_job}{Job}} $\ast$ Remove\+Operacao (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_job}{Job}} $\ast$}]{h,  }\item[{int}]{job\+Id,  }\item[{int}]{operacao\+Id }\end{DoxyParamCaption})}
+
+
+
+Remove operação de um job. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Apontador para inicio da Lista \\
+\hline
+{\em job\+Id} & Identificador do job a alterar \\
+\hline
+{\em operacao\+Id} & Identificador da operação a remover \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Apontador para Lista 
+\end{DoxyReturn}
