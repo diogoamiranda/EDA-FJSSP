@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['operacao_0',['Operacao',['../struct_operacao.html',1,'']]],
-  ['operacoes_1',['operacoes',['../struct_job.html#a4a05f63335a4b56351d5eb7da362c988',1,'Job::operacoes()'],['../struct_job_file.html#a3c6c30f672e97bef39a1f6945fe5fc31',1,'JobFile::operacoes()']]]
+  ['job_0',['Job',['../struct_job.html',1,'']]],
+  ['jobfile_1',['JobFile',['../struct_job_file.html',1,'JobFile'],['../jobs_8h.html#a26c88d957828aee55329497a30aff969',1,'JobFile():&#160;jobs.h']]],
+  ['jobs_2ec_2',['jobs.c',['../jobs_8c.html',1,'']]],
+  ['jobs_2eh_3',['jobs.h',['../jobs_8h.html',1,'']]]
 ];

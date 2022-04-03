@@ -2,34 +2,52 @@
 \label{struct_maquina}\index{Maquina@{Maquina}}
 
 
-Estrutura para armazenar uma m√°quina.  
+Estrutura para armazenar uma m·quina.  
 
 
 
 
-{\ttfamily \#include $<$data.\+h$>$}
+{\ttfamily \#include $<$maquinas.\+h$>$}
 
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{struct_maquina_a145c60b413f7dce90bbbe60f6cf2a406}{id}}
+\item 
+bool \mbox{\hyperlink{struct_maquina_a0f648c52e137edcbd8d8d518f79742e0}{disponivel}}
+\item 
+struct \mbox{\hyperlink{struct_maquina}{Maquina}} $\ast$ \mbox{\hyperlink{struct_maquina_a8cbfb5dd871556837128a586e83992a9}{next}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Estrutura para armazenar uma m√°quina. 
+Estrutura para armazenar uma m·quina. 
 
-Uma maquina contem um identificador (@id) 
+Uma maquina contem um identificador (@id), um boolean (@disponivel) que identifica se a maquina est· ou n„o disponivel para ser usada e um apontador para a proxima maquina (next).
+
+Todas as m·quinas est„o disponÌveis no instante t = 0. 
 
 \doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_maquina_a0f648c52e137edcbd8d8d518f79742e0}\label{struct_maquina_a0f648c52e137edcbd8d8d518f79742e0}} 
+\index{Maquina@{Maquina}!disponivel@{disponivel}}
+\index{disponivel@{disponivel}!Maquina@{Maquina}}
+\doxysubsubsection{\texorpdfstring{disponivel}{disponivel}}
+{\footnotesize\ttfamily bool Maquina\+::disponivel}
+
 \mbox{\Hypertarget{struct_maquina_a145c60b413f7dce90bbbe60f6cf2a406}\label{struct_maquina_a145c60b413f7dce90bbbe60f6cf2a406}} 
 \index{Maquina@{Maquina}!id@{id}}
 \index{id@{id}!Maquina@{Maquina}}
 \doxysubsubsection{\texorpdfstring{id}{id}}
 {\footnotesize\ttfamily int Maquina\+::id}
 
+\mbox{\Hypertarget{struct_maquina_a8cbfb5dd871556837128a586e83992a9}\label{struct_maquina_a8cbfb5dd871556837128a586e83992a9}} 
+\index{Maquina@{Maquina}!next@{next}}
+\index{next@{next}!Maquina@{Maquina}}
+\doxysubsubsection{\texorpdfstring{next}{next}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{struct_maquina}{Maquina}}$\ast$ Maquina\+::next}
+
 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-EDA-\/\+FJSSP/\mbox{\hyperlink{data_8h}{data.\+h}}\end{DoxyCompactItemize}
+EDA-\/\+FJSSP/\mbox{\hyperlink{maquinas_8h}{maquinas.\+h}}\end{DoxyCompactItemize}

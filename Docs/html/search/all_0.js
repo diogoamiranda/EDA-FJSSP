@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['criajob_0',['CriaJob',['../data_8h.html#a87208e1c4dceb7c0dd02e1355488e9a5',1,'CriaJob(int id, char *nome, Operacao operacoes[7]):&#160;jobs.c'],['../jobs_8c.html#a87208e1c4dceb7c0dd02e1355488e9a5',1,'CriaJob(int id, char *nome, Operacao operacoes[7]):&#160;jobs.c']]]
+  ['alteraoperacao_0',['AlteraOperacao',['../operacoes_8c.html#a325d7f7af45bc09d222de2724bac6bab',1,'AlteraOperacao(Operacao *h, int id, int tempo, bool terminada):&#160;operacoes.c'],['../operacoes_8h.html#a325d7f7af45bc09d222de2724bac6bab',1,'AlteraOperacao(Operacao *h, int id, int tempo, bool terminada):&#160;operacoes.c']]]
 ];

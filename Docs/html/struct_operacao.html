@@ -70,23 +70,27 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Estrutura para armazenar uma operação.  
+<p>Estrutura para armazenar uma opera��o.  
  <a href="struct_operacao.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="data_8h_source.html">data.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="operacoes_8h_source.html">operacoes.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:afed1badd2f20901c43a7b332cf857070"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_operacao.html#afed1badd2f20901c43a7b332cf857070">id</a></td></tr>
 <tr class="separator:afed1badd2f20901c43a7b332cf857070"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0bb20773651d7b58a4fb940430734b65"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_maquina.html">Maquina</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_operacao.html#a0bb20773651d7b58a4fb940430734b65">maquinaId</a></td></tr>
-<tr class="separator:a0bb20773651d7b58a4fb940430734b65"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae8c65de6cc9f6763236bf10b10b0b937"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_operacao.html#ae8c65de6cc9f6763236bf10b10b0b937">tempoTotal</a></td></tr>
-<tr class="separator:ae8c65de6cc9f6763236bf10b10b0b937"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61981b05a7697bfe8ebd85689cb114f2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_operacao.html#a61981b05a7697bfe8ebd85689cb114f2">maquinaId</a></td></tr>
+<tr class="separator:a61981b05a7697bfe8ebd85689cb114f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4056f218181a9a9bd3f885aa2f9d6f73"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_operacao.html#a4056f218181a9a9bd3f885aa2f9d6f73">tempo</a></td></tr>
+<tr class="separator:a4056f218181a9a9bd3f885aa2f9d6f73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4b49d893990ad8e50d4071ec40bd6ae"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_operacao.html#ad4b49d893990ad8e50d4071ec40bd6ae">terminada</a></td></tr>
+<tr class="separator:ad4b49d893990ad8e50d4071ec40bd6ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a844c9f3fd38441044df0e501b4fb741a"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct_operacao.html">Operacao</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_operacao.html#a844c9f3fd38441044df0e501b4fb741a">next</a></td></tr>
+<tr class="separator:a844c9f3fd38441044df0e501b4fb741a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Estrutura para armazenar uma operação. </p>
-<p >Uma operação contem um identificador (@id), uma máquina que executará a operação (@maquina_id) e o tempo total em unidades (@tempoTotal) para executar a operação com essa máquina. </p>
+<div class="textblock"><p >Estrutura para armazenar uma opera��o. </p>
+<p >Uma opera��o contem um identificador (@id) e um apontador (*next). </p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="afed1badd2f20901c43a7b332cf857070" name="afed1badd2f20901c43a7b332cf857070"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afed1badd2f20901c43a7b332cf857070">&#9670;&nbsp;</a></span>id</h2>
@@ -102,28 +106,56 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a0bb20773651d7b58a4fb940430734b65" name="a0bb20773651d7b58a4fb940430734b65"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0bb20773651d7b58a4fb940430734b65">&#9670;&nbsp;</a></span>maquinaId</h2>
+<a id="a61981b05a7697bfe8ebd85689cb114f2" name="a61981b05a7697bfe8ebd85689cb114f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61981b05a7697bfe8ebd85689cb114f2">&#9670;&nbsp;</a></span>maquinaId</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct_maquina.html">Maquina</a> Operacao::maquinaId</td>
+          <td class="memname">int Operacao::maquinaId</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="ae8c65de6cc9f6763236bf10b10b0b937" name="ae8c65de6cc9f6763236bf10b10b0b937"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae8c65de6cc9f6763236bf10b10b0b937">&#9670;&nbsp;</a></span>tempoTotal</h2>
+<a id="a844c9f3fd38441044df0e501b4fb741a" name="a844c9f3fd38441044df0e501b4fb741a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a844c9f3fd38441044df0e501b4fb741a">&#9670;&nbsp;</a></span>next</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int Operacao::tempoTotal</td>
+          <td class="memname">struct <a class="el" href="struct_operacao.html">Operacao</a>* Operacao::next</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4056f218181a9a9bd3f885aa2f9d6f73" name="a4056f218181a9a9bd3f885aa2f9d6f73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4056f218181a9a9bd3f885aa2f9d6f73">&#9670;&nbsp;</a></span>tempo</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Operacao::tempo</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad4b49d893990ad8e50d4071ec40bd6ae" name="ad4b49d893990ad8e50d4071ec40bd6ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4b49d893990ad8e50d4071ec40bd6ae">&#9670;&nbsp;</a></span>terminada</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Operacao::terminada</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -131,7 +163,7 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>EDA-FJSSP/<a class="el" href="data_8h_source.html">data.h</a></li>
+<li>EDA-FJSSP/<a class="el" href="operacoes_8h_source.html">operacoes.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

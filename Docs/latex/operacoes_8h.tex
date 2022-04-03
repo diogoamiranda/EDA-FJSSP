@@ -1,0 +1,172 @@
+\hypertarget{operacoes_8h}{}\doxysection{EDA-\/\+FJSSP/operacoes.h File Reference}
+\label{operacoes_8h}\index{EDA-\/FJSSP/operacoes.h@{EDA-\/FJSSP/operacoes.h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}maquinas.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_operacao}{Operacao}}
+\begin{DoxyCompactList}\small\item\em Estrutura para armazenar uma operação. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_operacao}{Operacao}} $\ast$ \mbox{\hyperlink{operacoes_8h_a8e3b811516c69b74e86981ebca42ab0b}{Cria\+Operacao}} (int id, int maq\+\_\+id, int tempo, bool terminada)
+\begin{DoxyCompactList}\small\item\em Cria nova \mbox{\hyperlink{struct_operacao}{Operacao}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_operacao}{Operacao}} $\ast$ \mbox{\hyperlink{operacoes_8h_a40e1158cb5a75e69ecb1c838798cf9d6}{Insere\+Operacao\+Fim}} (\mbox{\hyperlink{struct_operacao}{Operacao}} $\ast$h, \mbox{\hyperlink{struct_operacao}{Operacao}} $\ast$n)
+\begin{DoxyCompactList}\small\item\em Insere \mbox{\hyperlink{struct_operacao}{Operacao}} no final da lista. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_operacao}{Operacao}} $\ast$ \mbox{\hyperlink{operacoes_8h_ab53d9a5a0c856f81c8ee075292b5873a}{Remove\+Operacao}} (\mbox{\hyperlink{struct_operacao}{Operacao}} $\ast$h, int id)
+\begin{DoxyCompactList}\small\item\em Remove \mbox{\hyperlink{struct_operacao}{Operacao}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_operacao}{Operacao}} $\ast$ \mbox{\hyperlink{operacoes_8h_a325d7f7af45bc09d222de2724bac6bab}{Altera\+Operacao}} (\mbox{\hyperlink{struct_operacao}{Operacao}} $\ast$h, int id, int tempo, bool terminada)
+\begin{DoxyCompactList}\small\item\em Altera \mbox{\hyperlink{struct_operacao}{Operacao}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_operacao}{Operacao}} $\ast$ \mbox{\hyperlink{operacoes_8h_a33926a69eda46e2a1887524deb49d809}{Procura\+Operacao}} (\mbox{\hyperlink{struct_operacao}{Operacao}} $\ast$h, int id)
+\begin{DoxyCompactList}\small\item\em Verifica se operacao existe. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{operacoes_8h_ab5a8cf73b18cbc4a7d9e716fb2a2c58c}{Lista\+Operacoes}} (\mbox{\hyperlink{struct_operacao}{Operacao}} $\ast$h)
+\begin{DoxyCompactList}\small\item\em Mostra todos as operações existentes na lista. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{operacoes_8h_a07d09ca47648d8c15f4d4b5a6768c5b9}{Existe\+Operacao}} (\mbox{\hyperlink{struct_operacao}{Operacao}} $\ast$h, int id)
+\begin{DoxyCompactList}\small\item\em Verifica se operacação existe. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{operacoes_8h_a325d7f7af45bc09d222de2724bac6bab}\label{operacoes_8h_a325d7f7af45bc09d222de2724bac6bab}} 
+\index{operacoes.h@{operacoes.h}!AlteraOperacao@{AlteraOperacao}}
+\index{AlteraOperacao@{AlteraOperacao}!operacoes.h@{operacoes.h}}
+\doxysubsubsection{\texorpdfstring{AlteraOperacao()}{AlteraOperacao()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_operacao}{Operacao}} $\ast$ Altera\+Operacao (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_operacao}{Operacao}} $\ast$}]{h,  }\item[{int}]{id,  }\item[{int}]{tempo,  }\item[{bool}]{terminada }\end{DoxyParamCaption})}
+
+
+
+Altera \mbox{\hyperlink{struct_operacao}{Operacao}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Apontador para inicio da Lista \\
+\hline
+{\em id} & Codigo da operacao a alterar \\
+\hline
+{\em tempo} & Novo tempo daoperacao \\
+\hline
+{\em terminada} & Estado da operacao \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Apontador para Lista 
+\end{DoxyReturn}
+\mbox{\Hypertarget{operacoes_8h_a8e3b811516c69b74e86981ebca42ab0b}\label{operacoes_8h_a8e3b811516c69b74e86981ebca42ab0b}} 
+\index{operacoes.h@{operacoes.h}!CriaOperacao@{CriaOperacao}}
+\index{CriaOperacao@{CriaOperacao}!operacoes.h@{operacoes.h}}
+\doxysubsubsection{\texorpdfstring{CriaOperacao()}{CriaOperacao()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_operacao}{Operacao}} $\ast$ Cria\+Operacao (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{int}]{maq\+\_\+id,  }\item[{int}]{tempo,  }\item[{bool}]{terminada }\end{DoxyParamCaption})}
+
+
+
+Cria nova \mbox{\hyperlink{struct_operacao}{Operacao}}. 
+
+Aloca memória necessária para armazenar uma operacao em memória
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Identificador da \mbox{\hyperlink{struct_operacao}{Operacao}} \\
+\hline
+{\em maq\+\_\+id} & Identificador da maquina a executar \mbox{\hyperlink{struct_operacao}{Operacao}} \\
+\hline
+{\em tempo} & Unidades de tempo necessárias para a operação \\
+\hline
+{\em terminada} & Se a operação está ou não terminada \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{operacoes_8h_a07d09ca47648d8c15f4d4b5a6768c5b9}\label{operacoes_8h_a07d09ca47648d8c15f4d4b5a6768c5b9}} 
+\index{operacoes.h@{operacoes.h}!ExisteOperacao@{ExisteOperacao}}
+\index{ExisteOperacao@{ExisteOperacao}!operacoes.h@{operacoes.h}}
+\doxysubsubsection{\texorpdfstring{ExisteOperacao()}{ExisteOperacao()}}
+{\footnotesize\ttfamily bool Existe\+Operacao (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_operacao}{Operacao}} $\ast$}]{h,  }\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Verifica se operacação existe. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Inicio da Lista \\
+\hline
+{\em id} & Identificador a procurar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True/\+False 
+\end{DoxyReturn}
+\mbox{\Hypertarget{operacoes_8h_a40e1158cb5a75e69ecb1c838798cf9d6}\label{operacoes_8h_a40e1158cb5a75e69ecb1c838798cf9d6}} 
+\index{operacoes.h@{operacoes.h}!InsereOperacaoFim@{InsereOperacaoFim}}
+\index{InsereOperacaoFim@{InsereOperacaoFim}!operacoes.h@{operacoes.h}}
+\doxysubsubsection{\texorpdfstring{InsereOperacaoFim()}{InsereOperacaoFim()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_operacao}{Operacao}} $\ast$ Insere\+Operacao\+Fim (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_operacao}{Operacao}} $\ast$}]{h,  }\item[{\mbox{\hyperlink{struct_operacao}{Operacao}} $\ast$}]{novo }\end{DoxyParamCaption})}
+
+
+
+Insere \mbox{\hyperlink{struct_operacao}{Operacao}} no final da lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Inicio da Lista \\
+\hline
+{\em novo} & Nova operacao a inserir \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Inicio da Lista 
+\end{DoxyReturn}
+\mbox{\Hypertarget{operacoes_8h_ab5a8cf73b18cbc4a7d9e716fb2a2c58c}\label{operacoes_8h_ab5a8cf73b18cbc4a7d9e716fb2a2c58c}} 
+\index{operacoes.h@{operacoes.h}!ListaOperacoes@{ListaOperacoes}}
+\index{ListaOperacoes@{ListaOperacoes}!operacoes.h@{operacoes.h}}
+\doxysubsubsection{\texorpdfstring{ListaOperacoes()}{ListaOperacoes()}}
+{\footnotesize\ttfamily void Lista\+Operacoes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_operacao}{Operacao}} $\ast$}]{h }\end{DoxyParamCaption})}
+
+
+
+Mostra todos as operações existentes na lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Inicio da Lista \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{operacoes_8h_a33926a69eda46e2a1887524deb49d809}\label{operacoes_8h_a33926a69eda46e2a1887524deb49d809}} 
+\index{operacoes.h@{operacoes.h}!ProcuraOperacao@{ProcuraOperacao}}
+\index{ProcuraOperacao@{ProcuraOperacao}!operacoes.h@{operacoes.h}}
+\doxysubsubsection{\texorpdfstring{ProcuraOperacao()}{ProcuraOperacao()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_operacao}{Operacao}} $\ast$ Procura\+Operacao (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_operacao}{Operacao}} $\ast$}]{h,  }\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Verifica se operacao existe. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Inicio} & da Lista \\
+\hline
+{\em id} & Identificador da operacao a procurar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Apontador para operacao encontrada 
+\end{DoxyReturn}
+\mbox{\Hypertarget{operacoes_8h_ab53d9a5a0c856f81c8ee075292b5873a}\label{operacoes_8h_ab53d9a5a0c856f81c8ee075292b5873a}} 
+\index{operacoes.h@{operacoes.h}!RemoveOperacao@{RemoveOperacao}}
+\index{RemoveOperacao@{RemoveOperacao}!operacoes.h@{operacoes.h}}
+\doxysubsubsection{\texorpdfstring{RemoveOperacao()}{RemoveOperacao()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_operacao}{Operacao}} $\ast$ Remove\+Operacao (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_operacao}{Operacao}} $\ast$}]{h,  }\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Remove \mbox{\hyperlink{struct_operacao}{Operacao}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Apontador para inicio da Lista \\
+\hline
+{\em id} & Identificador da operacao a alterar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Apontador para Lista 
+\end{DoxyReturn}

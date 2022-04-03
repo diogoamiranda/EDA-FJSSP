@@ -2,12 +2,12 @@
 \label{struct_job}\index{Job@{Job}}
 
 
-Estrutura dinâmica para armazenar um job.  
+Estrutura din�mica para armazenar um job.  
 
 
 
 
-{\ttfamily \#include $<$data.\+h$>$}
+{\ttfamily \#include $<$jobs.\+h$>$}
 
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
@@ -16,16 +16,18 @@ int \mbox{\hyperlink{struct_job_a9d524fc8246b893613b42ed6b8ca070c}{id}}
 \item 
 char \mbox{\hyperlink{struct_job_a12cb4fbf9abbcbfa54e163d735139a50}{nome}} \mbox{[}50\mbox{]}
 \item 
-\mbox{\hyperlink{struct_operacao}{Operacao}} \mbox{\hyperlink{struct_job_a4a05f63335a4b56351d5eb7da362c988}{operacoes}} \mbox{[}7\mbox{]}
+bool \mbox{\hyperlink{struct_job_ae526d094cc39310710f7c25911740526}{terminado}}
+\item 
+int \mbox{\hyperlink{struct_job_a1a493096e96fa773475332789715353d}{operacoes}} \mbox{[}10\mbox{]}
 \item 
 struct \mbox{\hyperlink{struct_job}{Job}} $\ast$ \mbox{\hyperlink{struct_job_a1e361275d4a7d8aea298a6129260a41b}{next}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Estrutura dinâmica para armazenar um job. 
+Estrutura din�mica para armazenar um job. 
 
-Um job contem um identificador (@id), um nome (@nome), um conjunto finito de operações (@operacoes) para executar o job e um apontador ($\ast$next). 
+Um job contem um identificador (@id), um nome (@nome) e um apontador ($\ast$next). 
 
 \doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{struct_job_a9d524fc8246b893613b42ed6b8ca070c}\label{struct_job_a9d524fc8246b893613b42ed6b8ca070c}} 
@@ -46,14 +48,20 @@ Um job contem um identificador (@id), um nome (@nome), um conjunto finito de ope
 \doxysubsubsection{\texorpdfstring{nome}{nome}}
 {\footnotesize\ttfamily char Job\+::nome\mbox{[}50\mbox{]}}
 
-\mbox{\Hypertarget{struct_job_a4a05f63335a4b56351d5eb7da362c988}\label{struct_job_a4a05f63335a4b56351d5eb7da362c988}} 
+\mbox{\Hypertarget{struct_job_a1a493096e96fa773475332789715353d}\label{struct_job_a1a493096e96fa773475332789715353d}} 
 \index{Job@{Job}!operacoes@{operacoes}}
 \index{operacoes@{operacoes}!Job@{Job}}
 \doxysubsubsection{\texorpdfstring{operacoes}{operacoes}}
-{\footnotesize\ttfamily \mbox{\hyperlink{struct_operacao}{Operacao}} Job\+::operacoes\mbox{[}7\mbox{]}}
+{\footnotesize\ttfamily int Job\+::operacoes\mbox{[}10\mbox{]}}
+
+\mbox{\Hypertarget{struct_job_ae526d094cc39310710f7c25911740526}\label{struct_job_ae526d094cc39310710f7c25911740526}} 
+\index{Job@{Job}!terminado@{terminado}}
+\index{terminado@{terminado}!Job@{Job}}
+\doxysubsubsection{\texorpdfstring{terminado}{terminado}}
+{\footnotesize\ttfamily bool Job\+::terminado}
 
 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-EDA-\/\+FJSSP/\mbox{\hyperlink{data_8h}{data.\+h}}\end{DoxyCompactItemize}
+EDA-\/\+FJSSP/\mbox{\hyperlink{jobs_8h}{jobs.\+h}}\end{DoxyCompactItemize}

@@ -73,7 +73,7 @@ $(function() {
 <p>Estrutura para armazenar um job em ficheiro.  
  <a href="struct_job_file.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="data_8h_source.html">data.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="jobs_8h_source.html">jobs.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -81,12 +81,14 @@ Public Attributes</h2></td></tr>
 <tr class="separator:acfc76dac52247eceb42a26e531e19c88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f56c235841b644c5e98e550a562a3d7"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_job_file.html#a6f56c235841b644c5e98e550a562a3d7">nome</a> [50]</td></tr>
 <tr class="separator:a6f56c235841b644c5e98e550a562a3d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c6c30f672e97bef39a1f6945fe5fc31"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_operacao.html">Operacao</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_job_file.html#a3c6c30f672e97bef39a1f6945fe5fc31">operacoes</a> [7]</td></tr>
-<tr class="separator:a3c6c30f672e97bef39a1f6945fe5fc31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a747eab7de1d9825ae9693d77c7cbeefe"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_job_file.html#a747eab7de1d9825ae9693d77c7cbeefe">terminado</a></td></tr>
+<tr class="separator:a747eab7de1d9825ae9693d77c7cbeefe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab93001b49acf1e34d530c51fd95f7fbd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_job_file.html#ab93001b49acf1e34d530c51fd95f7fbd">operacoes</a> [10]</td></tr>
+<tr class="separator:ab93001b49acf1e34d530c51fd95f7fbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Estrutura para armazenar um job em ficheiro. </p>
-<p >Um job contem um identificador (@id), um nome (@nome), um conjunto finito de operaÃ§Ãµes (@operacoes) </p>
+<p >Um job contem um identificador (@id), um nome (@nome), um conjunto finito de operações (@operacoes) </p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
 <a id="acfc76dac52247eceb42a26e531e19c88" name="acfc76dac52247eceb42a26e531e19c88"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acfc76dac52247eceb42a26e531e19c88">&#9670;&nbsp;</a></span>id</h2>
@@ -116,14 +118,28 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a3c6c30f672e97bef39a1f6945fe5fc31" name="a3c6c30f672e97bef39a1f6945fe5fc31"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3c6c30f672e97bef39a1f6945fe5fc31">&#9670;&nbsp;</a></span>operacoes</h2>
+<a id="ab93001b49acf1e34d530c51fd95f7fbd" name="ab93001b49acf1e34d530c51fd95f7fbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab93001b49acf1e34d530c51fd95f7fbd">&#9670;&nbsp;</a></span>operacoes</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct_operacao.html">Operacao</a> JobFile::operacoes[7]</td>
+          <td class="memname">int JobFile::operacoes[10]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a747eab7de1d9825ae9693d77c7cbeefe" name="a747eab7de1d9825ae9693d77c7cbeefe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a747eab7de1d9825ae9693d77c7cbeefe">&#9670;&nbsp;</a></span>terminado</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool JobFile::terminado</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -131,7 +147,7 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>EDA-FJSSP/<a class="el" href="data_8h_source.html">data.h</a></li>
+<li>EDA-FJSSP/<a class="el" href="jobs_8h_source.html">jobs.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

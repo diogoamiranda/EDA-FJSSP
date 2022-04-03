@@ -70,20 +70,39 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Estrutura para armazenar uma m√°quina.  
+<p>Estrutura para armazenar uma m·quina.  
  <a href="struct_maquina.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="data_8h_source.html">data.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="maquinas_8h_source.html">maquinas.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a145c60b413f7dce90bbbe60f6cf2a406"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_maquina.html#a145c60b413f7dce90bbbe60f6cf2a406">id</a></td></tr>
 <tr class="separator:a145c60b413f7dce90bbbe60f6cf2a406"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f648c52e137edcbd8d8d518f79742e0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_maquina.html#a0f648c52e137edcbd8d8d518f79742e0">disponivel</a></td></tr>
+<tr class="separator:a0f648c52e137edcbd8d8d518f79742e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cbfb5dd871556837128a586e83992a9"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="struct_maquina.html">Maquina</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_maquina.html#a8cbfb5dd871556837128a586e83992a9">next</a></td></tr>
+<tr class="separator:a8cbfb5dd871556837128a586e83992a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Estrutura para armazenar uma m√°quina. </p>
-<p >Uma maquina contem um identificador (@id) </p>
+<div class="textblock"><p >Estrutura para armazenar uma m·quina. </p>
+<p >Uma maquina contem um identificador (@id), um boolean (@disponivel) que identifica se a maquina est· ou n„o disponivel para ser usada e um apontador para a proxima maquina (next).</p>
+<p >Todas as m·quinas est„o disponÌveis no instante t = 0. </p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="a0f648c52e137edcbd8d8d518f79742e0" name="a0f648c52e137edcbd8d8d518f79742e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f648c52e137edcbd8d8d518f79742e0">&#9670;&nbsp;</a></span>disponivel</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Maquina::disponivel</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a145c60b413f7dce90bbbe60f6cf2a406" name="a145c60b413f7dce90bbbe60f6cf2a406"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a145c60b413f7dce90bbbe60f6cf2a406">&#9670;&nbsp;</a></span>id</h2>
 
@@ -98,8 +117,22 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a8cbfb5dd871556837128a586e83992a9" name="a8cbfb5dd871556837128a586e83992a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cbfb5dd871556837128a586e83992a9">&#9670;&nbsp;</a></span>next</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct <a class="el" href="struct_maquina.html">Maquina</a>* Maquina::next</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>EDA-FJSSP/<a class="el" href="data_8h_source.html">data.h</a></li>
+<li>EDA-FJSSP/<a class="el" href="maquinas_8h_source.html">maquinas.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

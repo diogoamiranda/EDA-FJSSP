@@ -1,0 +1,151 @@
+\hypertarget{jobs_8h}{}\doxysection{EDA-\/\+FJSSP/jobs.h File Reference}
+\label{jobs_8h}\index{EDA-\/FJSSP/jobs.h@{EDA-\/FJSSP/jobs.h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}operacoes.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_job}{Job}}
+\begin{DoxyCompactList}\small\item\em Estrutura dinâmica para armazenar um job. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_job_file}{Job\+File}}
+\begin{DoxyCompactList}\small\item\em Estrutura para armazenar um job em ficheiro. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_job_file}{Job\+File}} \mbox{\hyperlink{jobs_8h_a26c88d957828aee55329497a30aff969}{Job\+File}}
+\begin{DoxyCompactList}\small\item\em Estrutura para armazenar um job em ficheiro. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_job}{Job}} $\ast$ \mbox{\hyperlink{jobs_8h_a99450e8e4947073f0a859862228c33b0}{Cria\+Job}} (int id, char $\ast$nome, int operacoes\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Cria novo \mbox{\hyperlink{struct_job}{Job}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_job}{Job}} $\ast$ \mbox{\hyperlink{jobs_8h_acb2c56dc6c6abd5b40b35136e41022c4}{Insere\+Job\+Fim}} (\mbox{\hyperlink{struct_job}{Job}} $\ast$h, \mbox{\hyperlink{struct_job}{Job}} $\ast$n)
+\begin{DoxyCompactList}\small\item\em Insere job no final da lista. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_job}{Job}} $\ast$ \mbox{\hyperlink{jobs_8h_aa8003d5db27a17dd4e976ba069b4ce5d}{Insere\+Operacao\+Job}} (\mbox{\hyperlink{struct_job}{Job}} $\ast$h, \mbox{\hyperlink{struct_operacao}{Operacao}} $\ast$o, int job\+Id)
+\item 
+float \mbox{\hyperlink{jobs_8h_a162d95efc4315e9820ba0e29e2934fcc}{Calcula\+Min\+Tempo\+Job}} (int job\+Id)
+\item 
+float \mbox{\hyperlink{jobs_8h_ad986f55477075063aed5f55d9d0c8405}{Calcula\+Max\+Tempo\+Job}} (int job\+Id)
+\item 
+float \mbox{\hyperlink{jobs_8h_a48ef03438882fa92be1498f3096e100e}{Calcula\+Media\+Tempo\+Operacao\+Job}} (int job\+Id)
+\item 
+float \mbox{\hyperlink{jobs_8h_a4d33797878088ff4462011d2a07871b0}{Calcula\+Media\+Tempo\+Operacoes\+Job}} (int job\+Id)
+\item 
+bool \mbox{\hyperlink{jobs_8h_a84a9e77e37d007803c22574861654770}{Gravar\+Job\+Binario}} (char $\ast$nome\+Ficheiro, \mbox{\hyperlink{struct_job}{Job}} $\ast$h, int total\+Operacoes)
+\begin{DoxyCompactList}\small\item\em Preservar dados em ficheiro Grava todos os nodos da Lista em Ficheiro. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_job}{Job}} $\ast$ \mbox{\hyperlink{jobs_8h_a7e3e25b2116b0f1ae872706bb3b0bc41}{Ler\+Job\+Binario}} (char $\ast$nome\+Ficheiro, int operacoes\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Lê informação de ficheiro. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{jobs_8h_aead7b838206e9de4eed837ceb43e9250}{Destroi\+Lista\+Jobs}} (\mbox{\hyperlink{struct_job}{Job}} $\ast$$\ast$h)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{jobs_8h_a26c88d957828aee55329497a30aff969}\label{jobs_8h_a26c88d957828aee55329497a30aff969}} 
+\index{jobs.h@{jobs.h}!JobFile@{JobFile}}
+\index{JobFile@{JobFile}!jobs.h@{jobs.h}}
+\doxysubsubsection{\texorpdfstring{JobFile}{JobFile}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_job_file}{Job\+File}} \mbox{\hyperlink{struct_job_file}{Job\+File}}}
+
+
+
+Estrutura para armazenar um job em ficheiro. 
+
+Um job contem um identificador (@id), um nome (@nome), um conjunto finito de operações (@operacoes) 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{jobs_8h_ad986f55477075063aed5f55d9d0c8405}\label{jobs_8h_ad986f55477075063aed5f55d9d0c8405}} 
+\index{jobs.h@{jobs.h}!CalculaMaxTempoJob@{CalculaMaxTempoJob}}
+\index{CalculaMaxTempoJob@{CalculaMaxTempoJob}!jobs.h@{jobs.h}}
+\doxysubsubsection{\texorpdfstring{CalculaMaxTempoJob()}{CalculaMaxTempoJob()}}
+{\footnotesize\ttfamily float Calcula\+Max\+Tempo\+Job (\begin{DoxyParamCaption}\item[{int}]{job\+Id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{jobs_8h_a48ef03438882fa92be1498f3096e100e}\label{jobs_8h_a48ef03438882fa92be1498f3096e100e}} 
+\index{jobs.h@{jobs.h}!CalculaMediaTempoOperacaoJob@{CalculaMediaTempoOperacaoJob}}
+\index{CalculaMediaTempoOperacaoJob@{CalculaMediaTempoOperacaoJob}!jobs.h@{jobs.h}}
+\doxysubsubsection{\texorpdfstring{CalculaMediaTempoOperacaoJob()}{CalculaMediaTempoOperacaoJob()}}
+{\footnotesize\ttfamily float Calcula\+Media\+Tempo\+Operacao\+Job (\begin{DoxyParamCaption}\item[{int}]{job\+Id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{jobs_8h_a4d33797878088ff4462011d2a07871b0}\label{jobs_8h_a4d33797878088ff4462011d2a07871b0}} 
+\index{jobs.h@{jobs.h}!CalculaMediaTempoOperacoesJob@{CalculaMediaTempoOperacoesJob}}
+\index{CalculaMediaTempoOperacoesJob@{CalculaMediaTempoOperacoesJob}!jobs.h@{jobs.h}}
+\doxysubsubsection{\texorpdfstring{CalculaMediaTempoOperacoesJob()}{CalculaMediaTempoOperacoesJob()}}
+{\footnotesize\ttfamily float Calcula\+Media\+Tempo\+Operacoes\+Job (\begin{DoxyParamCaption}\item[{int}]{job\+Id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{jobs_8h_a162d95efc4315e9820ba0e29e2934fcc}\label{jobs_8h_a162d95efc4315e9820ba0e29e2934fcc}} 
+\index{jobs.h@{jobs.h}!CalculaMinTempoJob@{CalculaMinTempoJob}}
+\index{CalculaMinTempoJob@{CalculaMinTempoJob}!jobs.h@{jobs.h}}
+\doxysubsubsection{\texorpdfstring{CalculaMinTempoJob()}{CalculaMinTempoJob()}}
+{\footnotesize\ttfamily float Calcula\+Min\+Tempo\+Job (\begin{DoxyParamCaption}\item[{int}]{job\+Id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{jobs_8h_a99450e8e4947073f0a859862228c33b0}\label{jobs_8h_a99450e8e4947073f0a859862228c33b0}} 
+\index{jobs.h@{jobs.h}!CriaJob@{CriaJob}}
+\index{CriaJob@{CriaJob}!jobs.h@{jobs.h}}
+\doxysubsubsection{\texorpdfstring{CriaJob()}{CriaJob()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_job}{Job}} $\ast$ Cria\+Job (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{char $\ast$}]{nome,  }\item[{int}]{operacoes\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Cria novo \mbox{\hyperlink{struct_job}{Job}}. 
+
+Aloca memória necessária para armazenar um job em memória
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Identificador do \mbox{\hyperlink{struct_job}{Job}} \\
+\hline
+{\em nome} & Nome do \mbox{\hyperlink{struct_job}{Job}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{jobs_8h_aead7b838206e9de4eed837ceb43e9250}\label{jobs_8h_aead7b838206e9de4eed837ceb43e9250}} 
+\index{jobs.h@{jobs.h}!DestroiListaJobs@{DestroiListaJobs}}
+\index{DestroiListaJobs@{DestroiListaJobs}!jobs.h@{jobs.h}}
+\doxysubsubsection{\texorpdfstring{DestroiListaJobs()}{DestroiListaJobs()}}
+{\footnotesize\ttfamily void Destroi\+Lista\+Jobs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_job}{Job}} $\ast$$\ast$}]{h }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{jobs_8h_a84a9e77e37d007803c22574861654770}\label{jobs_8h_a84a9e77e37d007803c22574861654770}} 
+\index{jobs.h@{jobs.h}!GravarJobBinario@{GravarJobBinario}}
+\index{GravarJobBinario@{GravarJobBinario}!jobs.h@{jobs.h}}
+\doxysubsubsection{\texorpdfstring{GravarJobBinario()}{GravarJobBinario()}}
+{\footnotesize\ttfamily bool Gravar\+Job\+Binario (\begin{DoxyParamCaption}\item[{char $\ast$}]{nome\+Ficheiro,  }\item[{\mbox{\hyperlink{struct_job}{Job}} $\ast$}]{h,  }\item[{int}]{total\+Operacoes }\end{DoxyParamCaption})}
+
+
+
+Preservar dados em ficheiro Grava todos os nodos da Lista em Ficheiro. 
+
+\mbox{\Hypertarget{jobs_8h_acb2c56dc6c6abd5b40b35136e41022c4}\label{jobs_8h_acb2c56dc6c6abd5b40b35136e41022c4}} 
+\index{jobs.h@{jobs.h}!InsereJobFim@{InsereJobFim}}
+\index{InsereJobFim@{InsereJobFim}!jobs.h@{jobs.h}}
+\doxysubsubsection{\texorpdfstring{InsereJobFim()}{InsereJobFim()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_job}{Job}} $\ast$ Insere\+Job\+Fim (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_job}{Job}} $\ast$}]{h,  }\item[{\mbox{\hyperlink{struct_job}{Job}} $\ast$}]{novo }\end{DoxyParamCaption})}
+
+
+
+Insere job no final da lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Inicio da Lista \\
+\hline
+{\em novo} & Novo final a inserir \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Inicio da Lista 
+\end{DoxyReturn}
+\mbox{\Hypertarget{jobs_8h_aa8003d5db27a17dd4e976ba069b4ce5d}\label{jobs_8h_aa8003d5db27a17dd4e976ba069b4ce5d}} 
+\index{jobs.h@{jobs.h}!InsereOperacaoJob@{InsereOperacaoJob}}
+\index{InsereOperacaoJob@{InsereOperacaoJob}!jobs.h@{jobs.h}}
+\doxysubsubsection{\texorpdfstring{InsereOperacaoJob()}{InsereOperacaoJob()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_job}{Job}} $\ast$ Insere\+Operacao\+Job (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_job}{Job}} $\ast$}]{h,  }\item[{\mbox{\hyperlink{struct_operacao}{Operacao}} $\ast$}]{o,  }\item[{int}]{job\+Id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{jobs_8h_a7e3e25b2116b0f1ae872706bb3b0bc41}\label{jobs_8h_a7e3e25b2116b0f1ae872706bb3b0bc41}} 
+\index{jobs.h@{jobs.h}!LerJobBinario@{LerJobBinario}}
+\index{LerJobBinario@{LerJobBinario}!jobs.h@{jobs.h}}
+\doxysubsubsection{\texorpdfstring{LerJobBinario()}{LerJobBinario()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_job}{Job}} $\ast$ Ler\+Job\+Binario (\begin{DoxyParamCaption}\item[{char $\ast$}]{nome\+Ficheiro,  }\item[{int}]{operacoes\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Lê informação de ficheiro. 
+

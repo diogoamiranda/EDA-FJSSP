@@ -2,28 +2,32 @@
 \label{struct_operacao}\index{Operacao@{Operacao}}
 
 
-Estrutura para armazenar uma operação.  
+Estrutura para armazenar uma opera��o.  
 
 
 
 
-{\ttfamily \#include $<$data.\+h$>$}
+{\ttfamily \#include $<$operacoes.\+h$>$}
 
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{struct_operacao_afed1badd2f20901c43a7b332cf857070}{id}}
 \item 
-\mbox{\hyperlink{struct_maquina}{Maquina}} \mbox{\hyperlink{struct_operacao_a0bb20773651d7b58a4fb940430734b65}{maquina\+Id}}
+int \mbox{\hyperlink{struct_operacao_a61981b05a7697bfe8ebd85689cb114f2}{maquina\+Id}}
 \item 
-int \mbox{\hyperlink{struct_operacao_ae8c65de6cc9f6763236bf10b10b0b937}{tempo\+Total}}
+int \mbox{\hyperlink{struct_operacao_a4056f218181a9a9bd3f885aa2f9d6f73}{tempo}}
+\item 
+bool \mbox{\hyperlink{struct_operacao_ad4b49d893990ad8e50d4071ec40bd6ae}{terminada}}
+\item 
+struct \mbox{\hyperlink{struct_operacao}{Operacao}} $\ast$ \mbox{\hyperlink{struct_operacao_a844c9f3fd38441044df0e501b4fb741a}{next}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-Estrutura para armazenar uma operação. 
+Estrutura para armazenar uma opera��o. 
 
-Uma operação contem um identificador (@id), uma máquina que executará a operação (@maquina\+\_\+id) e o tempo total em unidades (@tempo\+Total) para executar a operação com essa máquina. 
+Uma opera��o contem um identificador (@id) e um apontador ($\ast$next). 
 
 \doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{struct_operacao_afed1badd2f20901c43a7b332cf857070}\label{struct_operacao_afed1badd2f20901c43a7b332cf857070}} 
@@ -32,20 +36,32 @@ Uma operação contem um identificador (@id), uma máquina que executará a oper
 \doxysubsubsection{\texorpdfstring{id}{id}}
 {\footnotesize\ttfamily int Operacao\+::id}
 
-\mbox{\Hypertarget{struct_operacao_a0bb20773651d7b58a4fb940430734b65}\label{struct_operacao_a0bb20773651d7b58a4fb940430734b65}} 
+\mbox{\Hypertarget{struct_operacao_a61981b05a7697bfe8ebd85689cb114f2}\label{struct_operacao_a61981b05a7697bfe8ebd85689cb114f2}} 
 \index{Operacao@{Operacao}!maquinaId@{maquinaId}}
 \index{maquinaId@{maquinaId}!Operacao@{Operacao}}
 \doxysubsubsection{\texorpdfstring{maquinaId}{maquinaId}}
-{\footnotesize\ttfamily \mbox{\hyperlink{struct_maquina}{Maquina}} Operacao\+::maquina\+Id}
+{\footnotesize\ttfamily int Operacao\+::maquina\+Id}
 
-\mbox{\Hypertarget{struct_operacao_ae8c65de6cc9f6763236bf10b10b0b937}\label{struct_operacao_ae8c65de6cc9f6763236bf10b10b0b937}} 
-\index{Operacao@{Operacao}!tempoTotal@{tempoTotal}}
-\index{tempoTotal@{tempoTotal}!Operacao@{Operacao}}
-\doxysubsubsection{\texorpdfstring{tempoTotal}{tempoTotal}}
-{\footnotesize\ttfamily int Operacao\+::tempo\+Total}
+\mbox{\Hypertarget{struct_operacao_a844c9f3fd38441044df0e501b4fb741a}\label{struct_operacao_a844c9f3fd38441044df0e501b4fb741a}} 
+\index{Operacao@{Operacao}!next@{next}}
+\index{next@{next}!Operacao@{Operacao}}
+\doxysubsubsection{\texorpdfstring{next}{next}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{struct_operacao}{Operacao}}$\ast$ Operacao\+::next}
+
+\mbox{\Hypertarget{struct_operacao_a4056f218181a9a9bd3f885aa2f9d6f73}\label{struct_operacao_a4056f218181a9a9bd3f885aa2f9d6f73}} 
+\index{Operacao@{Operacao}!tempo@{tempo}}
+\index{tempo@{tempo}!Operacao@{Operacao}}
+\doxysubsubsection{\texorpdfstring{tempo}{tempo}}
+{\footnotesize\ttfamily int Operacao\+::tempo}
+
+\mbox{\Hypertarget{struct_operacao_ad4b49d893990ad8e50d4071ec40bd6ae}\label{struct_operacao_ad4b49d893990ad8e50d4071ec40bd6ae}} 
+\index{Operacao@{Operacao}!terminada@{terminada}}
+\index{terminada@{terminada}!Operacao@{Operacao}}
+\doxysubsubsection{\texorpdfstring{terminada}{terminada}}
+{\footnotesize\ttfamily bool Operacao\+::terminada}
 
 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-EDA-\/\+FJSSP/\mbox{\hyperlink{data_8h}{data.\+h}}\end{DoxyCompactItemize}
+EDA-\/\+FJSSP/\mbox{\hyperlink{operacoes_8h}{operacoes.\+h}}\end{DoxyCompactItemize}

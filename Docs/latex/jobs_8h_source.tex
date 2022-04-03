@@ -1,0 +1,74 @@
+\hypertarget{jobs_8h_source}{}\doxysection{jobs.\+h}
+\label{jobs_8h_source}\index{EDA-\/FJSSP/jobs.h@{EDA-\/FJSSP/jobs.h}}
+\mbox{\hyperlink{jobs_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{9 \textcolor{comment}{//prevenir declaração dupla de quaisquer identificadores (tipos, etc)}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef JOBS}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define JOBS}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <stdbool.h>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{operacoes_8h}{operacoes.h}}"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{comment}{//evita MSG ERROS: \_CRT\_SECURE\_NO\_WARNINGS}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#pragma warning( disable : 4996 ) }}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#pragma region Structs}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{28 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{29     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_job_a9d524fc8246b893613b42ed6b8ca070c}{id}};}
+\DoxyCodeLine{30     \textcolor{keywordtype}{char} nome[50];}
+\DoxyCodeLine{31     \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_job_ae526d094cc39310710f7c25911740526}{terminado}};}
+\DoxyCodeLine{32     \textcolor{keywordtype}{int} operacoes[10]; \textcolor{comment}{// ids de operacoes associadas}}
+\DoxyCodeLine{33     \textcolor{keyword}{struct }\mbox{\hyperlink{struct_job}{Job}}* \mbox{\hyperlink{struct_job_a1e361275d4a7d8aea298a6129260a41b}{next}}; \textcolor{comment}{// apontador para o proximo bloco de memoria/node do tipo Job}}
+\DoxyCodeLine{34 \} \mbox{\hyperlink{struct_job}{Job}};}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{42 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_job_file}{JobFile}} \{}
+\DoxyCodeLine{43     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_job_file_acfc76dac52247eceb42a26e531e19c88}{id}};}
+\DoxyCodeLine{44     \textcolor{keywordtype}{char} \mbox{\hyperlink{struct_job_file_a6f56c235841b644c5e98e550a562a3d7}{nome}}[50];}
+\DoxyCodeLine{45     \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_job_file_a747eab7de1d9825ae9693d77c7cbeefe}{terminado}};}
+\DoxyCodeLine{46     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_job_file_ab93001b49acf1e34d530c51fd95f7fbd}{operacoes}}[10]; \textcolor{comment}{// ids de operacoes associadas}}
+\DoxyCodeLine{47 \}\mbox{\hyperlink{jobs_8h_a26c88d957828aee55329497a30aff969}{JobFile}};}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#pragma region AssinaturasFunções}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53 \textcolor{comment}{// cria job(reservar memoria)}}
+\DoxyCodeLine{54 \mbox{\hyperlink{struct_job}{Job}}* \mbox{\hyperlink{jobs_8h_a99450e8e4947073f0a859862228c33b0}{CriaJob}}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id}, \textcolor{keywordtype}{char}* nome, \textcolor{keywordtype}{int} operacoes[]);}
+\DoxyCodeLine{55 }
+\DoxyCodeLine{56 \textcolor{comment}{//insere job no final da lista de Jobs}}
+\DoxyCodeLine{57 \mbox{\hyperlink{struct_job}{Job}}* \mbox{\hyperlink{jobs_8h_acb2c56dc6c6abd5b40b35136e41022c4}{InsereJobFim}}(\mbox{\hyperlink{struct_job}{Job}}* h, \mbox{\hyperlink{struct_job}{Job}}* n);}
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{comment}{//insere operações na lista de operações de um job}}
+\DoxyCodeLine{60 \mbox{\hyperlink{struct_job}{Job}}* \mbox{\hyperlink{jobs_8h_aa8003d5db27a17dd4e976ba069b4ce5d}{InsereOperacaoJob}}(\mbox{\hyperlink{struct_job}{Job}}* h, \mbox{\hyperlink{struct_operacao}{Operacao}}* o, \textcolor{keywordtype}{int} jobId);}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 \textcolor{comment}{// calcular o minimo de tempo que um job demora a ser executado}}
+\DoxyCodeLine{63 \textcolor{keywordtype}{float} \mbox{\hyperlink{jobs_8h_a162d95efc4315e9820ba0e29e2934fcc}{CalculaMinTempoJob}}(\textcolor{keywordtype}{int} jobId);}
+\DoxyCodeLine{64 }
+\DoxyCodeLine{65 \textcolor{comment}{// calcular o maximo de tempo que um job demora a ser executado}}
+\DoxyCodeLine{66 \textcolor{keywordtype}{float} \mbox{\hyperlink{jobs_8h_ad986f55477075063aed5f55d9d0c8405}{CalculaMaxTempoJob}}(\textcolor{keywordtype}{int} jobId);}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{68 \textcolor{comment}{// calcular quantidade média de tempo necessário para completar uma operação x do job}}
+\DoxyCodeLine{69 \textcolor{keywordtype}{float} \mbox{\hyperlink{jobs_8h_a48ef03438882fa92be1498f3096e100e}{CalculaMediaTempoOperacaoJob}}(\textcolor{keywordtype}{int} jobId);}
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 \textcolor{comment}{// calcular quantidade média das médias para completar uma operacao x do job}}
+\DoxyCodeLine{72 \textcolor{keywordtype}{float} \mbox{\hyperlink{jobs_8h_a4d33797878088ff4462011d2a07871b0}{CalculaMediaTempoOperacoesJob}}(\textcolor{keywordtype}{int} jobId);}
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 \textcolor{comment}{//gravar dados de um job em ficheiro}}
+\DoxyCodeLine{75 \textcolor{keywordtype}{bool} \mbox{\hyperlink{jobs_8h_a84a9e77e37d007803c22574861654770}{GravarJobBinario}}(\textcolor{keywordtype}{char}* nomeFicheiro, \mbox{\hyperlink{struct_job}{Job}}* h, \textcolor{keywordtype}{int} totalOperacoes);}
+\DoxyCodeLine{76 }
+\DoxyCodeLine{77 \textcolor{comment}{// ler ficheiro com dados de um job}}
+\DoxyCodeLine{78 \mbox{\hyperlink{struct_job}{Job}}* \mbox{\hyperlink{jobs_8h_a7e3e25b2116b0f1ae872706bb3b0bc41}{LerJobBinario}}(\textcolor{keywordtype}{char}* nomeFicheiro, \textcolor{keywordtype}{int} operacoes[]);}
+\DoxyCodeLine{79 }
+\DoxyCodeLine{80 \textcolor{comment}{//apaga todos os nodes da lista de jobs}}
+\DoxyCodeLine{81 \textcolor{keywordtype}{void} \mbox{\hyperlink{jobs_8h_aead7b838206e9de4eed837ceb43e9250}{DestroiListaJobs}}(\mbox{\hyperlink{struct_job}{Job}}** h) \{}
+\DoxyCodeLine{82 }
+\DoxyCodeLine{83 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{84 }
+\DoxyCodeLine{85 }
+\DoxyCodeLine{86 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{87 }
+
+\end{DoxyCode}

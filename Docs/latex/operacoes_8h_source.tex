@@ -1,0 +1,57 @@
+\hypertarget{operacoes_8h_source}{}\doxysection{operacoes.\+h}
+\label{operacoes_8h_source}\index{EDA-\/FJSSP/operacoes.h@{EDA-\/FJSSP/operacoes.h}}
+\mbox{\hyperlink{operacoes_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{9 \textcolor{comment}{//prevenir declaração dupla de quaisquer identificadores (tipos, etc)}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef OPERACOES}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define OPERACOES}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <stdbool.h>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{maquinas_8h}{maquinas.h}}"{}}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{comment}{//evita MSG ERROS: \_CRT\_SECURE\_NO\_WARNINGS}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#pragma warning( disable : 4996 ) }}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#pragma region Structs}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{28 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{29     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_operacao_afed1badd2f20901c43a7b332cf857070}{id}};}
+\DoxyCodeLine{30     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_operacao_a61981b05a7697bfe8ebd85689cb114f2}{maquinaId}};}
+\DoxyCodeLine{31     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_operacao_a4056f218181a9a9bd3f885aa2f9d6f73}{tempo}};}
+\DoxyCodeLine{32     \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_operacao_ad4b49d893990ad8e50d4071ec40bd6ae}{terminada}}; \textcolor{comment}{//Cada operação deve ser executada para completar o job}}
+\DoxyCodeLine{33     \textcolor{keyword}{struct }\mbox{\hyperlink{struct_operacao}{Operacao}}* \mbox{\hyperlink{struct_operacao_a844c9f3fd38441044df0e501b4fb741a}{next}};}
+\DoxyCodeLine{34 \} \mbox{\hyperlink{struct_operacao}{Operacao}};}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#pragma region AssinaturasFunções}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{// cria operação(reservar memoria)}}
+\DoxyCodeLine{41 \mbox{\hyperlink{struct_operacao}{Operacao}}* \mbox{\hyperlink{operacoes_8h_a8e3b811516c69b74e86981ebca42ab0b}{CriaOperacao}}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id}, \textcolor{keywordtype}{int} maq\_id, \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_operacao_a4056f218181a9a9bd3f885aa2f9d6f73}{tempo}}, \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_operacao_ad4b49d893990ad8e50d4071ec40bd6ae}{terminada}}); }
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{comment}{// insere operação na lista de operações}}
+\DoxyCodeLine{44 \mbox{\hyperlink{struct_operacao}{Operacao}}* \mbox{\hyperlink{operacoes_8h_a40e1158cb5a75e69ecb1c838798cf9d6}{InsereOperacaoFim}}(\mbox{\hyperlink{struct_operacao}{Operacao}}* h, \mbox{\hyperlink{struct_operacao}{Operacao}}* n);}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{comment}{//remove operação da lista de operações}}
+\DoxyCodeLine{47 \mbox{\hyperlink{struct_operacao}{Operacao}}* \mbox{\hyperlink{operacoes_8h_ab53d9a5a0c856f81c8ee075292b5873a}{RemoveOperacao}}(\mbox{\hyperlink{struct_operacao}{Operacao}}* h, \textcolor{keywordtype}{int} \textcolor{keywordtype}{id});}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{comment}{//altera operação}}
+\DoxyCodeLine{50 \mbox{\hyperlink{struct_operacao}{Operacao}}* \mbox{\hyperlink{operacoes_8h_a325d7f7af45bc09d222de2724bac6bab}{AlteraOperacao}}(\mbox{\hyperlink{struct_operacao}{Operacao}}* h, \textcolor{keywordtype}{int} \textcolor{keywordtype}{id}, \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_operacao_a4056f218181a9a9bd3f885aa2f9d6f73}{tempo}}, \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_operacao_ad4b49d893990ad8e50d4071ec40bd6ae}{terminada}});}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{comment}{//procura operaçao}}
+\DoxyCodeLine{53 \mbox{\hyperlink{struct_operacao}{Operacao}}* \mbox{\hyperlink{operacoes_8h_a33926a69eda46e2a1887524deb49d809}{ProcuraOperacao}}(\mbox{\hyperlink{struct_operacao}{Operacao}}* h, \textcolor{keywordtype}{int} \textcolor{keywordtype}{id});}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 \textcolor{comment}{//mostra todas as operações}}
+\DoxyCodeLine{56 \textcolor{keywordtype}{void} \mbox{\hyperlink{operacoes_8h_ab5a8cf73b18cbc4a7d9e716fb2a2c58c}{ListaOperacoes}}(\mbox{\hyperlink{struct_operacao}{Operacao}}* h);}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 \textcolor{comment}{//verifica se existe operação na lista}}
+\DoxyCodeLine{59 \textcolor{keywordtype}{bool} \mbox{\hyperlink{operacoes_8h_a07d09ca47648d8c15f4d4b5a6768c5b9}{ExisteOperacao}}(\mbox{\hyperlink{struct_operacao}{Operacao}}* h, \textcolor{keywordtype}{int} \textcolor{keywordtype}{id});}
+\DoxyCodeLine{60 }
+\DoxyCodeLine{61 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -7,7 +7,7 @@ Estrutura para armazenar um job em ficheiro.
 
 
 
-{\ttfamily \#include $<$data.\+h$>$}
+{\ttfamily \#include $<$jobs.\+h$>$}
 
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
@@ -16,14 +16,16 @@ int \mbox{\hyperlink{struct_job_file_acfc76dac52247eceb42a26e531e19c88}{id}}
 \item 
 char \mbox{\hyperlink{struct_job_file_a6f56c235841b644c5e98e550a562a3d7}{nome}} \mbox{[}50\mbox{]}
 \item 
-\mbox{\hyperlink{struct_operacao}{Operacao}} \mbox{\hyperlink{struct_job_file_a3c6c30f672e97bef39a1f6945fe5fc31}{operacoes}} \mbox{[}7\mbox{]}
+bool \mbox{\hyperlink{struct_job_file_a747eab7de1d9825ae9693d77c7cbeefe}{terminado}}
+\item 
+int \mbox{\hyperlink{struct_job_file_ab93001b49acf1e34d530c51fd95f7fbd}{operacoes}} \mbox{[}10\mbox{]}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Estrutura para armazenar um job em ficheiro. 
 
-Um job contem um identificador (@id), um nome (@nome), um conjunto finito de operaÃ§Ãµes (@operacoes) 
+Um job contem um identificador (@id), um nome (@nome), um conjunto finito de operações (@operacoes) 
 
 \doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{struct_job_file_acfc76dac52247eceb42a26e531e19c88}\label{struct_job_file_acfc76dac52247eceb42a26e531e19c88}} 
@@ -38,14 +40,20 @@ Um job contem um identificador (@id), um nome (@nome), um conjunto finito de ope
 \doxysubsubsection{\texorpdfstring{nome}{nome}}
 {\footnotesize\ttfamily char Job\+File\+::nome\mbox{[}50\mbox{]}}
 
-\mbox{\Hypertarget{struct_job_file_a3c6c30f672e97bef39a1f6945fe5fc31}\label{struct_job_file_a3c6c30f672e97bef39a1f6945fe5fc31}} 
+\mbox{\Hypertarget{struct_job_file_ab93001b49acf1e34d530c51fd95f7fbd}\label{struct_job_file_ab93001b49acf1e34d530c51fd95f7fbd}} 
 \index{JobFile@{JobFile}!operacoes@{operacoes}}
 \index{operacoes@{operacoes}!JobFile@{JobFile}}
 \doxysubsubsection{\texorpdfstring{operacoes}{operacoes}}
-{\footnotesize\ttfamily \mbox{\hyperlink{struct_operacao}{Operacao}} Job\+File\+::operacoes\mbox{[}7\mbox{]}}
+{\footnotesize\ttfamily int Job\+File\+::operacoes\mbox{[}10\mbox{]}}
+
+\mbox{\Hypertarget{struct_job_file_a747eab7de1d9825ae9693d77c7cbeefe}\label{struct_job_file_a747eab7de1d9825ae9693d77c7cbeefe}} 
+\index{JobFile@{JobFile}!terminado@{terminado}}
+\index{terminado@{terminado}!JobFile@{JobFile}}
+\doxysubsubsection{\texorpdfstring{terminado}{terminado}}
+{\footnotesize\ttfamily bool Job\+File\+::terminado}
 
 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-EDA-\/\+FJSSP/\mbox{\hyperlink{data_8h}{data.\+h}}\end{DoxyCompactItemize}
+EDA-\/\+FJSSP/\mbox{\hyperlink{jobs_8h}{jobs.\+h}}\end{DoxyCompactItemize}

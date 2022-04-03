@@ -1,0 +1,41 @@
+\hypertarget{maquinas_8h_source}{}\doxysection{maquinas.\+h}
+\label{maquinas_8h_source}\index{EDA-\/FJSSP/maquinas.h@{EDA-\/FJSSP/maquinas.h}}
+\mbox{\hyperlink{maquinas_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{9 \textcolor{comment}{//prevenir declaração dupla de quaisquer identificadores (tipos, etc)}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef MAQUINAS}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define MAQUINAS}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <stdbool.h>}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{comment}{//evita MSG ERROS: \_CRT\_SECURE\_NO\_WARNINGS}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#pragma warning( disable : 4996 ) }}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#pragma region Structs}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{30 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\{}
+\DoxyCodeLine{31     \textcolor{keywordtype}{int} \mbox{\hyperlink{struct_maquina_a145c60b413f7dce90bbbe60f6cf2a406}{id}};}
+\DoxyCodeLine{32     \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_maquina_a0f648c52e137edcbd8d8d518f79742e0}{disponivel}};}
+\DoxyCodeLine{33     \textcolor{keyword}{struct }\mbox{\hyperlink{struct_maquina}{Maquina}}* \mbox{\hyperlink{struct_maquina_a8cbfb5dd871556837128a586e83992a9}{next}};}
+\DoxyCodeLine{34 \} \mbox{\hyperlink{struct_maquina}{Maquina}};}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#pragma region AssinaturasFunções}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{// cria maquina(reservar memoria)}}
+\DoxyCodeLine{41 \mbox{\hyperlink{struct_maquina}{Maquina}}* \mbox{\hyperlink{maquinas_8h_acf6d18b2766e37d6cf6c198dd65fcf3c}{CriaMaquina}}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id}, \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_maquina_a0f648c52e137edcbd8d8d518f79742e0}{disponivel}});}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{comment}{// insere maquinas na lista de maquinas}}
+\DoxyCodeLine{44 \mbox{\hyperlink{struct_maquina}{Maquina}}* \mbox{\hyperlink{maquinas_8h_a18e6bd93e0b8f1e0f770e2437dd5843d}{InsereMaquinaFim}}(\mbox{\hyperlink{struct_maquina}{Maquina}}* h, \mbox{\hyperlink{struct_maquina}{Maquina}}* n);}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{comment}{//verifica se existe maquina na lista}}
+\DoxyCodeLine{47 \textcolor{keywordtype}{bool} \mbox{\hyperlink{maquinas_8h_a6b4fb10d806e49c744fe46ed846f29f8}{ExisteMaquina}}(\mbox{\hyperlink{struct_maquina}{Maquina}}* h, \textcolor{keywordtype}{int} \textcolor{keywordtype}{id});}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

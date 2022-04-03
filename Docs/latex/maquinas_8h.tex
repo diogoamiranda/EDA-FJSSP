@@ -1,0 +1,80 @@
+\hypertarget{maquinas_8h}{}\doxysection{EDA-\/\+FJSSP/maquinas.h File Reference}
+\label{maquinas_8h}\index{EDA-\/FJSSP/maquinas.h@{EDA-\/FJSSP/maquinas.h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_maquina}{Maquina}}
+\begin{DoxyCompactList}\small\item\em Estrutura para armazenar uma máquina. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_maquina}{Maquina}} $\ast$ \mbox{\hyperlink{maquinas_8h_acf6d18b2766e37d6cf6c198dd65fcf3c}{Cria\+Maquina}} (int id, bool disponivel)
+\begin{DoxyCompactList}\small\item\em Cria nova maquina. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_maquina}{Maquina}} $\ast$ \mbox{\hyperlink{maquinas_8h_a18e6bd93e0b8f1e0f770e2437dd5843d}{Insere\+Maquina\+Fim}} (\mbox{\hyperlink{struct_maquina}{Maquina}} $\ast$h, \mbox{\hyperlink{struct_maquina}{Maquina}} $\ast$n)
+\begin{DoxyCompactList}\small\item\em Insere maquina no final da lista. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{maquinas_8h_a6b4fb10d806e49c744fe46ed846f29f8}{Existe\+Maquina}} (\mbox{\hyperlink{struct_maquina}{Maquina}} $\ast$h, int id)
+\begin{DoxyCompactList}\small\item\em Verifica se maquina existe. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{maquinas_8h_acf6d18b2766e37d6cf6c198dd65fcf3c}\label{maquinas_8h_acf6d18b2766e37d6cf6c198dd65fcf3c}} 
+\index{maquinas.h@{maquinas.h}!CriaMaquina@{CriaMaquina}}
+\index{CriaMaquina@{CriaMaquina}!maquinas.h@{maquinas.h}}
+\doxysubsubsection{\texorpdfstring{CriaMaquina()}{CriaMaquina()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_maquina}{Maquina}} $\ast$ Cria\+Maquina (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{bool}]{disponivel }\end{DoxyParamCaption})}
+
+
+
+Cria nova maquina. 
+
+Aloca memória necessária para armazenar uma maquina em memória
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Identificador da maquina \\
+\hline
+{\em disponivel} & Se a maquina esta a ser utilizada ou nao \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{maquinas_8h_a6b4fb10d806e49c744fe46ed846f29f8}\label{maquinas_8h_a6b4fb10d806e49c744fe46ed846f29f8}} 
+\index{maquinas.h@{maquinas.h}!ExisteMaquina@{ExisteMaquina}}
+\index{ExisteMaquina@{ExisteMaquina}!maquinas.h@{maquinas.h}}
+\doxysubsubsection{\texorpdfstring{ExisteMaquina()}{ExisteMaquina()}}
+{\footnotesize\ttfamily bool Existe\+Maquina (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_maquina}{Maquina}} $\ast$}]{h,  }\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Verifica se maquina existe. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Inicio da Lista \\
+\hline
+{\em id} & Identificador a procurar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True/\+False 
+\end{DoxyReturn}
+\mbox{\Hypertarget{maquinas_8h_a18e6bd93e0b8f1e0f770e2437dd5843d}\label{maquinas_8h_a18e6bd93e0b8f1e0f770e2437dd5843d}} 
+\index{maquinas.h@{maquinas.h}!InsereMaquinaFim@{InsereMaquinaFim}}
+\index{InsereMaquinaFim@{InsereMaquinaFim}!maquinas.h@{maquinas.h}}
+\doxysubsubsection{\texorpdfstring{InsereMaquinaFim()}{InsereMaquinaFim()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_maquina}{Maquina}} $\ast$ Insere\+Maquina\+Fim (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_maquina}{Maquina}} $\ast$}]{h,  }\item[{\mbox{\hyperlink{struct_maquina}{Maquina}} $\ast$}]{novo }\end{DoxyParamCaption})}
+
+
+
+Insere maquina no final da lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Inicio da Lista \\
+\hline
+{\em novo} & Nova maquina a inserir \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Inicio da Lista 
+\end{DoxyReturn}

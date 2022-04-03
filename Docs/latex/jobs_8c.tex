@@ -6,18 +6,28 @@ Métodos para manipular Lista Ligada Simples (\mbox{\hyperlink{struct_job}{Job}})
 
 
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
-{\ttfamily \#include \char`\"{}data.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}jobs.\+h\char`\"{}}\newline
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{struct_job}{Job}} $\ast$ \mbox{\hyperlink{jobs_8c_a87208e1c4dceb7c0dd02e1355488e9a5}{Cria\+Job}} (int id, char $\ast$nome, \mbox{\hyperlink{struct_operacao}{Operacao}} operacoes\mbox{[}7\mbox{]})
+\mbox{\hyperlink{struct_job}{Job}} $\ast$ \mbox{\hyperlink{jobs_8c_a99450e8e4947073f0a859862228c33b0}{Cria\+Job}} (int id, char $\ast$nome, int operacoes\mbox{[}$\,$\mbox{]})
 \begin{DoxyCompactList}\small\item\em Cria novo \mbox{\hyperlink{struct_job}{Job}}. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{struct_job}{Job}} $\ast$ \mbox{\hyperlink{jobs_8c_ad5d10bab822d9159ac964c99b878120f}{Remove\+Operacao}} (\mbox{\hyperlink{struct_job}{Job}} $\ast$h, int job\+Id, int operacao\+Id)
-\begin{DoxyCompactList}\small\item\em Remove operação de um job. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\mbox{\hyperlink{struct_job}{Job}} $\ast$ \mbox{\hyperlink{jobs_8c_a60b04ee8485ae4552c333c5347d6685a}{Insere\+Job\+Fim}} (\mbox{\hyperlink{struct_job}{Job}} $\ast$h, \mbox{\hyperlink{struct_job}{Job}} $\ast$novo)
+\begin{DoxyCompactList}\small\item\em Insere job no final da lista. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{jobs_8c_a84a9e77e37d007803c22574861654770}{Gravar\+Job\+Binario}} (char $\ast$nome\+Ficheiro, \mbox{\hyperlink{struct_job}{Job}} $\ast$h, int total\+Operacoes)
+\begin{DoxyCompactList}\small\item\em Preservar dados em ficheiro Grava todos os nodos da Lista em Ficheiro. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_job}{Job}} $\ast$ \mbox{\hyperlink{jobs_8c_a7e3e25b2116b0f1ae872706bb3b0bc41}{Ler\+Job\+Binario}} (char $\ast$nome\+Ficheiro, int operacoes\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Lê informação de ficheiro. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{jobs_8c_aead7b838206e9de4eed837ceb43e9250}{Destroi\+Lista\+Jobs}} (\mbox{\hyperlink{struct_job}{Job}} $\ast$$\ast$h)
+\begin{DoxyCompactList}\small\item\em Destroi todos os nodos da lista job. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Métodos para manipular Lista Ligada Simples (\mbox{\hyperlink{struct_job}{Job}}) 
+
+Métodos para manipular Lista Ligada Simples (Operações)
+
+Métodos para manipular Lista Ligada Simples (Maquinas)
 
 \begin{DoxyAuthor}{Author}
 diogo miranda 
@@ -28,11 +38,11 @@ diogo miranda
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{jobs_8c_a87208e1c4dceb7c0dd02e1355488e9a5}\label{jobs_8c_a87208e1c4dceb7c0dd02e1355488e9a5}} 
+\mbox{\Hypertarget{jobs_8c_a99450e8e4947073f0a859862228c33b0}\label{jobs_8c_a99450e8e4947073f0a859862228c33b0}} 
 \index{jobs.c@{jobs.c}!CriaJob@{CriaJob}}
 \index{CriaJob@{CriaJob}!jobs.c@{jobs.c}}
 \doxysubsubsection{\texorpdfstring{CriaJob()}{CriaJob()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{struct_job}{Job}} $\ast$ Cria\+Job (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{char $\ast$}]{nome,  }\item[{\mbox{\hyperlink{struct_operacao}{Operacao}}}]{operacoes\mbox{[}7\mbox{]} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_job}{Job}} $\ast$ Cria\+Job (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{char $\ast$}]{nome,  }\item[{int}]{operacoes\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
 
 
 
@@ -46,28 +56,59 @@ Aloca memória necessária para armazenar um job em memória
 \hline
 {\em nome} & Nome do \mbox{\hyperlink{struct_job}{Job}} \\
 \hline
-{\em operacoes} & Array de operações \\
-\hline
 \end{DoxyParams}
-\mbox{\Hypertarget{jobs_8c_ad5d10bab822d9159ac964c99b878120f}\label{jobs_8c_ad5d10bab822d9159ac964c99b878120f}} 
-\index{jobs.c@{jobs.c}!RemoveOperacao@{RemoveOperacao}}
-\index{RemoveOperacao@{RemoveOperacao}!jobs.c@{jobs.c}}
-\doxysubsubsection{\texorpdfstring{RemoveOperacao()}{RemoveOperacao()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{struct_job}{Job}} $\ast$ Remove\+Operacao (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_job}{Job}} $\ast$}]{h,  }\item[{int}]{job\+Id,  }\item[{int}]{operacao\+Id }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{jobs_8c_aead7b838206e9de4eed837ceb43e9250}\label{jobs_8c_aead7b838206e9de4eed837ceb43e9250}} 
+\index{jobs.c@{jobs.c}!DestroiListaJobs@{DestroiListaJobs}}
+\index{DestroiListaJobs@{DestroiListaJobs}!jobs.c@{jobs.c}}
+\doxysubsubsection{\texorpdfstring{DestroiListaJobs()}{DestroiListaJobs()}}
+{\footnotesize\ttfamily void Destroi\+Lista\+Jobs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_job}{Job}} $\ast$$\ast$}]{h }\end{DoxyParamCaption})}
 
 
 
-Remove operação de um job. 
+Destroi todos os nodos da lista job. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em h} & Apontador para inicio da Lista \\
 \hline
-{\em job\+Id} & Identificador do job a alterar \\
+\end{DoxyParams}
+\mbox{\Hypertarget{jobs_8c_a84a9e77e37d007803c22574861654770}\label{jobs_8c_a84a9e77e37d007803c22574861654770}} 
+\index{jobs.c@{jobs.c}!GravarJobBinario@{GravarJobBinario}}
+\index{GravarJobBinario@{GravarJobBinario}!jobs.c@{jobs.c}}
+\doxysubsubsection{\texorpdfstring{GravarJobBinario()}{GravarJobBinario()}}
+{\footnotesize\ttfamily bool Gravar\+Job\+Binario (\begin{DoxyParamCaption}\item[{char $\ast$}]{nome\+Ficheiro,  }\item[{\mbox{\hyperlink{struct_job}{Job}} $\ast$}]{h,  }\item[{int}]{total\+Operacoes }\end{DoxyParamCaption})}
+
+
+
+Preservar dados em ficheiro Grava todos os nodos da Lista em Ficheiro. 
+
+\mbox{\Hypertarget{jobs_8c_a60b04ee8485ae4552c333c5347d6685a}\label{jobs_8c_a60b04ee8485ae4552c333c5347d6685a}} 
+\index{jobs.c@{jobs.c}!InsereJobFim@{InsereJobFim}}
+\index{InsereJobFim@{InsereJobFim}!jobs.c@{jobs.c}}
+\doxysubsubsection{\texorpdfstring{InsereJobFim()}{InsereJobFim()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_job}{Job}} $\ast$ Insere\+Job\+Fim (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_job}{Job}} $\ast$}]{h,  }\item[{\mbox{\hyperlink{struct_job}{Job}} $\ast$}]{novo }\end{DoxyParamCaption})}
+
+
+
+Insere job no final da lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Inicio da Lista \\
 \hline
-{\em operacao\+Id} & Identificador da operação a remover \\
+{\em novo} & Novo final a inserir \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Apontador para Lista 
+Inicio da Lista 
 \end{DoxyReturn}
+\mbox{\Hypertarget{jobs_8c_a7e3e25b2116b0f1ae872706bb3b0bc41}\label{jobs_8c_a7e3e25b2116b0f1ae872706bb3b0bc41}} 
+\index{jobs.c@{jobs.c}!LerJobBinario@{LerJobBinario}}
+\index{LerJobBinario@{LerJobBinario}!jobs.c@{jobs.c}}
+\doxysubsubsection{\texorpdfstring{LerJobBinario()}{LerJobBinario()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_job}{Job}} $\ast$ Ler\+Job\+Binario (\begin{DoxyParamCaption}\item[{char $\ast$}]{nome\+Ficheiro,  }\item[{int}]{operacoes\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Lê informação de ficheiro. 
+
