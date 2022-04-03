@@ -21,9 +21,21 @@
     <ClCompile Include="jobs.c">
       <Filter>Resource Files</Filter>
     </ClCompile>
+    <ClCompile Include="operacoes.c">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="maquinas.c">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="data.h">
+    <ClInclude Include="jobs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="operacoes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="maquinas.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -5,38 +5,88 @@
  * @brief Manipulação da lista de Jobs
 */
 
-#include<stdio.h>
-#include "data.h"
+#include <stdio.h>
+#include "jobs.h"
+#include "operacoes.h"
+#include "maquinas.h"
 
 /**
 * Função main (main thread)
 */
 int main() {
-	// criar maquinas, produtos, operaçoes e inserir jobs (se houver tempo)
-	// inserir novas operaçoes para o job x (percorrer linked list e inserir no array)
-	// remover operaçoes para o job x (percorrer linked list e remover do array de operaçoes)
 
+#pragma region FASE1_CRIAR_LISTAS
+	Maquina* m1 = CriaMaquina(0, true);
+	Maquina* m2 = CriaMaquina(1, true);
+	Maquina* m3 = CriaMaquina(2, true);
 
-#pragma region CriaListas
-	//maquinas
-	Maquina maq1, maq2;
-	maq1.id = 0;
-	maq2.id = 1;
+	Maquina* inicioListaMaq = NULL;
+	inicioListaMaq = InsereMaquinaFim(inicioListaMaq, m1);
+	inicioListaMaq = InsereMaquinaFim(inicioListaMaq, m2);
+	inicioListaMaq = InsereMaquinaFim(inicioListaMaq, m3);
 
-	//produtos
-	Produto prod1 = { 1, "prod1" };
+	Operacao* op1 = CriaOperacao(0, 0, 4, false);
+	Operacao* op2 = CriaOperacao(1, 1, 1, false);
+	Operacao* op3 = CriaOperacao(2, 2, 5, false);
 
-	//operacoes
-	Operacao op1 = { 0, maq1.id, 12 };
+	Operacao* inicioListaOperacao = NULL;
+	inicioListaOperacao = InsereMaquinaFim(inicioListaOperacao, op1);
+	inicioListaOperacao = InsereMaquinaFim(inicioListaOperacao, op2);
+	inicioListaOperacao = InsereMaquinaFim(inicioListaOperacao, op3);
 
-	//jobs
-	Job* job1 = criaJob(7, "Jogo1", "A");
+	int operacacoesJobs [] = {0,2};
+
+	Job* job1 = CriaJob(0, "vitafilmar", operacacoesJobs);
+	Job* inicioListaJob = NULL;
+	inicioListaJob = InsereJobFim(inicioListaJob, job1);
 
 #pragma endregion
 
-#pragma region ImprimeDados
-	printf("Job id %d", job1->id);
-	printf("Job %s", job1->nome);
+#pragma region FASE1_2
 	
+	//TODO: O TOTAL DE OPERACOES NAO DEVE SER ESTATICO
+	bool b = GravarJobBinario("jobs.bin", inicioListaJob, 2);
+
+	if (b == true) {
+		DestroiLista(&inicioListaJob);
+		inicioListaJob = LerJobBinario("jobs.bin", operacacoesJobs);
+	}
+
+#pragma endregion
+
+#pragma region FASE1_3
+	Operacao* op4 = CriaOperacao(4, 5, 5, false);
+	inicioListaOperacao = InsereOperacaoFim(inicioListaOperacao, op4);
+
+#pragma endregion
+
+#pragma region FASE1_4
+	inicioListaOperacao = RemoveOperacao(inicioListaOperacao, 4);
+
+#pragma endregion
+
+#pragma region FASE1_5
+	inicioListaOperacao = AlteraOperacao(inicioListaOperacao, 3, 6, true);
+
+#pragma endregion
+
+#pragma region FASE1_6
+	 float tempo = CalculaMinTempoJob(0);
+	 printf("tempo minimo de %.2f unidades para terminar job", tempo);
+
+#pragma endregion
+
+#pragma region FASE1_7
+	tempo = CalculaMaxTempoJob(0);
+	printf("tempo maximo de %.2f unidades para terminar job", tempo);
+
+#pragma endregion
+
+#pragma region FASE1_8
+	tempo = CalculaMediaTempoOperacoesJob(0);
+	printf("tempo medio de %.2f unidades para concluir qualquer operacao do job", tempo);
+
+#pragma endregion
+
 	return 0;
 }
