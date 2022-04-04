@@ -7,6 +7,7 @@
 
 #include <stdio.h>
 #include <stdbool.h>
+#include <stdlib.h>
 #include "maquinas.h"
 
 /**
@@ -22,6 +23,8 @@ Maquina* CriaMaquina(int id, bool disponivel)
 {
 	//alocar memória tendo em conta o tamanho do bloco de memória Job
 	Maquina* newMaquina = (Maquina*)malloc(sizeof(Maquina));
+
+	if (newMaquina == NULL) return NULL;
 
 	newMaquina->id = id;
 	newMaquina->disponivel = disponivel;

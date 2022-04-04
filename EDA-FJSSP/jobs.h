@@ -57,7 +57,7 @@ Job* CriaJob(int id, char* nome, int operacoes[]);
 Job* InsereJobFim(Job* h, Job* n);
 
 //insere operações na lista de operações de um job
-Job* InsereOperacaoJob(Job* h, Operacao* o, int jobId);
+// Job* InsereOperacaoJob(Job* h, Operacao* o, int jobId);
 
 // calcular o minimo de tempo que um job demora a ser executado
 float CalculaMinTempoJob(int jobId);
@@ -66,7 +66,7 @@ float CalculaMinTempoJob(int jobId);
 float CalculaMaxTempoJob(int jobId);
 
 // calcular quantidade média de tempo necessário para completar uma operação x do job
-float CalculaMediaTempoOperacaoJob(int jobId);
+// float CalculaMediaTempoOperacaoJob(int jobId);
 
 // calcular quantidade média das médias para completar uma operacao x do job
 float CalculaMediaTempoOperacoesJob(int jobId);
@@ -79,6 +79,9 @@ Job* LerJobBinario(char* nomeFicheiro, int operacoes[]);
 
 //apaga todos os nodes da lista de jobs
 void DestroiListaJobs(Job** h);
+
+//verifica se existe job
+bool ExisteJob(Job* h, int id);
 
 #pragma endregion
 

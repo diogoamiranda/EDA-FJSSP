@@ -6,6 +6,7 @@
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "jobs.h"
 
 
@@ -24,7 +25,9 @@ Job* CriaJob(int id, char* nome, int operacoes[]){
 
 	//alocar memória tendo em conta o tamanho do bloco de memória Job
 	Job* newJob = (Job*)malloc(sizeof(Job) + sizeof(operacoes));
-	
+
+	if (newJob == NULL) return NULL;
+
 	newJob->id = id;
 	strcpy(newJob->nome, nome);
 	//define as operacoes do job
@@ -127,6 +130,34 @@ void DestroiListaJobs(Job** h) {
 	}
 }
 
+/**
+* @brief Verifica se job existe.
+* @param h Inicio da Lista
+* @param id	Identificador a procurar
+* @return True/False
+*/
+bool ExisteJob(Job* h, int id) {
+	if (h == NULL) return false;
+	Operacao* aux = h;
+	while (aux != NULL) {
+		if (aux->id == id)
+			return true;
+		aux = aux->next;
+	}
+	return false;
+}
+
+float CalculaMinTempoJob(int jobId) {
+	return 0.2;
+}
+
+float CalculaMaxTempoJob(int jobId) {
+	return 0.1;
+}
+
+float CalculaMediaTempoOperacoesJob(int jobId) {
+	return 2;
+}
 /**
  2a fase
 */

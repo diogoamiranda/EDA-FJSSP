@@ -38,7 +38,7 @@ typedef struct {
 #pragma region AssinaturasFunções
 
 // cria operação(reservar memoria)
-Operacao* CriaOperacao(int id, int maq_id, int tempo, bool terminada); 
+Operacao* CriaOperacao(int id, int maqId, int tempo, bool terminada); 
 
 // insere operação na lista de operações
 Operacao* InsereOperacaoFim(Operacao* h, Operacao* n);

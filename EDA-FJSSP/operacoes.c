@@ -6,8 +6,8 @@
 */
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "operacoes.h"
-
 
 /**
 *	@brief Cria nova Operacao.
@@ -20,13 +20,15 @@
 *	@param terminada Se a operação está ou não terminada
 *
 */
-Operacao* CriaOperacao(int id, int maq_id, int tempo, bool terminada)
+Operacao* CriaOperacao(int id, int maqId, int tempo, bool terminada)
 {
 	//alocar memória tendo em conta o tamanho do bloco de memória Job
 	Operacao* newOperacao = (Operacao*)malloc(sizeof(Operacao));
 
+	if (newOperacao == NULL) return NULL;
+
 	newOperacao->id = id;
-	newOperacao->maquinaId = maq_id;
+	newOperacao->maquinaId = maqId;
 	newOperacao->tempo = tempo;
 	newOperacao->terminada = terminada;
 	//último node por isso define apontador como NULL
@@ -51,7 +53,7 @@ Operacao* InsereOperacaoFim(Operacao* h, Operacao* novo) {
 	else
 	{
 		//Posicionar-se no fim da lista
-		Maquina* aux = h;
+		Operacao* aux = h;
 		while (aux->next != NULL) {
 			aux = aux->next;
 		}
