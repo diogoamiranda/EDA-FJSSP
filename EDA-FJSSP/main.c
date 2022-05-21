@@ -2,89 +2,85 @@
  * @file main.c
  * @author diogo miranda
  * @date 2022
- * @brief Manipulação da lista de Jobs
+ * @brief Instantiation and manipulation of the various lists
 */
 
 #include <stdio.h>
 #include "jobs.h"
-#include "operacoes.h"
-#include "maquinas.h"
+#include "operations.h"
+#include "machines.h"
 
 /**
-* Função main (main thread)
+* Main function (main thread)
 */
 int main() {
 
-#pragma region FASE1_CRIAR_LISTAS
-	Maquina* m1 = CriaMaquina(0, true);
-	Maquina* m2 = CriaMaquina(1, true);
-	Maquina* m3 = CriaMaquina(2, true);
+#pragma region PAHSE1_CRIAR_LISTAS
+	Machine* m1 = CreateMachine(0, true);
+	Machine* m2 = CreateMachine(1, true);
+	Machine* m3 = CreateMachine(2, true);
 
-	Maquina* inicioListaMaq = NULL;
-	inicioListaMaq = InsereMaquinaFim(inicioListaMaq, m1);
-	inicioListaMaq = InsereMaquinaFim(inicioListaMaq, m2);
-	inicioListaMaq = InsereMaquinaFim(inicioListaMaq, m3);
+	Machine* headMachList = NULL;
+	headMachList = InsertMachineEnd(headMachList, m1);
+	headMachList = InsertMachineEnd(headMachList, m2);
+	headMachList = InsertMachineEnd(headMachList, m3);
 
-	Operacao* op1 = CriaOperacao(0, 0, 4, false);
-	Operacao* op2 = CriaOperacao(1, 1, 1, false);
-	Operacao* op3 = CriaOperacao(2, 2, 5, false);
+	Job* job1 = CreateJob(0, "plastic cutting");
 
-	Operacao* inicioListaOperacao = NULL;
-	inicioListaOperacao = InsereOperacaoFim(inicioListaOperacao, op1);
-	inicioListaOperacao = InsereOperacaoFim(inicioListaOperacao, op2);
-	inicioListaOperacao = InsereOperacaoFim(inicioListaOperacao, op3);
+	Job* headJobList = NULL;
+	headJobList = InsertJobEnd(headJobList, job1);
 
-	int operacacoesJobs [] = {0,2};
+	Operation* op1 = CreateOperation(0, 0, 0, 4, false);
+	Operation* op2 = CreateOperation(1, 0,  1, 1, false);
+	Operation* op3 = CreateOperation(2, 0, 2, 5, false);
 
-	Job* job1 = CriaJob(0, "vitafilmar", operacacoesJobs);
-	Job* inicioListaJob = NULL;
-	inicioListaJob = InsereJobFim(inicioListaJob, job1);
-
+	Operation* headOperationsList = NULL;
+	headOperationsList = InsertOperationEnd(headOperationsList, op1);
+	headOperationsList = InsertOperationEnd(headOperationsList, op2);
+	headOperationsList = InsertOperationEnd(headOperationsList, op3);
 #pragma endregion
 
-#pragma region FASE1_2
-	
-	//TODO: O TOTAL DE OPERACOES NAO DEVE SER ESTATICO
-	bool b = GravarJobBinario("jobs.bin", inicioListaJob, 2);
+#pragma region PAHSE1_2
+	/*bool b = SaveJobBinary("jobs.bin", headJobList);
 
 	if (b == true) {
-		DestroiListaJobs(&inicioListaJob);
-		inicioListaJob = LerJobBinario("jobs.bin", operacacoesJobs);
-	}
+		DeleteAllJobs(&headJobList);
+		ReadJobBinary = LerJobBinario("jobs.bin");
+	}*/
 
 #pragma endregion
 
-#pragma region FASE1_3
-	Operacao* op4 = CriaOperacao(4, 5, 5, false);
-	inicioListaOperacao = InsereOperacaoFim(inicioListaOperacao, op4);
+#pragma region PAHSE1_3
+	Operation* op4 = CreateOperation(4, 0, 5, 5, false);
+	headOperationsList = InsertOperationEnd(headOperationsList, op4);
 
 #pragma endregion
 
-#pragma region FASE1_4
-	inicioListaOperacao = RemoveOperacao(inicioListaOperacao, 4);
+#pragma region PAHSE1_4
+	headOperationsList = RemoveOperation(headOperationsList, 4);
 
 #pragma endregion
 
-#pragma region FASE1_5
-	inicioListaOperacao = AlteraOperacao(inicioListaOperacao, 3, 6, true);
+#pragma region PAHSE1_5
+	headOperationsList = UpdateOperation(headOperationsList, 3, 0, 6, 5, true);
 
 #pragma endregion
 
-#pragma region FASE1_6
-	 float tempo = CalculaMinTempoJob(0);
-	 printf("tempo minimo de %.2f unidades para terminar job\n", tempo);
+#pragma region PAHSE1_6
+	 float time = CalculateMinTimeJob(headJobList, headOperationsList, job1->id);
+	 printf("minimum time of %.2f units to finish job %d\n", time, job1->id);
 
 #pragma endregion
 
-#pragma region FASE1_7
-	tempo = CalculaMaxTempoJob(0);
-	printf("tempo maximo de %.2f unidades para terminar job\n", tempo);
+#pragma region PAHSE1_7
+	time = CalculateMaxTimeJob(job1->id);
+	printf("maximum time of %.2f units to finish job %d\n", time, job1->id);
 
 #pragma endregion
 
-#pragma region FASE1_8
-	tempo = CalculaMediaTempoOperacoesJob(0);
-	printf("tempo medio de %.2f unidades para concluir qualquer operacao do job\n", tempo);
+#pragma region PAHSE1_8
+	time = CalculateAvgTimeJobOperations(job1->id);
+	printf("average time of %.2f units to finish any job operation of the job ID %d\n", time, job1->id);
 
 #pragma endregion
 

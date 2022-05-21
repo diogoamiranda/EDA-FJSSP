@@ -1,87 +1,90 @@
 /**
- * @file data.h
+ * @file jobs.h
  * @author diogo miranda
  * @date 2022
- * @brief Jobs - Definições de Structs, Constantes e Assinaturas de Funções
+ * @brief Jobs - Definitions of Structs, Constants, and Function Signatures
  *
 */
 
-//prevenir declaração dupla de quaisquer identificadores (tipos, etc)
+//prevent double declaration of any identifiers (types, etc)
 #ifndef JOBS
 #define JOBS
 
 #include <stdio.h>
 #include <stdbool.h>
-#include "operacoes.h"
+#include "operations.h"
 
-//evita MSG ERROS: _CRT_SECURE_NO_WARNINGS
+//avoid MSG ERROS: _CRT_SECURE_NO_WARNINGS
 #pragma warning( disable : 4996 ) 
+
+#pragma region Constants
+#define JOB_NAME_MAX_LENGTH 50
+#pragma endregion
 
 #pragma region Structs
 
 /**
- * @brief Estrutura dinâmica para armazenar um job.
+ * @brief Dynamic structure to store a job
  *
- * Um job contem um identificador (@@id), um nome (@@nome)
- * e um apontador (*next).
+ * A job contains an identifier (@@id), a name (@@name),
+ * a boolean to check the state of the job(@@finished) and a pointer(*next).
  */
-typedef struct {
+typedef struct job {
 	int id;
-	char nome[50];
-	bool terminado;
-	int operacoes[10]; // ids de operacoes associadas
-	struct Job* next; // apontador para o proximo bloco de memoria/node do tipo Job
+	char name[JOB_NAME_MAX_LENGTH];
+	bool finished;
+	struct Operation* operations; //pointer to the operations list
+	struct Job* next; //pointer to the next memory block/node of type Job
 } Job;
 
 /**
- * @brief Estrutura para armazenar um job em ficheiro
+ * @brief Struct to store a job in a file
  *
- * Um job contem um identificador (@@id), um nome (@@nome),
- * um conjunto finito de operações (@@operacoes)
+ * A job contains an identifier (@@id), a name (@@name),
+ * a boolean to check the state of the job(@@finished)
  */
-typedef struct JobFile {
+typedef struct jobFile {
 	int id;
-	char nome[50];
-	bool terminado;
-	int operacoes[10]; // ids de operacoes associadas
+	char name[JOB_NAME_MAX_LENGTH];
+	bool finished;
 }JobFile;
 
 #pragma endregion
 
-#pragma region AssinaturasFunções
+#pragma region FunctionSignatures
 
-// cria job(reservar memoria)
-Job* CriaJob(int id, char* nome, int operacoes[]);
+// creates a new job(allocates memory)
+Job* CreateJob(int id, char* name);
 
-//insere job no final da lista de Jobs
-Job* InsereJobFim(Job* h, Job* n);
+// inserts job at the end of the job list
+Job* InsertJobEnd(Job* h, Job* n);
 
-//insere operações na lista de operações de um job
-// Job* InsereOperacaoJob(Job* h, Operacao* o, int jobId);
+// inserts new operations for a job
+Job* InsertJobOperation(Job* h, Operation* o, int jobId);
 
-// calcular o minimo de tempo que um job demora a ser executado
-float CalculaMinTempoJob(int jobId);
+// calculate a min time a job takes to complete
+float CalculateMinTimeJob(Job* h, Operation* hOp, int jobId);
 
-// calcular o maximo de tempo que um job demora a ser executado
-float CalculaMaxTempoJob(int jobId);
+// calculate a max time a job takes to complete
+float CalculateMaxTimeJob(int jobId);
 
-// calcular quantidade média de tempo necessário para completar uma operação x do job
-// float CalculaMediaTempoOperacaoJob(int jobId);
+// calculate average amount of time required to complete an operation of a job
+// float CalculateAvgTimeJobOperation(int jobId);
 
-// calcular quantidade média das médias para completar uma operacao x do job
-float CalculaMediaTempoOperacoesJob(int jobId);
+// calculate average amount of averages to complete an operation of a job
+float CalculateAvgTimeJobOperations(int jobId);
 
-//gravar dados de um job em ficheiro
-bool GravarJobBinario(char* nomeFicheiro, Job* h, int totalOperacoes);
+// write job data to file
+bool SaveJobBinary(char* fileName, Job* h);
 
-// ler ficheiro com dados de um job
-Job* LerJobBinario(char* nomeFicheiro, int operacoes[]);
+// read file with data from a job
+Job* ReadJobBinary(char* fileName);
 
-//apaga todos os nodes da lista de jobs
-void DestroiListaJobs(Job** h);
+// delete all nodes from the job list
+void DeleteAllJobs(Job** h);
 
-//verifica se existe job
-bool ExisteJob(Job* h, int id);
+// checks if job exists 
+bool JobExist(Job* h, int id);
 
 #pragma endregion
 

@@ -2,92 +2,84 @@
  * @file jobs.c
  * @author diogo miranda
  * @date 2022
- * @brief Métodos para manipular Lista Ligada Simples (Job)
+ * @brief Methods for manipulating Singly Linked Lists (Jobs)
 */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include "jobs.h"
+#include "operations.h"
 
 
 /**
-*	@brief Cria novo Job.
+* @brief Creates a new job.
 *
-*	Aloca memória necessária para armazenar um job em memória
+* Allocates necessary memory to store a Job in memory
 *
-*   @param id Identificador do Job
-*	@param nome Nome do Job
+* @param id Job identifier
+* @param name Job name
 *
 */
-Job* CriaJob(int id, char* nome, int operacoes[]){
-	//comprimento do array operacoes
-	int opLength = sizeof(operacoes) / sizeof(int);
-
+Job* CreateJob(int id, char* name){
 	//alocar memória tendo em conta o tamanho do bloco de memória Job
-	Job* newJob = (Job*)malloc(sizeof(Job) + sizeof(operacoes));
+	Job* newJob = (Job*)malloc(sizeof(Job));
 
 	if (newJob == NULL) return NULL;
 
 	newJob->id = id;
-	strcpy(newJob->nome, nome);
-	//define as operacoes do job
-	for (int i = 0; i < opLength; i++){
-		newJob->operacoes[i] = operacoes[i];
-	}
-	//último node por isso define apontador como NULL
+	strcpy(newJob->name, name);
+	//without operations by default
+	newJob->operations = NULL;
+	//last node so sets pointer to NULL
 	newJob->next = NULL;
 	return newJob;
 }
 
 /**
-* @brief Insere job no final da lista
-* @param h Inicio da Lista
-* @param novo Novo final a inserir
-* @return Inicio da Lista
+* @brief Inserts job at the end of the job list
+* @param h Head of the list
+* @param n New job to insert
+* @return Head of the list
 */
-Job* InsereJobFim(Job* h, Job* novo) {
-	//Verificar se a novo job já existe!!!
-	if (ExisteJob(h, novo->id)) return h;	//se existir não insere!
+Job* InsertJobEnd(Job* h, Job* n) {
+	//Check if the new job already exists
+	if (JobExist(h, n->id)) return h;	//if it exists, don't insert
 
-	//lista vazia?
+	//empty list?
 	if (h == NULL) {
-		h = novo;
+		h = n;
 	}
 	else
 	{
-		//Posicionar-se no fim da lista
+		//go to the end of the list
 		Job* aux = h;
 		while (aux->next != NULL) {
 			aux = aux->next;
 		}
-		//insere no fim da lista
-		aux->next = novo;
+		//inserts at the end of the list
+		aux->next = n;
 	}
 	return h;
 }
 
 /**
-* @brief Preservar dados em ficheiro
-* Grava todos os nodos da Lista em Ficheiro
+* @brief Preserve data in file
+* Writes all nodes in the List to a file
 */
-bool GravarJobBinario(char* nomeFicheiro, Job* h, int totalOperacoes) {
+bool SaveJobBinary(char* fileName, Job* h) {
 	FILE* fp;
 
 	if (h == NULL) return false;
-	if ((fp = fopen(nomeFicheiro, "wb")) == NULL) return false;
+	if ((fp = fopen(fileName, "wb")) == NULL) return false;
 
-	//grava n registos no ficheiro
 	Job* aux = h;
-	JobFile auxJob;	//para gravar em ficheiro!
-	while (aux) {		//while(aux!=NULL)
-		//Colocar no registo de ficheiro a inf que está no registo de memória
+	JobFile auxJob;
+	//write n records to file
+	while (aux) {
+		//Write job data to file without any pointers
 		auxJob.id = aux->id;
-		strcpy(auxJob.nome, aux->nome);
-		auxJob.terminado = aux->terminado;
-		//TODO: percorrer a lista de operacoes, comparar os ids e mostrar toda a informacao
-		for (int i = 0; i < totalOperacoes; i++){
-			auxJob.operacoes[i] = aux->operacoes[i];
-		}
+		strcpy(auxJob.name, aux->name);
+		auxJob.finished = aux->finished;
 		fwrite(&auxJob, sizeof(auxJob), 1, fp);
 		aux = aux->next;
 	}
@@ -96,30 +88,23 @@ bool GravarJobBinario(char* nomeFicheiro, Job* h, int totalOperacoes) {
 }
 
 /**
-* @brief Lê informação de ficheiro
+* @brief Read information about a job
 */
-Job* LerJobBinario(char* nomeFicheiro, int operacoes[]) {
+Job* ReadJobBinary(char* nomeFicheiro) {
 	FILE* fp;
 	Job* h = NULL;
 	Job* aux;
 
 	if ((fp = fopen(nomeFicheiro, "rb")) == NULL) return NULL;
-	//lê nº registos no ficheiro
-	JobFile auxJogo;
-	while (fread(&auxJogo, sizeof(JobFile), 1, fp)) {
-		aux = CriaJob(auxJogo.id, auxJogo.nome, operacoes);
-		h = InsereJobFim(h, aux);
-	}
 	fclose(fp);
 	return h;
 }
 
 /**
-* @brief Destroi todos os nodos da lista job
-* @param h Apontador para inicio da Lista
+* @brief Delete all nodes from a job list
+* @param h Pointer to the head of the list
 */
-
-void DestroiListaJobs(Job** h) {
+void DeleteAllJobs(Job** h) {
 	if (h != NULL) {
 		Job* aux;
 		while (*h) {
@@ -131,14 +116,14 @@ void DestroiListaJobs(Job** h) {
 }
 
 /**
-* @brief Verifica se job existe.
-* @param h Inicio da Lista
-* @param id	Identificador a procurar
+* @brief Check if a job exists.
+* @param h Head of the list
+* @param id	Identifier to be searched
 * @return True/False
 */
-bool ExisteJob(Job* h, int id) {
+bool JobExist(Job* h, int id) {
 	if (h == NULL) return false;
-	Operacao* aux = h;
+	Operation* aux = h;
 	while (aux != NULL) {
 		if (aux->id == id)
 			return true;
@@ -147,29 +132,59 @@ bool ExisteJob(Job* h, int id) {
 	return false;
 }
 
-float CalculaMinTempoJob(int jobId) {
-	return 0.2;
+/**
+* @brief Search for a job.
+* @param h Head of the list	
+* @param id Identifier to be searched
+* @return Pointer to the copy of founded job
+*/
+Job* SearchJob(Job* h, int id) {
+	if (h == NULL) return NULL;
+	else
+	{
+		Job* aux = h;
+		while (aux != NULL) {
+			if (aux->id == id) {
+				return (aux);
+			}
+			aux = aux->next;
+		}
+		return NULL;
+	}
 }
 
-float CalculaMaxTempoJob(int jobId) {
+/**
+* @brief Calculates the minimum time a job takes to complete
+* @param h Head of the job list
+* @param hOp Head of the operations list
+* @param jobId Job identifier
+* @return minTimeJob Minimum time that a job takes to complete
+*/
+float CalculateMinTimeJob(Job* h, Operation* hOp, int jobId) {
+	Job* aux = SearchJob(h, jobId);
+	float minTimeJob = 0;
+
+	return minTimeJob;
+}
+
+float CalculateMaxTimeJob(int jobId) {
 	return 0.1;
 }
 
-float CalculaMediaTempoOperacoesJob(int jobId) {
+float CalculateAvgTimeJobOperations(int jobId) {
 	return 2;
 }
-/**
- 2a fase
-*/
-/*Job* InsereOperacaoJob(Job* h, Operacao* o, int jobId) {
-	// se lista vazia
-	if (h == NULL) return NULL;	
-	//se operacao não tem informação
-	if (o == NULL) return h;	
 
-	Job* aux = ProcuraJob(h, jobId);
-	//se existe esse job
+//2nd Phase
+Job* InsertJobOperation(Job* h, Operation* o, int jobId) {
+	// if empty job list
+	if (h == NULL) return NULL;	
+	// search job
+	Job* aux = SearchJob(h, jobId);
+	if (aux) {
+		//add operations
+		aux->operations = o;
+	}
 	
-	return h;
+	return aux;
 }
-*/

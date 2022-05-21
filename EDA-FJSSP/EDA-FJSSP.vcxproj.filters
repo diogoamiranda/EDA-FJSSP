@@ -21,10 +21,10 @@
     <ClCompile Include="jobs.c">
       <Filter>Resource Files</Filter>
     </ClCompile>
-    <ClCompile Include="operacoes.c">
+    <ClCompile Include="operations.c">
       <Filter>Resource Files</Filter>
     </ClCompile>
-    <ClCompile Include="maquinas.c">
+    <ClCompile Include="machines.c">
       <Filter>Resource Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -32,10 +32,10 @@
     <ClInclude Include="jobs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="operacoes.h">
+    <ClInclude Include="operations.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="maquinas.h">
+    <ClInclude Include="machines.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
