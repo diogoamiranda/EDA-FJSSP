@@ -73,44 +73,140 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Métodos para manipular Lista Ligada Simples (<a class="el" href="struct_job.html" title="Estrutura dinâmica para armazenar um job.">Job</a>)  
+<p>Methods for manipulating Singly Linked Lists (Jobs)  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="jobs_8h_source.html">jobs.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="operations_8h_source.html">operations.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a99450e8e4947073f0a859862228c33b0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_job.html">Job</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jobs_8c.html#a99450e8e4947073f0a859862228c33b0">CriaJob</a> (int id, char *nome, int operacoes[])</td></tr>
-<tr class="memdesc:a99450e8e4947073f0a859862228c33b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cria novo <a class="el" href="struct_job.html" title="Estrutura dinâmica para armazenar um job.">Job</a>.  <a href="jobs_8c.html#a99450e8e4947073f0a859862228c33b0">More...</a><br /></td></tr>
-<tr class="separator:a99450e8e4947073f0a859862228c33b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60b04ee8485ae4552c333c5347d6685a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_job.html">Job</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jobs_8c.html#a60b04ee8485ae4552c333c5347d6685a">InsereJobFim</a> (<a class="el" href="struct_job.html">Job</a> *h, <a class="el" href="struct_job.html">Job</a> *novo)</td></tr>
-<tr class="memdesc:a60b04ee8485ae4552c333c5347d6685a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insere job no final da lista.  <a href="jobs_8c.html#a60b04ee8485ae4552c333c5347d6685a">More...</a><br /></td></tr>
-<tr class="separator:a60b04ee8485ae4552c333c5347d6685a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a84a9e77e37d007803c22574861654770"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jobs_8c.html#a84a9e77e37d007803c22574861654770">GravarJobBinario</a> (char *nomeFicheiro, <a class="el" href="struct_job.html">Job</a> *h, int totalOperacoes)</td></tr>
-<tr class="memdesc:a84a9e77e37d007803c22574861654770"><td class="mdescLeft">&#160;</td><td class="mdescRight">Preservar dados em ficheiro Grava todos os nodos da Lista em Ficheiro.  <a href="jobs_8c.html#a84a9e77e37d007803c22574861654770">More...</a><br /></td></tr>
-<tr class="separator:a84a9e77e37d007803c22574861654770"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e3e25b2116b0f1ae872706bb3b0bc41"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_job.html">Job</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jobs_8c.html#a7e3e25b2116b0f1ae872706bb3b0bc41">LerJobBinario</a> (char *nomeFicheiro, int operacoes[])</td></tr>
-<tr class="memdesc:a7e3e25b2116b0f1ae872706bb3b0bc41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lê informação de ficheiro.  <a href="jobs_8c.html#a7e3e25b2116b0f1ae872706bb3b0bc41">More...</a><br /></td></tr>
-<tr class="separator:a7e3e25b2116b0f1ae872706bb3b0bc41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aead7b838206e9de4eed837ceb43e9250"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jobs_8c.html#aead7b838206e9de4eed837ceb43e9250">DestroiListaJobs</a> (<a class="el" href="struct_job.html">Job</a> **h)</td></tr>
-<tr class="memdesc:aead7b838206e9de4eed837ceb43e9250"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroi todos os nodos da lista job.  <a href="jobs_8c.html#aead7b838206e9de4eed837ceb43e9250">More...</a><br /></td></tr>
-<tr class="separator:aead7b838206e9de4eed837ceb43e9250"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51815384df8073c80a5dafc28c049265"><td class="memItemLeft" align="right" valign="top"><a class="el" href="jobs_8h.html#a4150e22449797dfc130512f171768a2b">Job</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jobs_8c.html#a51815384df8073c80a5dafc28c049265">CreateJob</a> (int id, char *name)</td></tr>
+<tr class="memdesc:a51815384df8073c80a5dafc28c049265"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new job.  <a href="jobs_8c.html#a51815384df8073c80a5dafc28c049265">More...</a><br /></td></tr>
+<tr class="separator:a51815384df8073c80a5dafc28c049265"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0d014cdf46398a209ac7cb3b5db68da"><td class="memItemLeft" align="right" valign="top"><a class="el" href="jobs_8h.html#a4150e22449797dfc130512f171768a2b">Job</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jobs_8c.html#ad0d014cdf46398a209ac7cb3b5db68da">InsertJobEnd</a> (<a class="el" href="jobs_8h.html#a4150e22449797dfc130512f171768a2b">Job</a> *h, <a class="el" href="jobs_8h.html#a4150e22449797dfc130512f171768a2b">Job</a> *n)</td></tr>
+<tr class="memdesc:ad0d014cdf46398a209ac7cb3b5db68da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts job at the end of the job list.  <a href="jobs_8c.html#ad0d014cdf46398a209ac7cb3b5db68da">More...</a><br /></td></tr>
+<tr class="separator:ad0d014cdf46398a209ac7cb3b5db68da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a972e7a7dc535a25929c925f8381d7fdc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jobs_8c.html#a972e7a7dc535a25929c925f8381d7fdc">SaveJobBinary</a> (char *fileName, <a class="el" href="jobs_8h.html#a4150e22449797dfc130512f171768a2b">Job</a> *h)</td></tr>
+<tr class="memdesc:a972e7a7dc535a25929c925f8381d7fdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Preserve data in file Writes all nodes in the List to a file.  <a href="jobs_8c.html#a972e7a7dc535a25929c925f8381d7fdc">More...</a><br /></td></tr>
+<tr class="separator:a972e7a7dc535a25929c925f8381d7fdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13c20d1344612ecc34a027b829aa5da9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="jobs_8h.html#a4150e22449797dfc130512f171768a2b">Job</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jobs_8c.html#a13c20d1344612ecc34a027b829aa5da9">ReadJobBinary</a> (char *nomeFicheiro)</td></tr>
+<tr class="memdesc:a13c20d1344612ecc34a027b829aa5da9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read information about a job.  <a href="jobs_8c.html#a13c20d1344612ecc34a027b829aa5da9">More...</a><br /></td></tr>
+<tr class="separator:a13c20d1344612ecc34a027b829aa5da9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0bc3d298049f4b854ea860e3947a961"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jobs_8c.html#af0bc3d298049f4b854ea860e3947a961">DeleteAllJobs</a> (<a class="el" href="jobs_8h.html#a4150e22449797dfc130512f171768a2b">Job</a> **h)</td></tr>
+<tr class="memdesc:af0bc3d298049f4b854ea860e3947a961"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete all nodes from a job list.  <a href="jobs_8c.html#af0bc3d298049f4b854ea860e3947a961">More...</a><br /></td></tr>
+<tr class="separator:af0bc3d298049f4b854ea860e3947a961"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d2de41ea5c22f994d72c35c961bbdf1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jobs_8c.html#a6d2de41ea5c22f994d72c35c961bbdf1">JobExist</a> (<a class="el" href="jobs_8h.html#a4150e22449797dfc130512f171768a2b">Job</a> *h, int id)</td></tr>
+<tr class="memdesc:a6d2de41ea5c22f994d72c35c961bbdf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a job exists.  <a href="jobs_8c.html#a6d2de41ea5c22f994d72c35c961bbdf1">More...</a><br /></td></tr>
+<tr class="separator:a6d2de41ea5c22f994d72c35c961bbdf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f793260f4c950fcac7f69894159da3b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="jobs_8h.html#a4150e22449797dfc130512f171768a2b">Job</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jobs_8c.html#a8f793260f4c950fcac7f69894159da3b">SearchJob</a> (<a class="el" href="jobs_8h.html#a4150e22449797dfc130512f171768a2b">Job</a> *h, int id)</td></tr>
+<tr class="memdesc:a8f793260f4c950fcac7f69894159da3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Search for a job.  <a href="jobs_8c.html#a8f793260f4c950fcac7f69894159da3b">More...</a><br /></td></tr>
+<tr class="separator:a8f793260f4c950fcac7f69894159da3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28d624dbfe7968fa2a7d9b58a256225d"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jobs_8c.html#a28d624dbfe7968fa2a7d9b58a256225d">CalculateMinTimeJob</a> (<a class="el" href="jobs_8h.html#a4150e22449797dfc130512f171768a2b">Job</a> *h, <a class="el" href="operations_8h.html#a46c1f3c9eee509b8e3a2a4908ead5b8c">Operation</a> *hOp, int jobId)</td></tr>
+<tr class="memdesc:a28d624dbfe7968fa2a7d9b58a256225d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the minimum time a job takes to complete.  <a href="jobs_8c.html#a28d624dbfe7968fa2a7d9b58a256225d">More...</a><br /></td></tr>
+<tr class="separator:a28d624dbfe7968fa2a7d9b58a256225d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a114af9067c6ebf0240009d7890e8f52a"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jobs_8c.html#a114af9067c6ebf0240009d7890e8f52a">CalculateMaxTimeJob</a> (int jobId)</td></tr>
+<tr class="separator:a114af9067c6ebf0240009d7890e8f52a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afaab9e9bd7fab93ad3df06368bd38462"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jobs_8c.html#afaab9e9bd7fab93ad3df06368bd38462">CalculateAvgTimeJobOperations</a> (int jobId)</td></tr>
+<tr class="separator:afaab9e9bd7fab93ad3df06368bd38462"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a63b473116696747d1c7902c4415407f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="jobs_8h.html#a4150e22449797dfc130512f171768a2b">Job</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="jobs_8c.html#a63b473116696747d1c7902c4415407f0">InsertJobOperation</a> (<a class="el" href="jobs_8h.html#a4150e22449797dfc130512f171768a2b">Job</a> *h, <a class="el" href="operations_8h.html#a46c1f3c9eee509b8e3a2a4908ead5b8c">Operation</a> *o, int jobId)</td></tr>
+<tr class="separator:a63b473116696747d1c7902c4415407f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >Métodos para manipular Lista Ligada Simples (<a class="el" href="struct_job.html" title="Estrutura dinâmica para armazenar um job.">Job</a>) </p>
-<p >Métodos para manipular Lista Ligada Simples (Operações)</p>
-<p >Métodos para manipular Lista Ligada Simples (Maquinas)</p>
+<div class="textblock"><p >Methods for manipulating Singly Linked Lists (Jobs) </p>
 <dl class="section author"><dt>Author</dt><dd>diogo miranda </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2022 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a99450e8e4947073f0a859862228c33b0" name="a99450e8e4947073f0a859862228c33b0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a99450e8e4947073f0a859862228c33b0">&#9670;&nbsp;</a></span>CriaJob()</h2>
+<a id="afaab9e9bd7fab93ad3df06368bd38462" name="afaab9e9bd7fab93ad3df06368bd38462"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afaab9e9bd7fab93ad3df06368bd38462">&#9670;&nbsp;</a></span>CalculateAvgTimeJobOperations()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct_job.html">Job</a> * CriaJob </td>
+          <td class="memname">float CalculateAvgTimeJobOperations </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>jobId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a114af9067c6ebf0240009d7890e8f52a" name="a114af9067c6ebf0240009d7890e8f52a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a114af9067c6ebf0240009d7890e8f52a">&#9670;&nbsp;</a></span>CalculateMaxTimeJob()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float CalculateMaxTimeJob </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>jobId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a28d624dbfe7968fa2a7d9b58a256225d" name="a28d624dbfe7968fa2a7d9b58a256225d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28d624dbfe7968fa2a7d9b58a256225d">&#9670;&nbsp;</a></span>CalculateMinTimeJob()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float CalculateMinTimeJob </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="jobs_8h.html#a4150e22449797dfc130512f171768a2b">Job</a> *&#160;</td>
+          <td class="paramname"><em>h</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="operations_8h.html#a46c1f3c9eee509b8e3a2a4908ead5b8c">Operation</a> *&#160;</td>
+          <td class="paramname"><em>hOp</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>jobId</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculates the minimum time a job takes to complete. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">h</td><td>Head of the job list </td></tr>
+    <tr><td class="paramname">hOp</td><td>Head of the operations list </td></tr>
+    <tr><td class="paramname">jobId</td><td>Job identifier </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>minTimeJob Minimum time that a job takes to complete </dd></dl>
+
+</div>
+</div>
+<a id="a51815384df8073c80a5dafc28c049265" name="a51815384df8073c80a5dafc28c049265"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51815384df8073c80a5dafc28c049265">&#9670;&nbsp;</a></span>CreateJob()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="jobs_8h.html#a4150e22449797dfc130512f171768a2b">Job</a> * CreateJob </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>id</em>, </td>
@@ -119,13 +215,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>nome</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>operacoes</em>[]&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -135,67 +225,61 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Cria novo <a class="el" href="struct_job.html" title="Estrutura dinâmica para armazenar um job.">Job</a>. </p>
-<p >Aloca memória necessária para armazenar um job em memória</p>
+<p>Creates a new job. </p>
+<p >Allocates necessary memory to store a Job in memory</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">id</td><td>Identificador do <a class="el" href="struct_job.html" title="Estrutura dinâmica para armazenar um job.">Job</a> </td></tr>
-    <tr><td class="paramname">nome</td><td>Nome do <a class="el" href="struct_job.html" title="Estrutura dinâmica para armazenar um job.">Job</a> </td></tr>
+    <tr><td class="paramname">id</td><td>Job identifier </td></tr>
+    <tr><td class="paramname">name</td><td>Job name </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="aead7b838206e9de4eed837ceb43e9250" name="aead7b838206e9de4eed837ceb43e9250"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aead7b838206e9de4eed837ceb43e9250">&#9670;&nbsp;</a></span>DestroiListaJobs()</h2>
+<a id="af0bc3d298049f4b854ea860e3947a961" name="af0bc3d298049f4b854ea860e3947a961"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0bc3d298049f4b854ea860e3947a961">&#9670;&nbsp;</a></span>DeleteAllJobs()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void DestroiListaJobs </td>
+          <td class="memname">void DeleteAllJobs </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_job.html">Job</a> **&#160;</td>
+          <td class="paramtype"><a class="el" href="jobs_8h.html#a4150e22449797dfc130512f171768a2b">Job</a> **&#160;</td>
           <td class="paramname"><em>h</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Destroi todos os nodos da lista job. </p>
+<p>Delete all nodes from a job list. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">h</td><td>Apontador para inicio da Lista </td></tr>
+    <tr><td class="paramname">h</td><td>Pointer to the head of the list </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a84a9e77e37d007803c22574861654770" name="a84a9e77e37d007803c22574861654770"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a84a9e77e37d007803c22574861654770">&#9670;&nbsp;</a></span>GravarJobBinario()</h2>
+<a id="ad0d014cdf46398a209ac7cb3b5db68da" name="ad0d014cdf46398a209ac7cb3b5db68da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0d014cdf46398a209ac7cb3b5db68da">&#9670;&nbsp;</a></span>InsertJobEnd()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool GravarJobBinario </td>
+          <td class="memname"><a class="el" href="jobs_8h.html#a4150e22449797dfc130512f171768a2b">Job</a> * InsertJobEnd </td>
           <td>(</td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>nomeFicheiro</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="struct_job.html">Job</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="jobs_8h.html#a4150e22449797dfc130512f171768a2b">Job</a> *&#160;</td>
           <td class="paramname"><em>h</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>totalOperacoes</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="jobs_8h.html#a4150e22449797dfc130512f171768a2b">Job</a> *&#160;</td>
+          <td class="paramname"><em>n</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -205,65 +289,41 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Preservar dados em ficheiro Grava todos os nodos da Lista em Ficheiro. </p>
-
-</div>
-</div>
-<a id="a60b04ee8485ae4552c333c5347d6685a" name="a60b04ee8485ae4552c333c5347d6685a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a60b04ee8485ae4552c333c5347d6685a">&#9670;&nbsp;</a></span>InsereJobFim()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="struct_job.html">Job</a> * InsereJobFim </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_job.html">Job</a> *&#160;</td>
-          <td class="paramname"><em>h</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="struct_job.html">Job</a> *&#160;</td>
-          <td class="paramname"><em>novo</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Insere job no final da lista. </p>
+<p>Inserts job at the end of the job list. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">h</td><td>Inicio da Lista </td></tr>
-    <tr><td class="paramname">novo</td><td>Novo final a inserir </td></tr>
+    <tr><td class="paramname">h</td><td>Head of the list </td></tr>
+    <tr><td class="paramname">n</td><td>New job to insert </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Inicio da Lista </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Head of the list </dd></dl>
 
 </div>
 </div>
-<a id="a7e3e25b2116b0f1ae872706bb3b0bc41" name="a7e3e25b2116b0f1ae872706bb3b0bc41"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7e3e25b2116b0f1ae872706bb3b0bc41">&#9670;&nbsp;</a></span>LerJobBinario()</h2>
+<a id="a63b473116696747d1c7902c4415407f0" name="a63b473116696747d1c7902c4415407f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a63b473116696747d1c7902c4415407f0">&#9670;&nbsp;</a></span>InsertJobOperation()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="struct_job.html">Job</a> * LerJobBinario </td>
+          <td class="memname"><a class="el" href="jobs_8h.html#a4150e22449797dfc130512f171768a2b">Job</a> * InsertJobOperation </td>
           <td>(</td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>nomeFicheiro</em>, </td>
+          <td class="paramtype"><a class="el" href="jobs_8h.html#a4150e22449797dfc130512f171768a2b">Job</a> *&#160;</td>
+          <td class="paramname"><em>h</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="operations_8h.html#a46c1f3c9eee509b8e3a2a4908ead5b8c">Operation</a> *&#160;</td>
+          <td class="paramname"><em>o</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>operacoes</em>[]&#160;</td>
+          <td class="paramname"><em>jobId</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -273,7 +333,132 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Lê informação de ficheiro. </p>
+</div>
+</div>
+<a id="a6d2de41ea5c22f994d72c35c961bbdf1" name="a6d2de41ea5c22f994d72c35c961bbdf1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d2de41ea5c22f994d72c35c961bbdf1">&#9670;&nbsp;</a></span>JobExist()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool JobExist </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="jobs_8h.html#a4150e22449797dfc130512f171768a2b">Job</a> *&#160;</td>
+          <td class="paramname"><em>h</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if a job exists. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">h</td><td>Head of the list </td></tr>
+    <tr><td class="paramname">id</td><td>Identifier to be searched </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True/False </dd></dl>
+
+</div>
+</div>
+<a id="a13c20d1344612ecc34a027b829aa5da9" name="a13c20d1344612ecc34a027b829aa5da9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13c20d1344612ecc34a027b829aa5da9">&#9670;&nbsp;</a></span>ReadJobBinary()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="jobs_8h.html#a4150e22449797dfc130512f171768a2b">Job</a> * ReadJobBinary </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>nomeFicheiro</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read information about a job. </p>
+
+</div>
+</div>
+<a id="a972e7a7dc535a25929c925f8381d7fdc" name="a972e7a7dc535a25929c925f8381d7fdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a972e7a7dc535a25929c925f8381d7fdc">&#9670;&nbsp;</a></span>SaveJobBinary()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool SaveJobBinary </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>fileName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="jobs_8h.html#a4150e22449797dfc130512f171768a2b">Job</a> *&#160;</td>
+          <td class="paramname"><em>h</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Preserve data in file Writes all nodes in the List to a file. </p>
+
+</div>
+</div>
+<a id="a8f793260f4c950fcac7f69894159da3b" name="a8f793260f4c950fcac7f69894159da3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f793260f4c950fcac7f69894159da3b">&#9670;&nbsp;</a></span>SearchJob()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="jobs_8h.html#a4150e22449797dfc130512f171768a2b">Job</a> * SearchJob </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="jobs_8h.html#a4150e22449797dfc130512f171768a2b">Job</a> *&#160;</td>
+          <td class="paramname"><em>h</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>id</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Search for a job. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">h</td><td>Head of the list <br  />
+ </td></tr>
+    <tr><td class="paramname">id</td><td>Identifier to be searched </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the copy of founded job </dd></dl>
 
 </div>
 </div>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['operacao_0',['Operacao',['../struct_operacao.html',1,'']]]
+  ['operation_0',['operation',['../structoperation.html',1,'']]]
 ];

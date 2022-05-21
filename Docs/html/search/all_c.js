@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['readme_0',['README',['../md__r_e_a_d_m_e.html',1,'']]],
-  ['readme_2emd_1',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
-  ['removeoperacao_2',['RemoveOperacao',['../operacoes_8c.html#ab53d9a5a0c856f81c8ee075292b5873a',1,'RemoveOperacao(Operacao *h, int id):&#160;operacoes.c'],['../operacoes_8h.html#ab53d9a5a0c856f81c8ee075292b5873a',1,'RemoveOperacao(Operacao *h, int id):&#160;operacoes.c']]]
+  ['updateoperation_0',['UpdateOperation',['../operations_8c.html#adfda973e1d6070f124dd4f675d864175',1,'UpdateOperation(Operation *h, int id, int jobId, int maqId, int time, bool finished):&#160;operations.c'],['../operations_8h.html#adfda973e1d6070f124dd4f675d864175',1,'UpdateOperation(Operation *h, int id, int jobId, int maqId, int time, bool finished):&#160;operations.c']]]
 ];

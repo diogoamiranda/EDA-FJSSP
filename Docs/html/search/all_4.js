@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['gravarjobbinario_0',['GravarJobBinario',['../jobs_8c.html#a84a9e77e37d007803c22574861654770',1,'GravarJobBinario(char *nomeFicheiro, Job *h, int totalOperacoes):&#160;jobs.c'],['../jobs_8h.html#a84a9e77e37d007803c22574861654770',1,'GravarJobBinario(char *nomeFicheiro, Job *h, int totalOperacoes):&#160;jobs.c']]]
+  ['finished_0',['finished',['../structjob.html#a3998e7d9cf581454c59160e396989854',1,'job::finished()'],['../structjob_file.html#aff8cd3ca9e97706c690a5bbb4ee14559',1,'jobFile::finished()'],['../structoperation.html#aaab2fafcfe73770bf1e0264b24e5d080',1,'operation::finished()']]]
 ];

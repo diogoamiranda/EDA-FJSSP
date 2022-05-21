@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['operacoes_2ec_0',['operacoes.c',['../operacoes_8c.html',1,'']]],
-  ['operacoes_2eh_1',['operacoes.h',['../operacoes_8h.html',1,'']]]
+  ['operations_2ec_0',['operations.c',['../operations_8c.html',1,'']]],
+  ['operations_2eh_1',['operations.h',['../operations_8h.html',1,'']]]
 ];

@@ -1,0 +1,67 @@
+\hypertarget{structjob}{}\doxysection{job Struct Reference}
+\label{structjob}\index{job@{job}}
+
+
+Dynamic structure to store a job.  
+
+
+
+
+{\ttfamily \#include $<$jobs.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{structjob_a14f2a8b63b37554fd774fefa8e75608e}{id}}
+\item 
+char \mbox{\hyperlink{structjob_a9f7b0183759a156db503bdf168fdbc0c}{name}} \mbox{[}\mbox{\hyperlink{jobs_8h_ad19646e9515ebe01193e6fca0e0fbb0f}{JOB\+\_\+\+NAME\+\_\+\+MAX\+\_\+\+LENGTH}}\mbox{]}
+\item 
+bool \mbox{\hyperlink{structjob_a3998e7d9cf581454c59160e396989854}{finished}}
+\item 
+struct \mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$ \mbox{\hyperlink{structjob_a4eb4e372bda3a88438a435c3863c4f39}{operations}}
+\item 
+struct \mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}} $\ast$ \mbox{\hyperlink{structjob_a1097c071705775a7543ace96cdd9e6cc}{next}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Dynamic structure to store a job. 
+
+A job contains an identifier (@id), a name (@name), a boolean to check the state of the job(@finished) and a pointer($\ast$next). 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structjob_a3998e7d9cf581454c59160e396989854}\label{structjob_a3998e7d9cf581454c59160e396989854}} 
+\index{job@{job}!finished@{finished}}
+\index{finished@{finished}!job@{job}}
+\doxysubsubsection{\texorpdfstring{finished}{finished}}
+{\footnotesize\ttfamily bool job\+::finished}
+
+\mbox{\Hypertarget{structjob_a14f2a8b63b37554fd774fefa8e75608e}\label{structjob_a14f2a8b63b37554fd774fefa8e75608e}} 
+\index{job@{job}!id@{id}}
+\index{id@{id}!job@{job}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily int job\+::id}
+
+\mbox{\Hypertarget{structjob_a9f7b0183759a156db503bdf168fdbc0c}\label{structjob_a9f7b0183759a156db503bdf168fdbc0c}} 
+\index{job@{job}!name@{name}}
+\index{name@{name}!job@{job}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily char job\+::name\mbox{[}\mbox{\hyperlink{jobs_8h_ad19646e9515ebe01193e6fca0e0fbb0f}{JOB\+\_\+\+NAME\+\_\+\+MAX\+\_\+\+LENGTH}}\mbox{]}}
+
+\mbox{\Hypertarget{structjob_a1097c071705775a7543ace96cdd9e6cc}\label{structjob_a1097c071705775a7543ace96cdd9e6cc}} 
+\index{job@{job}!next@{next}}
+\index{next@{next}!job@{job}}
+\doxysubsubsection{\texorpdfstring{next}{next}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}}$\ast$ job\+::next}
+
+\mbox{\Hypertarget{structjob_a4eb4e372bda3a88438a435c3863c4f39}\label{structjob_a4eb4e372bda3a88438a435c3863c4f39}} 
+\index{job@{job}!operations@{operations}}
+\index{operations@{operations}!job@{job}}
+\doxysubsubsection{\texorpdfstring{operations}{operations}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}}$\ast$ job\+::operations}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+EDA-\/\+FJSSP/\mbox{\hyperlink{jobs_8h}{jobs.\+h}}\end{DoxyCompactItemize}

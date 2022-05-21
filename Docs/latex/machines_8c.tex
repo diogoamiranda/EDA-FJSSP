@@ -1,0 +1,93 @@
+\hypertarget{machines_8c}{}\doxysection{EDA-\/\+FJSSP/machines.c File Reference}
+\label{machines_8c}\index{EDA-\/FJSSP/machines.c@{EDA-\/FJSSP/machines.c}}
+
+
+Methods for manipulating Singly Linked Lists (Machines)  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}machines.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{machines_8h_a4bd79cbdb29500c38367706c5d46395a}{Machine}} $\ast$ \mbox{\hyperlink{machines_8c_a53b9181881fac3227453d51bc7fb1d96}{Create\+Machine}} (int id, bool available)
+\begin{DoxyCompactList}\small\item\em Creates a new machine. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{machines_8h_a4bd79cbdb29500c38367706c5d46395a}{Machine}} $\ast$ \mbox{\hyperlink{machines_8c_a8974d2e95ed5a3c6fbd935142c94664e}{Insert\+Machine\+End}} (\mbox{\hyperlink{machines_8h_a4bd79cbdb29500c38367706c5d46395a}{Machine}} $\ast$h, \mbox{\hyperlink{machines_8h_a4bd79cbdb29500c38367706c5d46395a}{Machine}} $\ast$n)
+\begin{DoxyCompactList}\small\item\em Inserts machine at the end of the machine list. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{machines_8c_a93526861fb294979490d5ee6a4488c1a}{Machine\+Exist}} (\mbox{\hyperlink{machines_8h_a4bd79cbdb29500c38367706c5d46395a}{Machine}} $\ast$h, int id)
+\begin{DoxyCompactList}\small\item\em Check if machine exists. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Methods for manipulating Singly Linked Lists (Machines) 
+
+\begin{DoxyAuthor}{Author}
+diogo miranda 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2022 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{machines_8c_a53b9181881fac3227453d51bc7fb1d96}\label{machines_8c_a53b9181881fac3227453d51bc7fb1d96}} 
+\index{machines.c@{machines.c}!CreateMachine@{CreateMachine}}
+\index{CreateMachine@{CreateMachine}!machines.c@{machines.c}}
+\doxysubsubsection{\texorpdfstring{CreateMachine()}{CreateMachine()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{machines_8h_a4bd79cbdb29500c38367706c5d46395a}{Machine}} $\ast$ Create\+Machine (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{bool}]{available }\end{DoxyParamCaption})}
+
+
+
+Creates a new machine. 
+
+Allocates necessary memory to store a machine in memory
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Machine identifier \\
+\hline
+{\em available} & Whether the machine is being used or not \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{machines_8c_a8974d2e95ed5a3c6fbd935142c94664e}\label{machines_8c_a8974d2e95ed5a3c6fbd935142c94664e}} 
+\index{machines.c@{machines.c}!InsertMachineEnd@{InsertMachineEnd}}
+\index{InsertMachineEnd@{InsertMachineEnd}!machines.c@{machines.c}}
+\doxysubsubsection{\texorpdfstring{InsertMachineEnd()}{InsertMachineEnd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{machines_8h_a4bd79cbdb29500c38367706c5d46395a}{Machine}} $\ast$ Insert\+Machine\+End (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{machines_8h_a4bd79cbdb29500c38367706c5d46395a}{Machine}} $\ast$}]{h,  }\item[{\mbox{\hyperlink{machines_8h_a4bd79cbdb29500c38367706c5d46395a}{Machine}} $\ast$}]{n }\end{DoxyParamCaption})}
+
+
+
+Inserts machine at the end of the machine list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Head of the list \\
+\hline
+{\em n} & New machine to insert \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Inicio da Lista 
+\end{DoxyReturn}
+\mbox{\Hypertarget{machines_8c_a93526861fb294979490d5ee6a4488c1a}\label{machines_8c_a93526861fb294979490d5ee6a4488c1a}} 
+\index{machines.c@{machines.c}!MachineExist@{MachineExist}}
+\index{MachineExist@{MachineExist}!machines.c@{machines.c}}
+\doxysubsubsection{\texorpdfstring{MachineExist()}{MachineExist()}}
+{\footnotesize\ttfamily bool Machine\+Exist (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{machines_8h_a4bd79cbdb29500c38367706c5d46395a}{Machine}} $\ast$}]{h,  }\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Check if machine exists. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Head of the list \\
+\hline
+{\em id} & Identifier to be searched \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True/\+False 
+\end{DoxyReturn}

@@ -1,0 +1,183 @@
+\hypertarget{operations_8c}{}\doxysection{EDA-\/\+FJSSP/operations.c File Reference}
+\label{operations_8c}\index{EDA-\/FJSSP/operations.c@{EDA-\/FJSSP/operations.c}}
+
+
+Methods for manipulating Singly Linked Lists (Operations)  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}operations.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$ \mbox{\hyperlink{operations_8c_a52a681f0945eeb60f138d8b412483309}{Create\+Operation}} (int id, int job\+Id, int maq\+Id, int time, bool finished)
+\begin{DoxyCompactList}\small\item\em Creates a new operation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$ \mbox{\hyperlink{operations_8c_aca2d7da318931051fea3456a2e421d18}{Insert\+Operation\+End}} (\mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$h, \mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$n)
+\begin{DoxyCompactList}\small\item\em Inserts new operation at the end of the operations list. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{operations_8c_aafaef56b18d7e3794dbfa1c6559fbb99}{Operation\+Exist}} (\mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$h, int id)
+\begin{DoxyCompactList}\small\item\em Check if operation exists. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$ \mbox{\hyperlink{operations_8c_ad96fb03058f7a5d3dea0aaa42fc77008}{Remove\+Operation}} (\mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$h, int id)
+\begin{DoxyCompactList}\small\item\em Remove Operation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$ \mbox{\hyperlink{operations_8c_adfda973e1d6070f124dd4f675d864175}{Update\+Operation}} (\mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$h, int id, int job\+Id, int maq\+Id, int time, bool finished)
+\begin{DoxyCompactList}\small\item\em Update Operation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$ \mbox{\hyperlink{operations_8c_a8c40c3a865eee34cf6b18baabcd92a8d}{Search\+Operation}} (\mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$h, int id)
+\begin{DoxyCompactList}\small\item\em Search for an operation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{operations_8c_a3ef47b38fb2af2912c4676f58b7f5c55}{Show\+All\+Operations}} (\mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$h)
+\begin{DoxyCompactList}\small\item\em Show all operations of the operations list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Methods for manipulating Singly Linked Lists (Operations) 
+
+\begin{DoxyAuthor}{Author}
+diogo miranda 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2022 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{operations_8c_a52a681f0945eeb60f138d8b412483309}\label{operations_8c_a52a681f0945eeb60f138d8b412483309}} 
+\index{operations.c@{operations.c}!CreateOperation@{CreateOperation}}
+\index{CreateOperation@{CreateOperation}!operations.c@{operations.c}}
+\doxysubsubsection{\texorpdfstring{CreateOperation()}{CreateOperation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$ Create\+Operation (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{int}]{job\+Id,  }\item[{int}]{maq\+Id,  }\item[{int}]{time,  }\item[{bool}]{finished }\end{DoxyParamCaption})}
+
+
+
+Creates a new operation. 
+
+Allocates necessary memory to store an operation in memory
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Operation identifier \\
+\hline
+{\em job\+Id} & Job identifier \\
+\hline
+{\em maq\+Id} & Machine identifier \\
+\hline
+{\em time} & Time units required for the operation \\
+\hline
+{\em finished} & Whether the operation is finished or not \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{operations_8c_aca2d7da318931051fea3456a2e421d18}\label{operations_8c_aca2d7da318931051fea3456a2e421d18}} 
+\index{operations.c@{operations.c}!InsertOperationEnd@{InsertOperationEnd}}
+\index{InsertOperationEnd@{InsertOperationEnd}!operations.c@{operations.c}}
+\doxysubsubsection{\texorpdfstring{InsertOperationEnd()}{InsertOperationEnd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$ Insert\+Operation\+End (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$}]{h,  }\item[{\mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$}]{n }\end{DoxyParamCaption})}
+
+
+
+Inserts new operation at the end of the operations list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Head of the operations list \\
+\hline
+{\em n} & New operation to insert \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Head of the list 
+\end{DoxyReturn}
+\mbox{\Hypertarget{operations_8c_aafaef56b18d7e3794dbfa1c6559fbb99}\label{operations_8c_aafaef56b18d7e3794dbfa1c6559fbb99}} 
+\index{operations.c@{operations.c}!OperationExist@{OperationExist}}
+\index{OperationExist@{OperationExist}!operations.c@{operations.c}}
+\doxysubsubsection{\texorpdfstring{OperationExist()}{OperationExist()}}
+{\footnotesize\ttfamily bool Operation\+Exist (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$}]{h,  }\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Check if operation exists. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Head of the list \\
+\hline
+{\em id} & Identifier to be searched \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True/\+False 
+\end{DoxyReturn}
+\mbox{\Hypertarget{operations_8c_ad96fb03058f7a5d3dea0aaa42fc77008}\label{operations_8c_ad96fb03058f7a5d3dea0aaa42fc77008}} 
+\index{operations.c@{operations.c}!RemoveOperation@{RemoveOperation}}
+\index{RemoveOperation@{RemoveOperation}!operations.c@{operations.c}}
+\doxysubsubsection{\texorpdfstring{RemoveOperation()}{RemoveOperation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$ Remove\+Operation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$}]{h,  }\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Remove Operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Head of the list \\
+\hline
+{\em id} & Identifier to be removed \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{operations_8c_a8c40c3a865eee34cf6b18baabcd92a8d}\label{operations_8c_a8c40c3a865eee34cf6b18baabcd92a8d}} 
+\index{operations.c@{operations.c}!SearchOperation@{SearchOperation}}
+\index{SearchOperation@{SearchOperation}!operations.c@{operations.c}}
+\doxysubsubsection{\texorpdfstring{SearchOperation()}{SearchOperation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$ Search\+Operation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$}]{h,  }\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Search for an operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Head of the list \\
+\hline
+{\em id} & Identifier to be searched \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{operations_8c_a3ef47b38fb2af2912c4676f58b7f5c55}\label{operations_8c_a3ef47b38fb2af2912c4676f58b7f5c55}} 
+\index{operations.c@{operations.c}!ShowAllOperations@{ShowAllOperations}}
+\index{ShowAllOperations@{ShowAllOperations}!operations.c@{operations.c}}
+\doxysubsubsection{\texorpdfstring{ShowAllOperations()}{ShowAllOperations()}}
+{\footnotesize\ttfamily void Show\+All\+Operations (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$}]{h }\end{DoxyParamCaption})}
+
+
+
+Show all operations of the operations list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Head of the operations list \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{operations_8c_adfda973e1d6070f124dd4f675d864175}\label{operations_8c_adfda973e1d6070f124dd4f675d864175}} 
+\index{operations.c@{operations.c}!UpdateOperation@{UpdateOperation}}
+\index{UpdateOperation@{UpdateOperation}!operations.c@{operations.c}}
+\doxysubsubsection{\texorpdfstring{UpdateOperation()}{UpdateOperation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$ Update\+Operation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$}]{h,  }\item[{int}]{id,  }\item[{int}]{job\+Id,  }\item[{int}]{maq\+Id,  }\item[{int}]{time,  }\item[{bool}]{finished }\end{DoxyParamCaption})}
+
+
+
+Update Operation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Head of the list \\
+\hline
+{\em id} & Operation identifier \\
+\hline
+{\em job\+Id} & Job identifier \\
+\hline
+{\em maq\+Id} & Machine identifier \\
+\hline
+{\em time} & Time units required for the operation \\
+\hline
+{\em finished} & Whether the operation is finished or not \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to list 
+\end{DoxyReturn}

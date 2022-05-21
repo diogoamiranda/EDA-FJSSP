@@ -1,0 +1,116 @@
+\hypertarget{machines_8h}{}\doxysection{EDA-\/\+FJSSP/machines.h File Reference}
+\label{machines_8h}\index{EDA-\/FJSSP/machines.h@{EDA-\/FJSSP/machines.h}}
+
+
+Machines -\/ Definitions of Structs, Constants, and Function Signatures.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structmachine}{machine}}
+\begin{DoxyCompactList}\small\item\em Struct to store a machine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structmachine}{machine}} \mbox{\hyperlink{machines_8h_a4bd79cbdb29500c38367706c5d46395a}{Machine}}
+\begin{DoxyCompactList}\small\item\em Struct to store a machine. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{machines_8h_a4bd79cbdb29500c38367706c5d46395a}{Machine}} $\ast$ \mbox{\hyperlink{machines_8h_a53b9181881fac3227453d51bc7fb1d96}{Create\+Machine}} (int id, bool available)
+\begin{DoxyCompactList}\small\item\em Creates a new machine. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{machines_8h_a4bd79cbdb29500c38367706c5d46395a}{Machine}} $\ast$ \mbox{\hyperlink{machines_8h_a8974d2e95ed5a3c6fbd935142c94664e}{Insert\+Machine\+End}} (\mbox{\hyperlink{machines_8h_a4bd79cbdb29500c38367706c5d46395a}{Machine}} $\ast$h, \mbox{\hyperlink{machines_8h_a4bd79cbdb29500c38367706c5d46395a}{Machine}} $\ast$n)
+\begin{DoxyCompactList}\small\item\em Inserts machine at the end of the machine list. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{machines_8h_a93526861fb294979490d5ee6a4488c1a}{Machine\+Exist}} (\mbox{\hyperlink{machines_8h_a4bd79cbdb29500c38367706c5d46395a}{Machine}} $\ast$h, int id)
+\begin{DoxyCompactList}\small\item\em Check if machine exists. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Machines -\/ Definitions of Structs, Constants, and Function Signatures. 
+
+\begin{DoxyAuthor}{Author}
+diogo miranda 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2022 
+\end{DoxyDate}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{machines_8h_a4bd79cbdb29500c38367706c5d46395a}\label{machines_8h_a4bd79cbdb29500c38367706c5d46395a}} 
+\index{machines.h@{machines.h}!Machine@{Machine}}
+\index{Machine@{Machine}!machines.h@{machines.h}}
+\doxysubsubsection{\texorpdfstring{Machine}{Machine}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structmachine}{machine}} \mbox{\hyperlink{machines_8h_a4bd79cbdb29500c38367706c5d46395a}{Machine}}}
+
+
+
+Struct to store a machine. 
+
+A machine contains an identifier(@id), a boolean (@available) that identifies whether or not the machine is available for use and a pointer to the next machine (@next)
+
+All machines are available at the same time (t = 0). 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{machines_8h_a53b9181881fac3227453d51bc7fb1d96}\label{machines_8h_a53b9181881fac3227453d51bc7fb1d96}} 
+\index{machines.h@{machines.h}!CreateMachine@{CreateMachine}}
+\index{CreateMachine@{CreateMachine}!machines.h@{machines.h}}
+\doxysubsubsection{\texorpdfstring{CreateMachine()}{CreateMachine()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{machines_8h_a4bd79cbdb29500c38367706c5d46395a}{Machine}} $\ast$ Create\+Machine (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{bool}]{available }\end{DoxyParamCaption})}
+
+
+
+Creates a new machine. 
+
+Allocates necessary memory to store a machine in memory
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Machine identifier \\
+\hline
+{\em available} & Whether the machine is being used or not \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{machines_8h_a8974d2e95ed5a3c6fbd935142c94664e}\label{machines_8h_a8974d2e95ed5a3c6fbd935142c94664e}} 
+\index{machines.h@{machines.h}!InsertMachineEnd@{InsertMachineEnd}}
+\index{InsertMachineEnd@{InsertMachineEnd}!machines.h@{machines.h}}
+\doxysubsubsection{\texorpdfstring{InsertMachineEnd()}{InsertMachineEnd()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{machines_8h_a4bd79cbdb29500c38367706c5d46395a}{Machine}} $\ast$ Insert\+Machine\+End (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{machines_8h_a4bd79cbdb29500c38367706c5d46395a}{Machine}} $\ast$}]{h,  }\item[{\mbox{\hyperlink{machines_8h_a4bd79cbdb29500c38367706c5d46395a}{Machine}} $\ast$}]{n }\end{DoxyParamCaption})}
+
+
+
+Inserts machine at the end of the machine list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Head of the list \\
+\hline
+{\em n} & New machine to insert \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Inicio da Lista 
+\end{DoxyReturn}
+\mbox{\Hypertarget{machines_8h_a93526861fb294979490d5ee6a4488c1a}\label{machines_8h_a93526861fb294979490d5ee6a4488c1a}} 
+\index{machines.h@{machines.h}!MachineExist@{MachineExist}}
+\index{MachineExist@{MachineExist}!machines.h@{machines.h}}
+\doxysubsubsection{\texorpdfstring{MachineExist()}{MachineExist()}}
+{\footnotesize\ttfamily bool Machine\+Exist (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{machines_8h_a4bd79cbdb29500c38367706c5d46395a}{Machine}} $\ast$}]{h,  }\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Check if machine exists. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Head of the list \\
+\hline
+{\em id} & Identifier to be searched \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True/\+False 
+\end{DoxyReturn}

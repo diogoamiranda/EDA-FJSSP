@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['operacao_0',['Operacao',['../struct_operacao.html',1,'']]],
-  ['operacoes_1',['operacoes',['../struct_job.html#a1a493096e96fa773475332789715353d',1,'Job::operacoes()'],['../struct_job_file.html#ab93001b49acf1e34d530c51fd95f7fbd',1,'JobFile::operacoes()']]],
-  ['operacoes_2ec_2',['operacoes.c',['../operacoes_8c.html',1,'']]],
-  ['operacoes_2eh_3',['operacoes.h',['../operacoes_8h.html',1,'']]]
+  ['readjobbinary_0',['ReadJobBinary',['../jobs_8c.html#a13c20d1344612ecc34a027b829aa5da9',1,'ReadJobBinary(char *nomeFicheiro):&#160;jobs.c'],['../jobs_8h.html#a006ab8f58480d92b29e18f391e38a671',1,'ReadJobBinary(char *fileName):&#160;jobs.c']]],
+  ['readme_1',['README',['../md__r_e_a_d_m_e.html',1,'']]],
+  ['readme_2emd_2',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
+  ['removeoperation_3',['RemoveOperation',['../operations_8c.html#ad96fb03058f7a5d3dea0aaa42fc77008',1,'RemoveOperation(Operation *h, int id):&#160;operations.c'],['../operations_8h.html#ad96fb03058f7a5d3dea0aaa42fc77008',1,'RemoveOperation(Operation *h, int id):&#160;operations.c']]]
 ];

@@ -1,0 +1,41 @@
+\hypertarget{machines_8h_source}{}\doxysection{machines.\+h}
+\label{machines_8h_source}\index{EDA-\/FJSSP/machines.h@{EDA-\/FJSSP/machines.h}}
+\mbox{\hyperlink{machines_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{9 \textcolor{comment}{//prevent double declaration of any identifiers (types, etc)}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#ifndef MACHINES}}
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#define MACHINES}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <stdio.h>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <stdbool.h>}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{comment}{//avoid MSG ERROS: \_CRT\_SECURE\_NO\_WARNINGS}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#pragma warning( disable : 4996 ) }}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#pragma region Structs}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{30 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structmachine}{machine}}\{}
+\DoxyCodeLine{31     \textcolor{keywordtype}{int} \mbox{\hyperlink{structmachine_aa8498f13a244a318f7d332e3f2608173}{id}};}
+\DoxyCodeLine{32     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structmachine_a323b0e58d2f176af5ab9e62329f5abc0}{available}};}
+\DoxyCodeLine{33     \textcolor{keyword}{struct }\mbox{\hyperlink{structmachine}{Machine}}* \mbox{\hyperlink{structmachine_ad385c34aa5dc45d4ea88c6fbf26c4a55}{next}};}
+\DoxyCodeLine{34 \} \mbox{\hyperlink{machines_8h_a4bd79cbdb29500c38367706c5d46395a}{Machine}};}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#pragma region FunctionSignatures}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{comment}{// create machine (allocates memory)}}
+\DoxyCodeLine{41 \mbox{\hyperlink{structmachine}{Machine}}* \mbox{\hyperlink{machines_8h_a53b9181881fac3227453d51bc7fb1d96}{CreateMachine}}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id}, \textcolor{keywordtype}{bool} \mbox{\hyperlink{structmachine_a323b0e58d2f176af5ab9e62329f5abc0}{available}});}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 \textcolor{comment}{// insert machine in machine list}}
+\DoxyCodeLine{44 \mbox{\hyperlink{structmachine}{Machine}}* \mbox{\hyperlink{machines_8h_a8974d2e95ed5a3c6fbd935142c94664e}{InsertMachineEnd}}(\mbox{\hyperlink{structmachine}{Machine}}* h, \mbox{\hyperlink{structmachine}{Machine}}* n);}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \textcolor{comment}{// checks if the machine already exists in the list}}
+\DoxyCodeLine{47 \textcolor{keywordtype}{bool} \mbox{\hyperlink{machines_8h_a93526861fb294979490d5ee6a4488c1a}{MachineExist}}(\mbox{\hyperlink{structmachine}{Machine}}* h, \textcolor{keywordtype}{int} \textcolor{keywordtype}{id});}
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{51 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

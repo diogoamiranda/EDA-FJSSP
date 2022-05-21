@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['next_0',['next',['../struct_job.html#a1e361275d4a7d8aea298a6129260a41b',1,'Job::next()'],['../struct_maquina.html#a8cbfb5dd871556837128a586e83992a9',1,'Maquina::next()'],['../struct_operacao.html#a844c9f3fd38441044df0e501b4fb741a',1,'Operacao::next()']]],
-  ['nome_1',['nome',['../struct_job.html#a12cb4fbf9abbcbfa54e163d735139a50',1,'Job::nome()'],['../struct_job_file.html#a6f56c235841b644c5e98e550a562a3d7',1,'JobFile::nome()']]]
+  ['id_0',['id',['../structjob.html#a14f2a8b63b37554fd774fefa8e75608e',1,'job::id()'],['../structjob_file.html#a763cc7e33863b60ec32ae93544672bf2',1,'jobFile::id()'],['../structmachine.html#aa8498f13a244a318f7d332e3f2608173',1,'machine::id()'],['../structoperation.html#a27f9d61dfc5d12e19a1bbad97397c460',1,'operation::id()']]]
 ];
