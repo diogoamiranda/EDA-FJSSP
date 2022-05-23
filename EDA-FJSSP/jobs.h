@@ -62,25 +62,25 @@ Job* InsertJobEnd(Job* h, Job* n);
 // inserts new operations for a job
 Job* InsertJobOperation(Job* h, Operation* o, int jobId);
 
-// calculate a min time a job takes to complete
+// calculates the min time a job takes to complete
 float CalculateMinTimeJob(Job* h, Operation* hOp, int jobId);
 
-// calculate a max time a job takes to complete
+// calculates the max time a job takes to complete
 float CalculateMaxTimeJob(int jobId);
 
-// calculate average amount of time required to complete an operation of a job
+// calculates average amount of time required to complete an operation of a job
 // float CalculateAvgTimeJobOperation(int jobId);
 
-// calculate average amount of averages to complete an operation of a job
+// calculates average amount of averages to complete an operation of a job
 float CalculateAvgTimeJobOperations(int jobId);
 
-// write job data to file
+// writes job data to file
 bool SaveJobBinary(char* fileName, Job* h);
 
-// read file with data from a job
+// reads file with data from a job
 Job* ReadJobBinary(char* fileName);
 
-// delete all nodes from the job list
+// deletes all nodes from the job list
 void DeleteAllJobs(Job** h);
 
 // checks if job exists 

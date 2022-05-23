@@ -37,10 +37,10 @@ typedef struct machine{
 
 #pragma region FunctionSignatures
 
-// create machine (allocates memory)
+// creates machine (allocates memory)
 Machine* CreateMachine(int id, bool available);
 
-// insert machine in machine list
+// inserts machine in machine list
 Machine* InsertMachineEnd(Machine* h, Machine* n);
 
 // checks if the machine already exists in the list
