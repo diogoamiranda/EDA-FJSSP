@@ -20,8 +20,8 @@
 * @param name Job name
 *
 */
-Job* CreateJob(int id, char* name){
-	//alocar memória tendo em conta o tamanho do bloco de memória Job
+Job* CreateJob(int id, char* name) {
+	//allocates a Job in memory
 	Job* newJob = (Job*)malloc(sizeof(Job));
 
 	if (newJob == NULL) return NULL;
@@ -123,7 +123,7 @@ void DeleteAllJobs(Job** h) {
 */
 bool JobExist(Job* h, int id) {
 	if (h == NULL) return false;
-	Operation* aux = h;
+	Job* aux = h;
 	while (aux != NULL) {
 		if (aux->id == id)
 			return true;
@@ -134,7 +134,7 @@ bool JobExist(Job* h, int id) {
 
 /**
 * @brief Search for a job.
-* @param h Head of the list	
+* @param h Head of the list
 * @param id Identifier to be searched
 * @return Pointer to the copy of founded job
 */
@@ -156,35 +156,152 @@ Job* SearchJob(Job* h, int id) {
 /**
 * @brief Calculates the minimum time a job takes to complete
 * @param h Head of the job list
-* @param hOp Head of the operations list
 * @param jobId Job identifier
 * @return minTimeJob Minimum time that a job takes to complete
 */
-float CalculateMinTimeJob(Job* h, Operation* hOp, int jobId) {
-	Job* aux = SearchJob(h, jobId);
+float CalculateMinTimeJob(Job* h, int jobId) {
 	float minTimeJob = 0;
+	Job* auxJob = SearchJob(h, jobId);
+	//get job operations
+	Operation* op = auxJob->operations;
+	Operation* auxOp = NULL;
+	while (op != NULL) {
+		//TODO: remove order dependency from operations in the job operations list
+		if (auxOp == NULL || auxOp->type != op->type) {
+			auxOp = GetOperationMinTime(auxJob->operations, op->type);
+			if (auxOp != NULL) {
+				minTimeJob += auxOp->executionTime;
+				ShowOperation(auxOp, auxOp->id);
+			}
+		}
+		op = op->next;//next operation
+	}
 
 	return minTimeJob;
 }
 
-float CalculateMaxTimeJob(int jobId) {
-	return 0.1;
+/**
+* @brief Calculates the maximum time a job takes to complete
+* @param h Head of the job list
+* @param jobId Job identifier
+* @return maxTimeJob Maximum time that a job takes to complete
+*/
+float CalculateMaxTimeJob(Job* h, int jobId) {
+	float maxTimeJob = 0;
+	Job* auxJob = SearchJob(h, jobId);
+	//get job operations
+	Operation* op = auxJob->operations;
+	Operation* auxOp = NULL;
+	while (op != NULL) {
+		//TODO: remove order dependency from operations in the job operations list
+		if (auxOp == NULL || auxOp->type != op->type) {
+			auxOp = GetOperationMaxTime(auxJob->operations, op->type);
+			if (auxOp != NULL) {
+				maxTimeJob += auxOp->executionTime;
+				ShowOperation(auxOp, auxOp->id);
+			}
+		}
+		op = op->next;//next operation
+	}
+
+	return maxTimeJob;
 }
 
-float CalculateAvgTimeJobOperations(int jobId) {
-	return 2;
+/**
+ * Calculates the average time necessary to complete a job operation,
+ * list operations and prints average.
+ * TODO: remove order dependency from operations in the job operations list
+ * 
+ * \param h Head of the jobs list
+ * \param jobId Job identifier
+ * \return 
+ */
+void ShowAvgTimeJobOperations(Job* h, int jobId) {
+	float avgTimeOp = 0;
+	float totalTimeOp = 0;
+	int countOp = 0;
+	int lastOpType = -1;
+
+	Job* auxJob = SearchJob(h, jobId);
+	//get job operations
+	Operation* op = auxJob->operations;
+	Operation* auxOp = auxJob->operations;
+	while (op != NULL) {
+		if (lastOpType != op->type) { //avoid multiple calculations for the same type of operation
+			while (auxOp != NULL) {
+				if (auxOp->type == op->type) {
+					countOp++;
+					totalTimeOp += auxOp->executionTime;
+					lastOpType = auxOp->type;
+					ShowOperation(auxJob->operations, auxOp->id);
+				}
+				auxOp = auxOp->next;
+			}
+			avgTimeOp = totalTimeOp / countOp;
+			printf("Average time of %.2f to complete operation type %d\n", avgTimeOp, op->type);
+			printf("***********************\n");
+			//reset vars for next calculations
+			countOp = 0;
+			totalTimeOp = 0;
+			avgTimeOp = 0;
+			auxOp = auxJob->operations;
+		}
+		op = op->next;//next operation
+	}
 }
 
-//2nd Phase
-Job* InsertJobOperation(Job* h, Operation* o, int jobId) {
+/**
+ * Insert new operation in the operations list of a specific job.
+ * TODO: CHECK IF OPERATION ALREADY EXISTS BEFORE INSERT
+ * 
+ * \param h Head of Jobs list
+ * \param jobId Job identifier
+ * \param opId Operation identifier
+ * \param opType Operation type
+ * \param machId Machine identifier
+ * \param time Operation time
+ * \param finished Operation state
+ * \return 
+ */
+Operation* InsertJobOperationEnd(Job* h, int jobId, int opId, int opType, int machId, int time, bool finished) {
 	// if empty job list
-	if (h == NULL) return NULL;	
+	if (h == NULL) return NULL;
 	// search job
 	Job* aux = SearchJob(h, jobId);
+	Operation* jobOp = NULL;
 	if (aux) {
-		//add operations
-		aux->operations = o;
+		jobOp = aux->operations;
+		jobOp = CreateOperation(jobOp, opId, opType, machId, time, false);
+		aux->operations = jobOp;
 	}
-	
-	return aux;
+
+	return jobOp;
+}
+
+void ShowJobOperations(Job* h, int jobId) {
+	Job* aux = SearchJob(h, jobId);
+	if (aux) {
+		Operation* op = aux->operations;
+		printf("Job List:\n");
+		printf("Job ID = %d\n", aux->id);
+		printf("finished = %s\n", aux->finished ? "true" : "false");
+		printf("********** Job Operations ***********\n");
+		while (op != NULL) {
+			printf("operation id = %d\n", op->id);
+			printf("machine id = %d\n", op->machineId);
+			printf("execution time = %.2f\n\n", op->executionTime);
+			op = op->next;
+		}
+		printf("*************************\n");
+	}
+}
+
+void ShowJobs(Job* h) {
+	Job* aux = h;
+	printf("\job List:\n");
+	while (aux) {
+		printf("job ID = %d\n", aux->id);
+		printf("job finished = %d\n", aux->finished);
+		aux = aux->next;
+	}
 }

@@ -60,19 +60,16 @@ Job* CreateJob(int id, char* name);
 Job* InsertJobEnd(Job* h, Job* n);
 
 // inserts new operations for a job
-Job* InsertJobOperation(Job* h, Operation* o, int jobId);
+Operation* InsertJobOperationEnd(Job* h, int jobId, int opId, int opType, int machId, int time, bool finished);
 
 // calculates the min time a job takes to complete
-float CalculateMinTimeJob(Job* h, Operation* hOp, int jobId);
+float CalculateMinTimeJob(Job* h, int jobId);
 
 // calculates the max time a job takes to complete
-float CalculateMaxTimeJob(int jobId);
+float CalculateMaxTimeJob(Job* h, int jobId);
 
-// calculates average amount of time required to complete an operation of a job
-// float CalculateAvgTimeJobOperation(int jobId);
-
-// calculates average amount of averages to complete an operation of a job
-float CalculateAvgTimeJobOperations(int jobId);
+// calculates average amount of time required to complete a job operation
+void ShowAvgTimeJobOperations(Job* h, int jobId);
 
 // writes job data to file
 bool SaveJobBinary(char* fileName, Job* h);
@@ -86,6 +83,9 @@ void DeleteAllJobs(Job** h);
 // checks if job exists 
 bool JobExist(Job* h, int id);
 
+void ShowJobOperations(Job* h, int jobId);
+
+void ShowJobs(Job* h);
 #pragma endregion
 
 
