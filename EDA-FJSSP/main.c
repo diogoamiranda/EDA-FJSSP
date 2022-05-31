@@ -25,19 +25,28 @@ int main() {
 	headMachList = InsertMachineEnd(headMachList, m2);
 	headMachList = InsertMachineEnd(headMachList, m3);
 
-	Job* job1 = CreateJob(0, "plastic cutting");
+	Operation* op1 = CreateOperation(NULL, 0, 0, 0, 4, false);
+	Operation* op2 = CreateOperation(NULL, 1, 0,  1, 1, false);
+	Operation* op3 = CreateOperation(NULL, 2, 0, 2, 5, false);
 
-	Job* headJobList = NULL;
-	headJobList = InsertJobEnd(headJobList, job1);
-
-	Operation* op1 = CreateOperation(0, 0, 0, 4, false);
-	Operation* op2 = CreateOperation(1, 0,  1, 1, false);
-	Operation* op3 = CreateOperation(2, 0, 2, 5, false);
-
+	//Phase 1 list
 	Operation* headOperationsList = NULL;
 	headOperationsList = InsertOperationEnd(headOperationsList, op1);
 	headOperationsList = InsertOperationEnd(headOperationsList, op2);
 	headOperationsList = InsertOperationEnd(headOperationsList, op3);
+
+	Job* job1 = CreateJob(0, "plastic cutting");
+	Job* job2 = CreateJob(1, "paint");
+
+	Job* headJobList = NULL;
+	headJobList = InsertJobEnd(headJobList, job1);
+	headJobList = InsertJobEnd(headJobList, job2);
+
+	Operation* headJobOperationsList = NULL;
+	headJobOperationsList = InsertJobOperationEnd(headJobList, 0, 0, 1, 1, 4, false);
+	headJobOperationsList = InsertJobOperationEnd(headJobList, 0, 1, 1, 3, 5, false);
+	headJobOperationsList = InsertJobOperationEnd(headJobList, 0, 2, 2, 2, 4, false);
+	headJobOperationsList = InsertJobOperationEnd(headJobList, 0, 3, 2, 4, 5, false);
 #pragma endregion
 
 #pragma region PAHSE1_2
@@ -51,7 +60,7 @@ int main() {
 #pragma endregion
 
 #pragma region PAHSE1_3
-	Operation* op4 = CreateOperation(4, 0, 5, 5, false);
+	Operation* op4 = CreateOperation(NULL, 4, 4, 5, 5, false);
 	headOperationsList = InsertOperationEnd(headOperationsList, op4);
 
 #pragma endregion
@@ -62,25 +71,27 @@ int main() {
 #pragma endregion
 
 #pragma region PAHSE1_5
-	headOperationsList = UpdateOperation(headOperationsList, 3, 0, 6, 5, true);
+	headOperationsList = UpdateOperation(headOperationsList, 0, 4, 0, 6, 5, true);
 
 #pragma endregion
 
 #pragma region PAHSE1_6
-	 float time = CalculateMinTimeJob(headJobList, headOperationsList, job1->id);
-	 printf("minimum time of %.2f units to finish job %d\n", time, job1->id);
+	printf("**** Job Stats - Minimum time to finish job ****");
+	float time = CalculateMinTimeJob(headJobList, job1->id);
+	printf("minimum time of %.2f units to finish job %d\n\n", time, job1->id);
 
 #pragma endregion
 
 #pragma region PAHSE1_7
-	time = CalculateMaxTimeJob(job1->id);
-	printf("maximum time of %.2f units to finish job %d\n", time, job1->id);
+	printf("**** Job Stats - Maximum time to finish job ****");
+	time = CalculateMaxTimeJob(headJobList, job1->id);
+	printf("maximum time of %.2f units to finish job %d\n\n", time, job1->id);
 
 #pragma endregion
 
 #pragma region PAHSE1_8
-	time = CalculateAvgTimeJobOperations(job1->id);
-	printf("average time of %.2f units to finish any job operation of the job ID %d\n", time, job1->id);
+	printf("**** Job Stats - AVG time to finish operation job ****");
+	ShowAvgTimeJobOperations(headJobList, job1->id);
 
 #pragma endregion
 
