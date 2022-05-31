@@ -28,9 +28,9 @@
  */
 typedef struct operation {
 	int id;
-	int jobId;
+	int type;
 	int machineId;
-	int executionTime;
+	float executionTime;
 	bool finished; //each operation should be executed to complete a job
 	struct Operation* next;
 } Operation;
@@ -40,7 +40,7 @@ typedef struct operation {
 #pragma region FunctionSignatures
 
 //creates operation
-Operation* CreateOperation(int id, int jobId, int maqId, int time, bool finished); 
+Operation* CreateOperation(Operation* op, int id, int type, int maqId, int time, bool finished); 
 
 //inserts operations in the operations list
 Operation* InsertOperationEnd(Operation* h, Operation* n);
@@ -48,16 +48,28 @@ Operation* InsertOperationEnd(Operation* h, Operation* n);
 //removes operation from the operations list
 Operation* RemoveOperation(Operation* h, int id);
 
-Operation* UpdateOperation(Operation* h, int id, int jobId, int maqId, int time, bool finished);
+Operation* UpdateOperation(Operation* h, int id, int type, int maqId, int time, bool finished);
 
 Operation* SearchOperation(Operation* h, int id);
+
+// gets operation with minimum time for a specific type of operation
+Operation* GetOperationMinTime(Operation* h, int type);
+
+// gets operation with maximum time for a specific type of operation
+Operation* GetOperationMaxTime(Operation* h, int type);
+
+// calculates the maximum time for a specific opearation
+float CalculateMaxTimeOperation(Operation* h, int opId);
  
 void ShowAllOperations(Operation* h);
 
 //cheks if an operation exists in the operations list
 bool OperationExist(Operation* h, int id);
 
+void ShowOperation(Operation* op, int id);
+
 #pragma endregion
 
 
 #endif
+

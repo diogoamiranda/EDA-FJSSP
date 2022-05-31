@@ -15,23 +15,23 @@
 * Allocates necessary memory to store an operation in memory
 *
 * @param id Operation identifier
-* @param jobId Job identifier
+* @param type Operation type
 * @param maqId Machine identifier
 * @param time Time units required for the operation
 * @param finished Whether the operation is finished or not
 *
 */
-Operation* CreateOperation(int id, int jobId, int maqId, int time, bool finished){
+Operation* CreateOperation(Operation* op, int id, int type, int maqId, int time, bool finished){
 	Operation* newOperation = (Operation*)malloc(sizeof(Operation));
 	if (newOperation == NULL) return NULL;
 
 	newOperation->id = id;
-	newOperation->jobId = jobId;
+	newOperation->type = type;
 	newOperation->machineId = maqId;
 	newOperation->executionTime = time;
 	newOperation->finished = finished;
-	//last node so sets pointer to NULL
-	newOperation->next = NULL;
+	//points to last operation
+	newOperation->next = op;
 	return newOperation;
 }
 
@@ -116,13 +116,13 @@ Operation* RemoveOperation(Operation* h, int id) {
 * 
 * @param h Head of the list
 * @param id Operation identifier
-* @param jobId Job identifier
+* @param type Operation type
 * @param maqId Machine identifier
 * @param time Time units required for the operation
 * @param finished Whether the operation is finished or not
 * @return pointer to list
 */
-Operation* UpdateOperation(Operation* h, int id, int jobId, int maqId, int time, bool finished) {
+Operation* UpdateOperation(Operation* h, int id, int type, int maqId, int time, bool finished) {
 	Operation* aux = SearchOperation(h, id);
 	//founded an operation?
 	if (aux != NULL)		
@@ -154,6 +154,50 @@ Operation* SearchOperation(Operation* h, int id) {
 }
 
 /**
+ * Calculates the minimum time of a specific operation.
+ * 
+ * \param h Head of the operations list
+ * \param opId Operation identifier
+ * \return 
+ */
+float CalculateMinTimeOperation(Operation* h, int opId) {
+	float minTime = 0;
+
+	Operation* aux = h;
+	while (aux != NULL) {
+		if (aux->id == opId) {
+			if (minTime == 0 || minTime > aux->executionTime) {
+				minTime = aux->executionTime;
+			}
+		}
+		aux = aux->next;
+	}
+	return minTime;
+}
+
+/**
+ * Calculates the maximum time of a specific operation.
+ *
+ * \param h Head of the operations list
+ * \param opId Operation identifier
+ * \return
+ */
+float CalculateMaxTimeOperation(Operation* h, int opId) {
+	float maxTime = 0;
+
+	Operation* aux = h;
+	while (aux != NULL) {
+		if (aux->id == opId) {
+			if (maxTime == 0 || maxTime < aux->executionTime) {
+				maxTime = aux->executionTime;
+			}
+		}
+		aux = aux->next;
+	}
+	return maxTime;
+}
+
+/**
  *	@brief Show all operations of the operations list
  *  @param h Head of the operations list
  */
@@ -162,10 +206,65 @@ void ShowAllOperations(Operation* h) {
 	while (aux) {
 		printf("\nOperations List:\n");
 		printf("Operation ID = %d\n", aux->id);
-		printf("Job ID = %d\n", aux->jobId);
+		printf("Operation type = %d\n", aux->type);
 		printf("Machine ID  = %d\n", aux->machineId);
-		printf("Required time(units) = %d\n", aux->executionTime);
+		printf("Required time(units) = %.2f\n", aux->executionTime);
 		printf("Operation finished = %d\n", aux->finished);
 		aux = aux->next;
 	}
+}
+
+/**
+ *	@brief Show a specific operation data
+ *  @param op Operation
+ */
+void ShowOperation(Operation* op, int id) {
+	Operation* aux = SearchOperation(op, id);
+	if (aux !=NULL) {
+		printf("\nOperation ID = %d\n", aux->id);
+		printf("Operation type = %d\n", aux->type);
+		printf("Machine ID  = %d\n", aux->machineId);
+		printf("Required time(units) = %.2f\n", aux->executionTime);
+		printf("Operation finished = %d\n\n", aux->finished);
+	}
+}
+
+/**
+ * Get operation with minimum time for a specific type of operation.
+ * 
+ * \param op Head of operations list
+ * \param type Operation type
+ * \return 
+ */
+Operation* GetOperationMinTime(Operation* op, int type) {
+	Operation* aux = op;
+	Operation* finalOp = NULL;
+	while (aux != NULL) {
+		if ((finalOp == NULL && aux->type == type) || (aux->type == type && aux->executionTime < finalOp->executionTime)) {
+			finalOp = aux;
+		}
+		aux = aux->next;
+	}
+
+	return finalOp;
+}
+
+/**
+ * Get operation with maximum time for a specific type of operation.
+ * 
+ * \param op Head of operations list
+ * \param type Operation type
+ * \return 
+ */
+Operation* GetOperationMaxTime(Operation* op, int type) {
+	Operation* aux = op;
+	Operation* finalOp = NULL;
+	while (aux != NULL) {
+		if ((finalOp == NULL && aux->type == type) || (aux->type == type && aux->executionTime > finalOp->executionTime)) {
+			finalOp = aux;
+		}
+		aux = aux->next;
+	}
+
+	return finalOp;
 }
