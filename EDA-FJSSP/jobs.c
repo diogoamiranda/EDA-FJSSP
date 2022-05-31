@@ -116,6 +116,41 @@ void DeleteAllJobs(Job** h) {
 }
 
 /**
+* @brief Delete a specif job from the job list
+* @param h Pointer to the head of the list
+*/
+void DeleteJob(Job* h, int jobId) {
+	//empty list?
+	if (h == NULL) return NULL;
+
+	if (h->id == jobId) {
+		Job* aux = h;
+		h = h->next;
+		Operation* op = h->operations;
+		RemoveOperations(op);
+		free(aux);
+	}
+	else
+	{
+		Job* aux = h;
+		Job* auxPrev = aux;
+		//search id to remove
+		while (aux && aux->id != jobId) {
+			auxPrev = aux;
+			aux = aux->next;
+		}
+		//if founded, remove
+		if (aux != NULL) {
+			auxPrev->next = aux->next;
+			Operation* op = h->operations;
+			RemoveOperations(op);
+			free(aux);
+		}
+	}
+	return h;
+}
+
+/**
 * @brief Check if a job exists.
 * @param h Head of the list
 * @param id	Identifier to be searched

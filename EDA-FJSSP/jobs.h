@@ -80,6 +80,9 @@ Job* ReadJobBinary(char* fileName);
 // deletes all nodes from the job list
 void DeleteAllJobs(Job** h);
 
+// delete job from the job list
+void DeleteJob(Job* h, int jobId);
+
 // checks if job exists 
 bool JobExist(Job* h, int id);
 
