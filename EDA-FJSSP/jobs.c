@@ -189,6 +189,26 @@ Job* SearchJob(Job* h, int id) {
 }
 
 /**
+* @brief Delete a specif operation from the job operations list
+* @param h Pointer to the head of the list
+*/
+void DeleteJobOperation(Job* h, int jobId, int opId) {
+	Job* auxJob = SearchJob(h, jobId);
+	if (auxJob == NULL) return;
+
+	Operation* op = auxJob->operations;
+	Operation* hOp = auxJob->operations;
+	while (op != NULL) {
+		if (op->id == opId) {
+			RemoveOperation(hOp, opId);
+			return;
+		}
+		op = op->next;
+	}
+
+}
+
+/**
 * @brief Calculates the minimum time a job takes to complete
 * @param h Head of the job list
 * @param jobId Job identifier

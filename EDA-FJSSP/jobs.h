@@ -83,6 +83,9 @@ void DeleteAllJobs(Job** h);
 // delete job from the job list
 void DeleteJob(Job* h, int jobId);
 
+// delete job operation
+void DeleteJobOperation(Job* h, int jobId, int opId);
+
 // checks if job exists 
 bool JobExist(Job* h, int id);
 
