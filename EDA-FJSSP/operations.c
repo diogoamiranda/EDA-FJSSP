@@ -112,6 +112,20 @@ Operation* RemoveOperation(Operation* h, int id) {
 }
 
 /**
+* @brief Remove Operations
+* @param h Head of the list
+*/
+void RemoveOperations(Operation* h){
+	Operation* op = h;
+	Operation* auxOp;
+	while (op != NULL){
+		Operation* auxOp = op;
+		op = op->next;
+		free(auxOp);
+	}
+}
+
+/**
 * @brief Update Operation
 * 
 * @param h Head of the list

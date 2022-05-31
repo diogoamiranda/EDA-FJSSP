@@ -48,6 +48,9 @@ Operation* InsertOperationEnd(Operation* h, Operation* n);
 //removes operation from the operations list
 Operation* RemoveOperation(Operation* h, int id);
 
+//removes operations from the operations list
+void RemoveOperations(Operation* h);
+
 Operation* UpdateOperation(Operation* h, int id, int type, int maqId, int time, bool finished);
 
 Operation* SearchOperation(Operation* h, int id);
