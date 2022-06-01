@@ -101,6 +101,47 @@ Job* ReadJobBinary(char* fileName) {
 }
 
 /**
+ * Loads all the information related to a process plan.
+ * Allocate memory and insert into appropriate lists.
+ * 
+ * \param fileName File name with data about a process plan
+ * \return 
+ */
+Job* LoadProcessPlan(char* fileName) {
+	FILE* fp;
+	Job* hJob = NULL;
+	Operation* hOp = NULL;
+	Job* newJob = NULL;
+	Operation* newOp = NULL;
+	char jobName[JOB_NAME_MAX_LENGTH];
+	char strLine[LOAD_PROCESS_PLAN_BYTES_TO_READ_BY_LINE]; // read x bytes at a time;
+
+	if ((fp = fopen(fileName, "r")) == NULL) return NULL;
+
+	Job aux;
+	Operation auxOp;
+	int currLine = 0;
+	while (fgets(strLine, LOAD_PROCESS_PLAN_BYTES_TO_READ_BY_LINE, fp) != NULL){
+		// ignore first line
+		if (currLine != 0) {
+			sscanf(strLine, "%d,%d,%f,%d", &aux.id, &auxOp.type, &auxOp.executionTime, &auxOp.machineId);
+			sprintf(jobName, "Job%d", aux.id);//concatenate string and job id
+			//avoid unnecessary memory allocation
+			if (currLine == 1 || aux.id != hJob->id) {
+				newJob = CreateJob(aux.id, jobName);
+				hJob = InsertJobEnd(hJob, newJob);
+			}
+			InsertJobOperationStart(hJob, aux.id, currLine, auxOp.type, auxOp.machineId, auxOp.executionTime, false);
+		    //TODO: Add machines
+		}
+
+		currLine++;
+	}
+	fclose(fp);
+	return hJob;
+}
+
+/**
 * @brief Removes all nodes from a job list
 * @param h Pointer to the head of the list
 */
@@ -331,7 +372,7 @@ void ShowAvgTimeJobOperations(Job* h, int jobId) {
 }
 
 /**
- * Insert new operation in the operations list of a specific job.
+ * Insert new operation at the beginning of the list in the operations list of a specific job.
  * TODO: CHECK IF OPERATION ALREADY EXISTS BEFORE INSERT
  * 
  * \param h Head of Jobs list
@@ -343,7 +384,7 @@ void ShowAvgTimeJobOperations(Job* h, int jobId) {
  * \param finished Operation state
  * \return 
  */
-Job* InsertJobOperationEnd(Job* h, int jobId, int opId, int opType, int machId, int time, bool finished) {
+Job* InsertJobOperationStart(Job* h, int jobId, int opId, int opType, int machId, int time, bool finished) {
 	// if empty job list
 	if (h == NULL) return NULL;
 	// search job
@@ -367,9 +408,10 @@ void ShowJobOperations(Job* h, int jobId) {
 		printf("finished = %s\n", aux->finished ? "true" : "false");
 		printf("********** Job Operations ***********\n");
 		while (op != NULL) {
-			printf("operation id = %d\n", op->id);
-			printf("machine id = %d\n", op->machineId);
-			printf("execution time = %.2f\n\n", op->executionTime);
+			printf("\toperation id = %d\n", op->id);
+			printf("\toperation type = %d\n", op->type);
+			printf("\tmachine id = %d\n", op->machineId);
+			printf("\texecution time = %.2f\n\n", op->executionTime);
 			op = op->next;
 		}
 		printf("*************************\n");

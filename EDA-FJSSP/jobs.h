@@ -19,6 +19,7 @@
 
 #pragma region Constants
 #define JOB_NAME_MAX_LENGTH 50
+#define LOAD_PROCESS_PLAN_BYTES_TO_READ_BY_LINE 100
 #pragma endregion
 
 #pragma region Structs
@@ -59,8 +60,8 @@ Job* CreateJob(int id, char* name);
 // inserts job at the end of the job list
 Job* InsertJobEnd(Job* h, Job* n);
 
-// inserts new operations for a job
-Job* InsertJobOperationEnd(Job* h, int jobId, int opId, int opType, int machId, int time, bool finished);
+// inserts new operations for a job at the beginning of the list
+Job* InsertJobOperationStart(Job* h, int jobId, int opId, int opType, int machId, int time, bool finished);
 
 // calculates the min time a job takes to complete
 float CalculateMinTimeJob(Job* h, int jobId);
@@ -76,6 +77,8 @@ bool SaveJobBinary(char* fileName, Job* h);
 
 // reads file with data from a job
 Job* ReadJobBinary(char* fileName);
+
+Job* LoadProcessPlan(char* fileName);
 
 // removes all nodes from the job list
 void RemoveAllJobs(Job** h);
