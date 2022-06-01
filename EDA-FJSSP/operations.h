@@ -40,7 +40,7 @@ typedef struct operation {
 #pragma region FunctionSignatures
 
 //creates operation
-Operation* CreateOperation(Operation* op, int id, int type, int maqId, int time, bool finished); 
+Operation* CreateOperation(Operation* op, int id, int type, int machId, int time, bool finished); 
 
 //inserts operations in the operations list
 Operation* InsertOperationEnd(Operation* h, Operation* n);
@@ -51,7 +51,7 @@ Operation* RemoveOperation(Operation* h, int id);
 //removes operations from the operations list
 void RemoveOperations(Operation* h);
 
-Operation* UpdateOperation(Operation* h, int id, int type, int maqId, int time, bool finished);
+Operation* UpdateOperation(Operation* h, int id, int type, int machId, int time, bool finished);
 
 Operation* SearchOperation(Operation* h, int id);
 

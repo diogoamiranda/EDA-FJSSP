@@ -16,18 +16,18 @@
 *
 * @param id Operation identifier
 * @param type Operation type
-* @param maqId Machine identifier
+* @param machId Machine identifier
 * @param time Time units required for the operation
 * @param finished Whether the operation is finished or not
 *
 */
-Operation* CreateOperation(Operation* op, int id, int type, int maqId, int time, bool finished){
+Operation* CreateOperation(Operation* op, int id, int type, int machId, int time, bool finished){
 	Operation* newOperation = (Operation*)malloc(sizeof(Operation));
 	if (newOperation == NULL) return NULL;
 
 	newOperation->id = id;
 	newOperation->type = type;
-	newOperation->machineId = maqId;
+	newOperation->machineId = machId;
 	newOperation->executionTime = time;
 	newOperation->finished = finished;
 	//points to last operation
@@ -131,16 +131,18 @@ void RemoveOperations(Operation* h){
 * @param h Head of the list
 * @param id Operation identifier
 * @param type Operation type
-* @param maqId Machine identifier
+* @param machId Machine identifier
 * @param time Time units required for the operation
 * @param finished Whether the operation is finished or not
 * @return pointer to list
 */
-Operation* UpdateOperation(Operation* h, int id, int type, int maqId, int time, bool finished) {
+Operation* UpdateOperation(Operation* h, int id, int type, int machId, int time, bool finished) {
 	Operation* aux = SearchOperation(h, id);
 	//founded an operation?
 	if (aux != NULL)		
 	{
+		aux->type = type;
+		aux->machineId = machId;
 		aux->executionTime = time;
 		aux->finished = finished;
 	}

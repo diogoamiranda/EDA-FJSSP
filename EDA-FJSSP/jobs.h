@@ -60,7 +60,7 @@ Job* CreateJob(int id, char* name);
 Job* InsertJobEnd(Job* h, Job* n);
 
 // inserts new operations for a job
-Operation* InsertJobOperationEnd(Job* h, int jobId, int opId, int opType, int machId, int time, bool finished);
+Job* InsertJobOperationEnd(Job* h, int jobId, int opId, int opType, int machId, int time, bool finished);
 
 // calculates the min time a job takes to complete
 float CalculateMinTimeJob(Job* h, int jobId);
@@ -77,14 +77,17 @@ bool SaveJobBinary(char* fileName, Job* h);
 // reads file with data from a job
 Job* ReadJobBinary(char* fileName);
 
-// deletes all nodes from the job list
-void DeleteAllJobs(Job** h);
+// removes all nodes from the job list
+void RemoveAllJobs(Job** h);
 
-// delete job from the job list
-void DeleteJob(Job* h, int jobId);
+// removes job from the job list
+Job* RemoveJob(Job* h, int jobId);
 
-// delete job operation
-void DeleteJobOperation(Job* h, int jobId, int opId);
+// removes job operation
+void RemoveJobOperation(Job* h, int jobId, int opId);
+
+// updates job operation
+Job* UpdateJobOperation(Job* h, int jobId, int opId, int opType, int opMachId, int opTime, bool opFinished);
 
 // checks if job exists 
 bool JobExist(Job* h, int id);

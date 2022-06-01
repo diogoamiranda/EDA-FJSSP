@@ -90,21 +90,21 @@ bool SaveJobBinary(char* fileName, Job* h) {
 /**
 * @brief Read information about a job
 */
-Job* ReadJobBinary(char* nomeFicheiro) {
+Job* ReadJobBinary(char* fileName) {
 	FILE* fp;
 	Job* h = NULL;
 	Job* aux;
 
-	if ((fp = fopen(nomeFicheiro, "rb")) == NULL) return NULL;
+	if ((fp = fopen(fileName, "rb")) == NULL) return NULL;
 	fclose(fp);
 	return h;
 }
 
 /**
-* @brief Delete all nodes from a job list
+* @brief Removes all nodes from a job list
 * @param h Pointer to the head of the list
 */
-void DeleteAllJobs(Job** h) {
+void RemoveAllJobs(Job** h) {
 	if (h != NULL) {
 		Job* aux;
 		while (*h) {
@@ -116,35 +116,38 @@ void DeleteAllJobs(Job** h) {
 }
 
 /**
-* @brief Delete a specif job from the job list
+* @brief Removes a specif job from the job list
 * @param h Pointer to the head of the list
 */
-void DeleteJob(Job* h, int jobId) {
-	//empty list?
-	if (h == NULL) return NULL;
+Job* RemoveJob(Job* h, int jobId) {
+	Job* currJob = h; 
+	Job* prevJob;
 
-	if (h->id == jobId) {
-		Job* aux = h;
+	//empty list?
+	if (currJob == NULL) return NULL;
+
+	if (currJob->id == jobId) {
 		h = h->next;
-		Operation* op = h->operations;
+		Operation* op = currJob->operations;
 		RemoveOperations(op);
-		free(aux);
+		free(currJob);
 	}
 	else
 	{
-		Job* aux = h;
-		Job* auxPrev = aux;
+		prevJob = h;
+		currJob = prevJob->next;
+
 		//search id to remove
-		while (aux && aux->id != jobId) {
-			auxPrev = aux;
-			aux = aux->next;
+		while (currJob && currJob->id != jobId) {
+			prevJob = currJob;
+			currJob = currJob->next;
 		}
 		//if founded, remove
-		if (aux != NULL) {
-			auxPrev->next = aux->next;
-			Operation* op = h->operations;
+		if (currJob != NULL) {
+			prevJob->next = currJob->next;
+			Operation* op = currJob->operations;
 			RemoveOperations(op);
-			free(aux);
+			free(currJob);
 		}
 	}
 	return h;
@@ -189,10 +192,10 @@ Job* SearchJob(Job* h, int id) {
 }
 
 /**
-* @brief Delete a specif operation from the job operations list
+* @brief Removes a specif operation from the job operations list
 * @param h Pointer to the head of the list
 */
-void DeleteJobOperation(Job* h, int jobId, int opId) {
+void RemoveJobOperation(Job* h, int jobId, int opId) {
 	Job* auxJob = SearchJob(h, jobId);
 	if (auxJob == NULL) return;
 
@@ -200,12 +203,34 @@ void DeleteJobOperation(Job* h, int jobId, int opId) {
 	Operation* hOp = auxJob->operations;
 	while (op != NULL) {
 		if (op->id == opId) {
-			RemoveOperation(hOp, opId);
+			hOp = RemoveOperation(hOp, opId);
 			return;
 		}
 		op = op->next;
 	}
 
+}
+
+/**
+ * Updates a specif operation from the job operations list.
+ * 
+ * \param h Head of the list
+ * \param jobId Job identifier
+ * \param opId Operation identifier
+ * \param opType Operation type
+ * \param opMachId Machine identifier
+ * \param opTime Operation execution time
+ * \param opFinished Whether the operation is finished or not
+ * \return 
+ */
+Job* UpdateJobOperation(Job* h, int jobId, int opId, int opType, int opMachId, int opTime, bool opFinished) {
+	Job* auxJob = SearchJob(h, jobId);
+	if (auxJob == NULL) return;
+
+	Operation* op = auxJob->operations;
+	UpdateOperation(op, opId, opType, opMachId, opTime, opFinished);
+
+	return auxJob;
 }
 
 /**
@@ -318,7 +343,7 @@ void ShowAvgTimeJobOperations(Job* h, int jobId) {
  * \param finished Operation state
  * \return 
  */
-Operation* InsertJobOperationEnd(Job* h, int jobId, int opId, int opType, int machId, int time, bool finished) {
+Job* InsertJobOperationEnd(Job* h, int jobId, int opId, int opType, int machId, int time, bool finished) {
 	// if empty job list
 	if (h == NULL) return NULL;
 	// search job
@@ -330,7 +355,7 @@ Operation* InsertJobOperationEnd(Job* h, int jobId, int opId, int opType, int ma
 		aux->operations = jobOp;
 	}
 
-	return jobOp;
+	return h;
 }
 
 void ShowJobOperations(Job* h, int jobId) {
@@ -353,10 +378,9 @@ void ShowJobOperations(Job* h, int jobId) {
 
 void ShowJobs(Job* h) {
 	Job* aux = h;
-	printf("\job List:\n");
+	printf("job List:\n");
 	while (aux) {
-		printf("job ID = %d\n", aux->id);
-		printf("job finished = %d\n", aux->finished);
+		printf("\tjob ID = %d\n", aux->id);
 		aux = aux->next;
 	}
 }
