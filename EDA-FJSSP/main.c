@@ -99,37 +99,56 @@ int main() {
 
 #pragma region PHASE2
 #pragma region ex2
-	Job* headJobList = LoadProcessPlan("data//process_plan.txt");
+	//Job* headJobList = LoadProcessPlan("data//process_plan.txt");
+	JobTree* rootJobTree = LoadProcessPlanTree("data//process_plan.txt");
 #pragma endregion
 
 #pragma region ex3
+	//linked list
 	/*Job* job9 = CreateJob(9, "plastic necklace");
-
 	headJobList = InsertJobEnd(headJobList, job9);*/
+	
+	//bst
+	/*JobTree* job9 = CreateJob(9, "plastic necklace");
+	rootJobTree = InsertJobTree(rootJobTree, job9);*/
 #pragma endregion
 
 #pragma region ex4
+	//linked list
 	/*printf("\n******Ex. 4 - Phase 2****\n");
 	printf("Before remove job\n");
 	ShowJobs(headJobList);
 	headJobList = RemoveJob(headJobList, job9->id);
 	printf("After remove job\n");
 	ShowJobs(headJobList);*/
+	
+	//bst
+	/*printf("Before remove job\n");
+	ShowJobsTreeInOrder(rootJobTree);
+	rootJobTree = RemoveJobTree(rootJobTree, job9->id);
+	printf("\nAfter remove job\n");
+	ShowJobsTreeInOrder(rootJobTree);*/
+
 #pragma endregion
 
 #pragma region ex5
+	//linked list
 	//headJobList = InsertJobOperationStart(headJobList, 0, 60, 3, 4, 5, false);
+	//bst
+	//rootJobTree = InsertJobOperationTree(rootJobTree, 0, 60, 3, 4, 5, false);
 #pragma endregion
 
 #pragma region ex6
+	//linked list
 	//RemoveJobOperation(headJobList, 0, 60);
+	//bst
+	//RemoveJobOperationTree(rootJobTree, 0, 60);
 #pragma endregion
 
 #pragma region ex7
 	//UpdateJobOperation(headJobList, 0, 0, 5, 1, 10, false);
 	
 #pragma endregion
-
 
 #pragma endregion
 
