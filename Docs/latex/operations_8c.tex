@@ -11,7 +11,7 @@ Methods for manipulating Singly Linked Lists (Operations)
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$ \mbox{\hyperlink{operations_8c_a52a681f0945eeb60f138d8b412483309}{Create\+Operation}} (int id, int job\+Id, int maq\+Id, int time, bool finished)
+\mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$ \mbox{\hyperlink{operations_8c_ac4b94ab4ae65990e2cca847467994ba4}{Create\+Operation}} (\mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$op, int id, int type, int mach\+Id, int time, bool finished)
 \begin{DoxyCompactList}\small\item\em Creates a new operation. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$ \mbox{\hyperlink{operations_8c_aca2d7da318931051fea3456a2e421d18}{Insert\+Operation\+End}} (\mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$h, \mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$n)
 \begin{DoxyCompactList}\small\item\em Inserts new operation at the end of the operations list. \end{DoxyCompactList}\item 
@@ -19,12 +19,24 @@ bool \mbox{\hyperlink{operations_8c_aafaef56b18d7e3794dbfa1c6559fbb99}{Operation
 \begin{DoxyCompactList}\small\item\em Check if operation exists. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$ \mbox{\hyperlink{operations_8c_ad96fb03058f7a5d3dea0aaa42fc77008}{Remove\+Operation}} (\mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$h, int id)
 \begin{DoxyCompactList}\small\item\em Remove Operation. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$ \mbox{\hyperlink{operations_8c_adfda973e1d6070f124dd4f675d864175}{Update\+Operation}} (\mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$h, int id, int job\+Id, int maq\+Id, int time, bool finished)
+void \mbox{\hyperlink{operations_8c_acaca152c5ddb5c5a514caa91784e11a3}{Remove\+Operations}} (\mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$h)
+\begin{DoxyCompactList}\small\item\em Remove Operations. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$ \mbox{\hyperlink{operations_8c_a2ad4175c0a57ffb11dd8a01948fffabd}{Update\+Operation}} (\mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$h, int id, int type, int mach\+Id, int time, bool finished)
 \begin{DoxyCompactList}\small\item\em Update Operation. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$ \mbox{\hyperlink{operations_8c_a8c40c3a865eee34cf6b18baabcd92a8d}{Search\+Operation}} (\mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$h, int id)
 \begin{DoxyCompactList}\small\item\em Search for an operation. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{operations_8c_a8605bde3dc79e35ed6a83f27437c6bb5}{Calculate\+Min\+Time\+Operation}} (\mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$h, int op\+Id)
+\item 
+float \mbox{\hyperlink{operations_8c_a4b2e1a5c8fed6bff2fc89fb77f3069a3}{Calculate\+Max\+Time\+Operation}} (\mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$h, int op\+Id)
+\item 
 void \mbox{\hyperlink{operations_8c_a3ef47b38fb2af2912c4676f58b7f5c55}{Show\+All\+Operations}} (\mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$h)
-\begin{DoxyCompactList}\small\item\em Show all operations of the operations list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Show all operations of the operations list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{operations_8c_aabccc767f647eb13db93f737b4c67a06}{Show\+Operation}} (\mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$op, int id)
+\begin{DoxyCompactList}\small\item\em Show a specific operation data. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$ \mbox{\hyperlink{operations_8c_a45e08663931fc601011282c03da736f6}{Get\+Operation\+Min\+Time}} (\mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$op, int type)
+\item 
+\mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$ \mbox{\hyperlink{operations_8c_a7b70c80311dd0d31c436a72822fce367}{Get\+Operation\+Max\+Time}} (\mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$op, int type)
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -39,11 +51,47 @@ diogo miranda
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{operations_8c_a52a681f0945eeb60f138d8b412483309}\label{operations_8c_a52a681f0945eeb60f138d8b412483309}} 
+\mbox{\Hypertarget{operations_8c_a4b2e1a5c8fed6bff2fc89fb77f3069a3}\label{operations_8c_a4b2e1a5c8fed6bff2fc89fb77f3069a3}} 
+\index{operations.c@{operations.c}!CalculateMaxTimeOperation@{CalculateMaxTimeOperation}}
+\index{CalculateMaxTimeOperation@{CalculateMaxTimeOperation}!operations.c@{operations.c}}
+\doxysubsubsection{\texorpdfstring{CalculateMaxTimeOperation()}{CalculateMaxTimeOperation()}}
+{\footnotesize\ttfamily float Calculate\+Max\+Time\+Operation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$}]{h,  }\item[{int}]{op\+Id }\end{DoxyParamCaption})}
+
+Calculates the maximum time of a specific operation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Head of the operations list \\
+\hline
+{\em op\+Id} & Operation identifier \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{operations_8c_a8605bde3dc79e35ed6a83f27437c6bb5}\label{operations_8c_a8605bde3dc79e35ed6a83f27437c6bb5}} 
+\index{operations.c@{operations.c}!CalculateMinTimeOperation@{CalculateMinTimeOperation}}
+\index{CalculateMinTimeOperation@{CalculateMinTimeOperation}!operations.c@{operations.c}}
+\doxysubsubsection{\texorpdfstring{CalculateMinTimeOperation()}{CalculateMinTimeOperation()}}
+{\footnotesize\ttfamily float Calculate\+Min\+Time\+Operation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$}]{h,  }\item[{int}]{op\+Id }\end{DoxyParamCaption})}
+
+Calculates the minimum time of a specific operation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Head of the operations list \\
+\hline
+{\em op\+Id} & Operation identifier \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{operations_8c_ac4b94ab4ae65990e2cca847467994ba4}\label{operations_8c_ac4b94ab4ae65990e2cca847467994ba4}} 
 \index{operations.c@{operations.c}!CreateOperation@{CreateOperation}}
 \index{CreateOperation@{CreateOperation}!operations.c@{operations.c}}
 \doxysubsubsection{\texorpdfstring{CreateOperation()}{CreateOperation()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$ Create\+Operation (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{int}]{job\+Id,  }\item[{int}]{maq\+Id,  }\item[{int}]{time,  }\item[{bool}]{finished }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$ Create\+Operation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$}]{op,  }\item[{int}]{id,  }\item[{int}]{type,  }\item[{int}]{mach\+Id,  }\item[{int}]{time,  }\item[{bool}]{finished }\end{DoxyParamCaption})}
 
 
 
@@ -55,15 +103,51 @@ Allocates necessary memory to store an operation in memory
 \begin{DoxyParams}{Parameters}
 {\em id} & Operation identifier \\
 \hline
-{\em job\+Id} & Job identifier \\
+{\em type} & Operation type \\
 \hline
-{\em maq\+Id} & Machine identifier \\
+{\em mach\+Id} & Machine identifier \\
 \hline
 {\em time} & Time units required for the operation \\
 \hline
 {\em finished} & Whether the operation is finished or not \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{operations_8c_a7b70c80311dd0d31c436a72822fce367}\label{operations_8c_a7b70c80311dd0d31c436a72822fce367}} 
+\index{operations.c@{operations.c}!GetOperationMaxTime@{GetOperationMaxTime}}
+\index{GetOperationMaxTime@{GetOperationMaxTime}!operations.c@{operations.c}}
+\doxysubsubsection{\texorpdfstring{GetOperationMaxTime()}{GetOperationMaxTime()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$ Get\+Operation\+Max\+Time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$}]{op,  }\item[{int}]{type }\end{DoxyParamCaption})}
+
+Get operation with maximum time for a specific type of operation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em op} & Head of operations list \\
+\hline
+{\em type} & Operation type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{operations_8c_a45e08663931fc601011282c03da736f6}\label{operations_8c_a45e08663931fc601011282c03da736f6}} 
+\index{operations.c@{operations.c}!GetOperationMinTime@{GetOperationMinTime}}
+\index{GetOperationMinTime@{GetOperationMinTime}!operations.c@{operations.c}}
+\doxysubsubsection{\texorpdfstring{GetOperationMinTime()}{GetOperationMinTime()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$ Get\+Operation\+Min\+Time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$}]{op,  }\item[{int}]{type }\end{DoxyParamCaption})}
+
+Get operation with minimum time for a specific type of operation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em op} & Head of operations list \\
+\hline
+{\em type} & Operation type \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
 \mbox{\Hypertarget{operations_8c_aca2d7da318931051fea3456a2e421d18}\label{operations_8c_aca2d7da318931051fea3456a2e421d18}} 
 \index{operations.c@{operations.c}!InsertOperationEnd@{InsertOperationEnd}}
 \index{InsertOperationEnd@{InsertOperationEnd}!operations.c@{operations.c}}
@@ -121,6 +205,21 @@ Remove Operation.
 {\em id} & Identifier to be removed \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{operations_8c_acaca152c5ddb5c5a514caa91784e11a3}\label{operations_8c_acaca152c5ddb5c5a514caa91784e11a3}} 
+\index{operations.c@{operations.c}!RemoveOperations@{RemoveOperations}}
+\index{RemoveOperations@{RemoveOperations}!operations.c@{operations.c}}
+\doxysubsubsection{\texorpdfstring{RemoveOperations()}{RemoveOperations()}}
+{\footnotesize\ttfamily void Remove\+Operations (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$}]{h }\end{DoxyParamCaption})}
+
+
+
+Remove Operations. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Head of the list \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{operations_8c_a8c40c3a865eee34cf6b18baabcd92a8d}\label{operations_8c_a8c40c3a865eee34cf6b18baabcd92a8d}} 
 \index{operations.c@{operations.c}!SearchOperation@{SearchOperation}}
 \index{SearchOperation@{SearchOperation}!operations.c@{operations.c}}
@@ -153,11 +252,26 @@ Show all operations of the operations list.
 {\em h} & Head of the operations list \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{operations_8c_adfda973e1d6070f124dd4f675d864175}\label{operations_8c_adfda973e1d6070f124dd4f675d864175}} 
+\mbox{\Hypertarget{operations_8c_aabccc767f647eb13db93f737b4c67a06}\label{operations_8c_aabccc767f647eb13db93f737b4c67a06}} 
+\index{operations.c@{operations.c}!ShowOperation@{ShowOperation}}
+\index{ShowOperation@{ShowOperation}!operations.c@{operations.c}}
+\doxysubsubsection{\texorpdfstring{ShowOperation()}{ShowOperation()}}
+{\footnotesize\ttfamily void Show\+Operation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$}]{op,  }\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Show a specific operation data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em op} & Operation \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{operations_8c_a2ad4175c0a57ffb11dd8a01948fffabd}\label{operations_8c_a2ad4175c0a57ffb11dd8a01948fffabd}} 
 \index{operations.c@{operations.c}!UpdateOperation@{UpdateOperation}}
 \index{UpdateOperation@{UpdateOperation}!operations.c@{operations.c}}
 \doxysubsubsection{\texorpdfstring{UpdateOperation()}{UpdateOperation()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$ Update\+Operation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$}]{h,  }\item[{int}]{id,  }\item[{int}]{job\+Id,  }\item[{int}]{maq\+Id,  }\item[{int}]{time,  }\item[{bool}]{finished }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$ Update\+Operation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$}]{h,  }\item[{int}]{id,  }\item[{int}]{type,  }\item[{int}]{mach\+Id,  }\item[{int}]{time,  }\item[{bool}]{finished }\end{DoxyParamCaption})}
 
 
 
@@ -169,9 +283,9 @@ Update Operation.
 \hline
 {\em id} & Operation identifier \\
 \hline
-{\em job\+Id} & Job identifier \\
+{\em type} & Operation type \\
 \hline
-{\em maq\+Id} & Machine identifier \\
+{\em mach\+Id} & Machine identifier \\
 \hline
 {\em time} & Time units required for the operation \\
 \hline

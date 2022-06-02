@@ -14,11 +14,11 @@ Struct to store an operation.
 \item 
 int \mbox{\hyperlink{structoperation_a27f9d61dfc5d12e19a1bbad97397c460}{id}}
 \item 
-int \mbox{\hyperlink{structoperation_a161071ffe352317dd13ec6fd3aefe746}{job\+Id}}
+int \mbox{\hyperlink{structoperation_a6c0d0c91bebaddda4de0b1c16436458d}{type}}
 \item 
 int \mbox{\hyperlink{structoperation_a6c3cdacf363eead6ee79626dea90169a}{machine\+Id}}
 \item 
-int \mbox{\hyperlink{structoperation_a0ec5769fa297c0822afc616c4b974575}{execution\+Time}}
+float \mbox{\hyperlink{structoperation_a5ee7f7ac07802586c1cfcdcaf386735b}{execution\+Time}}
 \item 
 bool \mbox{\hyperlink{structoperation_aaab2fafcfe73770bf1e0264b24e5d080}{finished}}
 \item 
@@ -32,11 +32,11 @@ Struct to store an operation.
 An operation contains an identifier (@id), a job identifier (@job\+Id), a machine identifier (@machine\+Id), a execution time (@execution\+Time), an operation state (@finished) and a pointer ($\ast$next). 
 
 \doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{structoperation_a0ec5769fa297c0822afc616c4b974575}\label{structoperation_a0ec5769fa297c0822afc616c4b974575}} 
+\mbox{\Hypertarget{structoperation_a5ee7f7ac07802586c1cfcdcaf386735b}\label{structoperation_a5ee7f7ac07802586c1cfcdcaf386735b}} 
 \index{operation@{operation}!executionTime@{executionTime}}
 \index{executionTime@{executionTime}!operation@{operation}}
 \doxysubsubsection{\texorpdfstring{executionTime}{executionTime}}
-{\footnotesize\ttfamily int operation\+::execution\+Time}
+{\footnotesize\ttfamily float operation\+::execution\+Time}
 
 \mbox{\Hypertarget{structoperation_aaab2fafcfe73770bf1e0264b24e5d080}\label{structoperation_aaab2fafcfe73770bf1e0264b24e5d080}} 
 \index{operation@{operation}!finished@{finished}}
@@ -50,12 +50,6 @@ An operation contains an identifier (@id), a job identifier (@job\+Id), a machin
 \doxysubsubsection{\texorpdfstring{id}{id}}
 {\footnotesize\ttfamily int operation\+::id}
 
-\mbox{\Hypertarget{structoperation_a161071ffe352317dd13ec6fd3aefe746}\label{structoperation_a161071ffe352317dd13ec6fd3aefe746}} 
-\index{operation@{operation}!jobId@{jobId}}
-\index{jobId@{jobId}!operation@{operation}}
-\doxysubsubsection{\texorpdfstring{jobId}{jobId}}
-{\footnotesize\ttfamily int operation\+::job\+Id}
-
 \mbox{\Hypertarget{structoperation_a6c3cdacf363eead6ee79626dea90169a}\label{structoperation_a6c3cdacf363eead6ee79626dea90169a}} 
 \index{operation@{operation}!machineId@{machineId}}
 \index{machineId@{machineId}!operation@{operation}}
@@ -67,6 +61,12 @@ An operation contains an identifier (@id), a job identifier (@job\+Id), a machin
 \index{next@{next}!operation@{operation}}
 \doxysubsubsection{\texorpdfstring{next}{next}}
 {\footnotesize\ttfamily struct \mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}}$\ast$ operation\+::next}
+
+\mbox{\Hypertarget{structoperation_a6c0d0c91bebaddda4de0b1c16436458d}\label{structoperation_a6c0d0c91bebaddda4de0b1c16436458d}} 
+\index{operation@{operation}!type@{type}}
+\index{type@{type}!operation@{operation}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily int operation\+::type}
 
 
 

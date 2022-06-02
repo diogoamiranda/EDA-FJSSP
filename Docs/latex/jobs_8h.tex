@@ -13,18 +13,24 @@ Jobs -\/ Definitions of Structs, Constants, and Function Signatures.
 \item 
 struct \mbox{\hyperlink{structjob}{job}}
 \begin{DoxyCompactList}\small\item\em Dynamic structure to store a job. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structjob_tree}{job\+Tree}}
+\begin{DoxyCompactList}\small\item\em Dynamic structure (BST) to store a job. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structjob_file}{job\+File}}
 \begin{DoxyCompactList}\small\item\em Struct to store a job in a file. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
 \#define \mbox{\hyperlink{jobs_8h_ad19646e9515ebe01193e6fca0e0fbb0f}{JOB\+\_\+\+NAME\+\_\+\+MAX\+\_\+\+LENGTH}}~50
+\item 
+\#define \mbox{\hyperlink{jobs_8h_accd7f09f1167ad7eb0267cb099d4d438}{LOAD\+\_\+\+PROCESS\+\_\+\+PLAN\+\_\+\+BYTES\+\_\+\+TO\+\_\+\+READ\+\_\+\+BY\+\_\+\+LINE}}~100
 \end{DoxyCompactItemize}
 \doxysubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
 typedef struct \mbox{\hyperlink{structjob}{job}} \mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}}
 \begin{DoxyCompactList}\small\item\em Dynamic structure to store a job. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structjob_tree}{job\+Tree}} \mbox{\hyperlink{jobs_8h_a991563e5938296a0c928bbdbe51c498f}{Job\+Tree}}
+\begin{DoxyCompactList}\small\item\em Dynamic structure (BST) to store a job. \end{DoxyCompactList}\item 
 typedef struct \mbox{\hyperlink{structjob_file}{job\+File}} \mbox{\hyperlink{jobs_8h_a4b2d2732998f2ee9190d474da57912ed}{Job\+File}}
 \begin{DoxyCompactList}\small\item\em Struct to store a job in a file. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
@@ -32,24 +38,52 @@ typedef struct \mbox{\hyperlink{structjob_file}{job\+File}} \mbox{\hyperlink{job
 \item 
 \mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}} $\ast$ \mbox{\hyperlink{jobs_8h_a51815384df8073c80a5dafc28c049265}{Create\+Job}} (int id, char $\ast$name)
 \begin{DoxyCompactList}\small\item\em Creates a new job. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{jobs_8h_a991563e5938296a0c928bbdbe51c498f}{Job\+Tree}} $\ast$ \mbox{\hyperlink{jobs_8h_a83e7a08474652f24d4ee943f936727ac}{Create\+Job\+Tree}} (int id, char $\ast$name)
+\item 
 \mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}} $\ast$ \mbox{\hyperlink{jobs_8h_ad0d014cdf46398a209ac7cb3b5db68da}{Insert\+Job\+End}} (\mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}} $\ast$h, \mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}} $\ast$n)
 \begin{DoxyCompactList}\small\item\em Inserts job at the end of the job list. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}} $\ast$ \mbox{\hyperlink{jobs_8h_a63b473116696747d1c7902c4415407f0}{Insert\+Job\+Operation}} (\mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}} $\ast$h, \mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$o, int job\+Id)
+\mbox{\hyperlink{jobs_8h_a991563e5938296a0c928bbdbe51c498f}{Job\+Tree}} $\ast$ \mbox{\hyperlink{jobs_8h_a8d3f80f8d9528f413610a08dec396250}{Insert\+Job\+Tree}} (\mbox{\hyperlink{jobs_8h_a991563e5938296a0c928bbdbe51c498f}{Job\+Tree}} $\ast$root, \mbox{\hyperlink{jobs_8h_a991563e5938296a0c928bbdbe51c498f}{Job\+Tree}} $\ast$n)
+\begin{DoxyCompactList}\small\item\em Inserts job into the job tree. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}} $\ast$ \mbox{\hyperlink{jobs_8h_afe9c00bb5378e50cef3ae60e8363aef9}{Insert\+Job\+Operation\+Start}} (\mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}} $\ast$h, int job\+Id, int op\+Id, int op\+Type, int mach\+Id, int time, bool finished)
 \item 
-float \mbox{\hyperlink{jobs_8h_a28d624dbfe7968fa2a7d9b58a256225d}{Calculate\+Min\+Time\+Job}} (\mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}} $\ast$h, \mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$h\+Op, int job\+Id)
+\mbox{\hyperlink{jobs_8h_a991563e5938296a0c928bbdbe51c498f}{Job\+Tree}} $\ast$ \mbox{\hyperlink{jobs_8h_ac8e987328c86a08a8fad51668f7c6cc5}{Insert\+Job\+Operation\+Tree}} (\mbox{\hyperlink{jobs_8h_a991563e5938296a0c928bbdbe51c498f}{Job\+Tree}} $\ast$root, int job\+Id, int op\+Id, int op\+Type, int mach\+Id, int time, bool finished)
+\item 
+float \mbox{\hyperlink{jobs_8h_a4347b4dc7efd7b1a61efab2606fc2ff7}{Calculate\+Min\+Time\+Job}} (\mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}} $\ast$h, int job\+Id)
 \begin{DoxyCompactList}\small\item\em Calculates the minimum time a job takes to complete. \end{DoxyCompactList}\item 
-float \mbox{\hyperlink{jobs_8h_a114af9067c6ebf0240009d7890e8f52a}{Calculate\+Max\+Time\+Job}} (int job\+Id)
-\item 
-float \mbox{\hyperlink{jobs_8h_afaab9e9bd7fab93ad3df06368bd38462}{Calculate\+Avg\+Time\+Job\+Operations}} (int job\+Id)
+float \mbox{\hyperlink{jobs_8h_a051f503676d20a908404a60bd98d6755}{Calculate\+Max\+Time\+Job}} (\mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}} $\ast$h, int job\+Id)
+\begin{DoxyCompactList}\small\item\em Calculates the maximum time a job takes to complete. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{jobs_8h_ad5424ae3302b74b9b402c7369ef82abd}{Show\+Avg\+Time\+Job\+Operations}} (\mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}} $\ast$h, int job\+Id)
 \item 
 bool \mbox{\hyperlink{jobs_8h_a972e7a7dc535a25929c925f8381d7fdc}{Save\+Job\+Binary}} (char $\ast$file\+Name, \mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}} $\ast$h)
 \begin{DoxyCompactList}\small\item\em Preserve data in file Writes all nodes in the List to a file. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}} $\ast$ \mbox{\hyperlink{jobs_8h_a006ab8f58480d92b29e18f391e38a671}{Read\+Job\+Binary}} (char $\ast$file\+Name)
 \begin{DoxyCompactList}\small\item\em Read information about a job. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{jobs_8h_af0bc3d298049f4b854ea860e3947a961}{Delete\+All\+Jobs}} (\mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}} $\ast$$\ast$h)
-\begin{DoxyCompactList}\small\item\em Delete all nodes from a job list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}} $\ast$ \mbox{\hyperlink{jobs_8h_ada20884ef0d6daa98faa151f4cb3188d}{Load\+Process\+Plan}} (char $\ast$file\+Name)
+\item 
+\mbox{\hyperlink{jobs_8h_a991563e5938296a0c928bbdbe51c498f}{Job\+Tree}} $\ast$ \mbox{\hyperlink{jobs_8h_aee346fb4bd2db5390680d55286bb86a4}{Load\+Process\+Plan\+Tree}} (char $\ast$file\+Name)
+\item 
+void \mbox{\hyperlink{jobs_8h_a77ce9aea583d353efcd962b2244bcedf}{Remove\+All\+Jobs}} (\mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}} $\ast$$\ast$h)
+\begin{DoxyCompactList}\small\item\em Removes all nodes from a job list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}} $\ast$ \mbox{\hyperlink{jobs_8h_a34a6dd05de6e72d57cfeaee6f76f4ef0}{Remove\+Job}} (\mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}} $\ast$h, int job\+Id)
+\begin{DoxyCompactList}\small\item\em Removes a specif job from the job list. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{jobs_8h_a991563e5938296a0c928bbdbe51c498f}{Job\+Tree}} $\ast$ \mbox{\hyperlink{jobs_8h_a6339022f94b64785f55deed6d02ee4c5}{Remove\+Job\+Tree}} (\mbox{\hyperlink{jobs_8h_a991563e5938296a0c928bbdbe51c498f}{Job\+Tree}} $\ast$h, int job\+Id)
+\begin{DoxyCompactList}\small\item\em Removes a specif job from the job tree. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{jobs_8h_adb03f9095e53946a9233ec1ee7a5c3f6}{Remove\+Job\+Operation}} (\mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}} $\ast$h, int job\+Id, int op\+Id)
+\begin{DoxyCompactList}\small\item\em Removes a specif operation from the job operations list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{jobs_8h_aea32922971ff774bb621eef7a997deb1}{Remove\+Job\+Operation\+Tree}} (\mbox{\hyperlink{jobs_8h_a991563e5938296a0c928bbdbe51c498f}{Job\+Tree}} $\ast$root, int job\+Id, int op\+Id)
+\item 
+\mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}} $\ast$ \mbox{\hyperlink{jobs_8h_ab11582334def3a4947e706aea01a98ed}{Update\+Job\+Operation}} (\mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}} $\ast$h, int job\+Id, int op\+Id, int op\+Type, int op\+Mach\+Id, int op\+Time, bool op\+Finished)
+\item 
 bool \mbox{\hyperlink{jobs_8h_a6d2de41ea5c22f994d72c35c961bbdf1}{Job\+Exist}} (\mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}} $\ast$h, int id)
-\begin{DoxyCompactList}\small\item\em Check if a job exists. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Check if a job exists. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{jobs_8h_a72c5c8538e0a72cb7b14d5b735102e8c}{Job\+Exist\+Tree}} (\mbox{\hyperlink{jobs_8h_a991563e5938296a0c928bbdbe51c498f}{Job\+Tree}} $\ast$root, int id)
+\begin{DoxyCompactList}\small\item\em Check if a job exists in the job tree. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{jobs_8h_a0394c24f2340289933d91e72c9826b68}{Show\+Job\+Operations}} (\mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}} $\ast$h, int job\+Id)
+\item 
+void \mbox{\hyperlink{jobs_8h_af7972db0c34c926e094c5a4ea9e1e124}{Show\+Jobs}} (\mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}} $\ast$h)
+\item 
+void \mbox{\hyperlink{jobs_8h_a312801c7ae00c622ad1c1fa0a63ebc1f}{Show\+Jobs\+Tree\+In\+Order}} (\mbox{\hyperlink{jobs_8h_a991563e5938296a0c928bbdbe51c498f}{Job\+Tree}} $\ast$root)
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -69,6 +103,12 @@ diogo miranda
 \index{JOB\_NAME\_MAX\_LENGTH@{JOB\_NAME\_MAX\_LENGTH}!jobs.h@{jobs.h}}
 \doxysubsubsection{\texorpdfstring{JOB\_NAME\_MAX\_LENGTH}{JOB\_NAME\_MAX\_LENGTH}}
 {\footnotesize\ttfamily \#define JOB\+\_\+\+NAME\+\_\+\+MAX\+\_\+\+LENGTH~50}
+
+\mbox{\Hypertarget{jobs_8h_accd7f09f1167ad7eb0267cb099d4d438}\label{jobs_8h_accd7f09f1167ad7eb0267cb099d4d438}} 
+\index{jobs.h@{jobs.h}!LOAD\_PROCESS\_PLAN\_BYTES\_TO\_READ\_BY\_LINE@{LOAD\_PROCESS\_PLAN\_BYTES\_TO\_READ\_BY\_LINE}}
+\index{LOAD\_PROCESS\_PLAN\_BYTES\_TO\_READ\_BY\_LINE@{LOAD\_PROCESS\_PLAN\_BYTES\_TO\_READ\_BY\_LINE}!jobs.h@{jobs.h}}
+\doxysubsubsection{\texorpdfstring{LOAD\_PROCESS\_PLAN\_BYTES\_TO\_READ\_BY\_LINE}{LOAD\_PROCESS\_PLAN\_BYTES\_TO\_READ\_BY\_LINE}}
+{\footnotesize\ttfamily \#define LOAD\+\_\+\+PROCESS\+\_\+\+PLAN\+\_\+\+BYTES\+\_\+\+TO\+\_\+\+READ\+\_\+\+BY\+\_\+\+LINE~100}
 
 
 
@@ -93,26 +133,44 @@ A job contains an identifier (@id), a name (@name), a boolean to check the state
 
 Struct to store a job in a file. 
 
-A job contains an identifier (@id), a name (@name), a boolean to check the state of the job(@finished) 
+A job contains an identifier (@id), a name (@name), a boolean to check the state of the job(@finished) \mbox{\Hypertarget{jobs_8h_a991563e5938296a0c928bbdbe51c498f}\label{jobs_8h_a991563e5938296a0c928bbdbe51c498f}} 
+\index{jobs.h@{jobs.h}!JobTree@{JobTree}}
+\index{JobTree@{JobTree}!jobs.h@{jobs.h}}
+\doxysubsubsection{\texorpdfstring{JobTree}{JobTree}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structjob_tree}{job\+Tree}} \mbox{\hyperlink{jobs_8h_a991563e5938296a0c928bbdbe51c498f}{Job\+Tree}}}
+
+
+
+Dynamic structure (BST) to store a job. 
+
+A job contains an identifier (@id), a name (@name), a boolean to check the state of the job(@finished) and a pointer($\ast$next). 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{jobs_8h_afaab9e9bd7fab93ad3df06368bd38462}\label{jobs_8h_afaab9e9bd7fab93ad3df06368bd38462}} 
-\index{jobs.h@{jobs.h}!CalculateAvgTimeJobOperations@{CalculateAvgTimeJobOperations}}
-\index{CalculateAvgTimeJobOperations@{CalculateAvgTimeJobOperations}!jobs.h@{jobs.h}}
-\doxysubsubsection{\texorpdfstring{CalculateAvgTimeJobOperations()}{CalculateAvgTimeJobOperations()}}
-{\footnotesize\ttfamily float Calculate\+Avg\+Time\+Job\+Operations (\begin{DoxyParamCaption}\item[{int}]{job\+Id }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{jobs_8h_a114af9067c6ebf0240009d7890e8f52a}\label{jobs_8h_a114af9067c6ebf0240009d7890e8f52a}} 
+\mbox{\Hypertarget{jobs_8h_a051f503676d20a908404a60bd98d6755}\label{jobs_8h_a051f503676d20a908404a60bd98d6755}} 
 \index{jobs.h@{jobs.h}!CalculateMaxTimeJob@{CalculateMaxTimeJob}}
 \index{CalculateMaxTimeJob@{CalculateMaxTimeJob}!jobs.h@{jobs.h}}
 \doxysubsubsection{\texorpdfstring{CalculateMaxTimeJob()}{CalculateMaxTimeJob()}}
-{\footnotesize\ttfamily float Calculate\+Max\+Time\+Job (\begin{DoxyParamCaption}\item[{int}]{job\+Id }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily float Calculate\+Max\+Time\+Job (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}} $\ast$}]{h,  }\item[{int}]{job\+Id }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{jobs_8h_a28d624dbfe7968fa2a7d9b58a256225d}\label{jobs_8h_a28d624dbfe7968fa2a7d9b58a256225d}} 
+
+
+Calculates the maximum time a job takes to complete. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Head of the job list \\
+\hline
+{\em job\+Id} & Job identifier \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+max\+Time\+Job Maximum time that a job takes to complete 
+\end{DoxyReturn}
+\mbox{\Hypertarget{jobs_8h_a4347b4dc7efd7b1a61efab2606fc2ff7}\label{jobs_8h_a4347b4dc7efd7b1a61efab2606fc2ff7}} 
 \index{jobs.h@{jobs.h}!CalculateMinTimeJob@{CalculateMinTimeJob}}
 \index{CalculateMinTimeJob@{CalculateMinTimeJob}!jobs.h@{jobs.h}}
 \doxysubsubsection{\texorpdfstring{CalculateMinTimeJob()}{CalculateMinTimeJob()}}
-{\footnotesize\ttfamily float Calculate\+Min\+Time\+Job (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}} $\ast$}]{h,  }\item[{\mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$}]{h\+Op,  }\item[{int}]{job\+Id }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily float Calculate\+Min\+Time\+Job (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}} $\ast$}]{h,  }\item[{int}]{job\+Id }\end{DoxyParamCaption})}
 
 
 
@@ -121,8 +179,6 @@ Calculates the minimum time a job takes to complete.
 
 \begin{DoxyParams}{Parameters}
 {\em h} & Head of the job list \\
-\hline
-{\em h\+Op} & Head of the operations list \\
 \hline
 {\em job\+Id} & Job identifier \\
 \hline
@@ -149,21 +205,24 @@ Allocates necessary memory to store a Job in memory
 {\em name} & Job name \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{jobs_8h_af0bc3d298049f4b854ea860e3947a961}\label{jobs_8h_af0bc3d298049f4b854ea860e3947a961}} 
-\index{jobs.h@{jobs.h}!DeleteAllJobs@{DeleteAllJobs}}
-\index{DeleteAllJobs@{DeleteAllJobs}!jobs.h@{jobs.h}}
-\doxysubsubsection{\texorpdfstring{DeleteAllJobs()}{DeleteAllJobs()}}
-{\footnotesize\ttfamily void Delete\+All\+Jobs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}} $\ast$$\ast$}]{h }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{jobs_8h_a83e7a08474652f24d4ee943f936727ac}\label{jobs_8h_a83e7a08474652f24d4ee943f936727ac}} 
+\index{jobs.h@{jobs.h}!CreateJobTree@{CreateJobTree}}
+\index{CreateJobTree@{CreateJobTree}!jobs.h@{jobs.h}}
+\doxysubsubsection{\texorpdfstring{CreateJobTree()}{CreateJobTree()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{jobs_8h_a991563e5938296a0c928bbdbe51c498f}{Job\+Tree}} $\ast$ Create\+Job\+Tree (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
 
-
-
-Delete all nodes from a job list. 
+Creates a new job. Allocates necessary memory to store a Job\+Tee in memory
 
 
 \begin{DoxyParams}{Parameters}
-{\em h} & Pointer to the head of the list \\
+{\em id} & \\
+\hline
+{\em name} & \\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
 \mbox{\Hypertarget{jobs_8h_ad0d014cdf46398a209ac7cb3b5db68da}\label{jobs_8h_ad0d014cdf46398a209ac7cb3b5db68da}} 
 \index{jobs.h@{jobs.h}!InsertJobEnd@{InsertJobEnd}}
 \index{InsertJobEnd@{InsertJobEnd}!jobs.h@{jobs.h}}
@@ -184,12 +243,82 @@ Inserts job at the end of the job list.
 \begin{DoxyReturn}{Returns}
 Head of the list 
 \end{DoxyReturn}
-\mbox{\Hypertarget{jobs_8h_a63b473116696747d1c7902c4415407f0}\label{jobs_8h_a63b473116696747d1c7902c4415407f0}} 
-\index{jobs.h@{jobs.h}!InsertJobOperation@{InsertJobOperation}}
-\index{InsertJobOperation@{InsertJobOperation}!jobs.h@{jobs.h}}
-\doxysubsubsection{\texorpdfstring{InsertJobOperation()}{InsertJobOperation()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}} $\ast$ Insert\+Job\+Operation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}} $\ast$}]{h,  }\item[{\mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$}]{o,  }\item[{int}]{job\+Id }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{jobs_8h_afe9c00bb5378e50cef3ae60e8363aef9}\label{jobs_8h_afe9c00bb5378e50cef3ae60e8363aef9}} 
+\index{jobs.h@{jobs.h}!InsertJobOperationStart@{InsertJobOperationStart}}
+\index{InsertJobOperationStart@{InsertJobOperationStart}!jobs.h@{jobs.h}}
+\doxysubsubsection{\texorpdfstring{InsertJobOperationStart()}{InsertJobOperationStart()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}} $\ast$ Insert\+Job\+Operation\+Start (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}} $\ast$}]{h,  }\item[{int}]{job\+Id,  }\item[{int}]{op\+Id,  }\item[{int}]{op\+Type,  }\item[{int}]{mach\+Id,  }\item[{int}]{time,  }\item[{bool}]{finished }\end{DoxyParamCaption})}
 
+Insert new operation at the beginning of the list in the operations list of a specific job. TODO\+: CHECK IF OPERATION ALREADY EXISTS BEFORE INSERT
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Head of Jobs list \\
+\hline
+{\em job\+Id} & Job identifier \\
+\hline
+{\em op\+Id} & Operation identifier \\
+\hline
+{\em op\+Type} & Operation type \\
+\hline
+{\em mach\+Id} & Machine identifier \\
+\hline
+{\em time} & Operation time \\
+\hline
+{\em finished} & Operation state \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{jobs_8h_ac8e987328c86a08a8fad51668f7c6cc5}\label{jobs_8h_ac8e987328c86a08a8fad51668f7c6cc5}} 
+\index{jobs.h@{jobs.h}!InsertJobOperationTree@{InsertJobOperationTree}}
+\index{InsertJobOperationTree@{InsertJobOperationTree}!jobs.h@{jobs.h}}
+\doxysubsubsection{\texorpdfstring{InsertJobOperationTree()}{InsertJobOperationTree()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{jobs_8h_a991563e5938296a0c928bbdbe51c498f}{Job\+Tree}} $\ast$ Insert\+Job\+Operation\+Tree (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{jobs_8h_a991563e5938296a0c928bbdbe51c498f}{Job\+Tree}} $\ast$}]{root,  }\item[{int}]{job\+Id,  }\item[{int}]{op\+Id,  }\item[{int}]{op\+Type,  }\item[{int}]{mach\+Id,  }\item[{int}]{time,  }\item[{bool}]{finished }\end{DoxyParamCaption})}
+
+Insert new operation at the beginning of the list in the operations list of a specific job (Tree version). TODO\+: CHECK IF OPERATION ALREADY EXISTS BEFORE INSERT
+
+
+\begin{DoxyParams}{Parameters}
+{\em root} & Root of job tree \\
+\hline
+{\em job\+Id} & Job identifier \\
+\hline
+{\em op\+Id} & Operation identifier \\
+\hline
+{\em op\+Type} & Operation type \\
+\hline
+{\em mach\+Id} & Machine identifier \\
+\hline
+{\em time} & Operation time \\
+\hline
+{\em finished} & Operation state \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{jobs_8h_a8d3f80f8d9528f413610a08dec396250}\label{jobs_8h_a8d3f80f8d9528f413610a08dec396250}} 
+\index{jobs.h@{jobs.h}!InsertJobTree@{InsertJobTree}}
+\index{InsertJobTree@{InsertJobTree}!jobs.h@{jobs.h}}
+\doxysubsubsection{\texorpdfstring{InsertJobTree()}{InsertJobTree()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{jobs_8h_a991563e5938296a0c928bbdbe51c498f}{Job\+Tree}} $\ast$ Insert\+Job\+Tree (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{jobs_8h_a991563e5938296a0c928bbdbe51c498f}{Job\+Tree}} $\ast$}]{root,  }\item[{\mbox{\hyperlink{jobs_8h_a991563e5938296a0c928bbdbe51c498f}{Job\+Tree}} $\ast$}]{n }\end{DoxyParamCaption})}
+
+
+
+Inserts job into the job tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em root} & Root of the tree \\
+\hline
+{\em n} & New root \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Root of the tree 
+\end{DoxyReturn}
 \mbox{\Hypertarget{jobs_8h_a6d2de41ea5c22f994d72c35c961bbdf1}\label{jobs_8h_a6d2de41ea5c22f994d72c35c961bbdf1}} 
 \index{jobs.h@{jobs.h}!JobExist@{JobExist}}
 \index{JobExist@{JobExist}!jobs.h@{jobs.h}}
@@ -210,6 +339,58 @@ Check if a job exists.
 \begin{DoxyReturn}{Returns}
 True/\+False 
 \end{DoxyReturn}
+\mbox{\Hypertarget{jobs_8h_a72c5c8538e0a72cb7b14d5b735102e8c}\label{jobs_8h_a72c5c8538e0a72cb7b14d5b735102e8c}} 
+\index{jobs.h@{jobs.h}!JobExistTree@{JobExistTree}}
+\index{JobExistTree@{JobExistTree}!jobs.h@{jobs.h}}
+\doxysubsubsection{\texorpdfstring{JobExistTree()}{JobExistTree()}}
+{\footnotesize\ttfamily bool Job\+Exist\+Tree (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{jobs_8h_a991563e5938296a0c928bbdbe51c498f}{Job\+Tree}} $\ast$}]{root,  }\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Check if a job exists in the job tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Root of the tree \\
+\hline
+{\em id} & Identifier to be searched \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True/\+False 
+\end{DoxyReturn}
+\mbox{\Hypertarget{jobs_8h_ada20884ef0d6daa98faa151f4cb3188d}\label{jobs_8h_ada20884ef0d6daa98faa151f4cb3188d}} 
+\index{jobs.h@{jobs.h}!LoadProcessPlan@{LoadProcessPlan}}
+\index{LoadProcessPlan@{LoadProcessPlan}!jobs.h@{jobs.h}}
+\doxysubsubsection{\texorpdfstring{LoadProcessPlan()}{LoadProcessPlan()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}} $\ast$ Load\+Process\+Plan (\begin{DoxyParamCaption}\item[{char $\ast$}]{file\+Name }\end{DoxyParamCaption})}
+
+Loads all the information related to a process plan. Allocate memory and insert into appropriate lists.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & File name with data about a process plan \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{jobs_8h_aee346fb4bd2db5390680d55286bb86a4}\label{jobs_8h_aee346fb4bd2db5390680d55286bb86a4}} 
+\index{jobs.h@{jobs.h}!LoadProcessPlanTree@{LoadProcessPlanTree}}
+\index{LoadProcessPlanTree@{LoadProcessPlanTree}!jobs.h@{jobs.h}}
+\doxysubsubsection{\texorpdfstring{LoadProcessPlanTree()}{LoadProcessPlanTree()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{jobs_8h_a991563e5938296a0c928bbdbe51c498f}{Job\+Tree}} $\ast$ Load\+Process\+Plan\+Tree (\begin{DoxyParamCaption}\item[{char $\ast$}]{file\+Name }\end{DoxyParamCaption})}
+
+Loads all the information related to a process plan. Allocate memory and insert into appropriate tree.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & File name with data about a process plan \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
 \mbox{\Hypertarget{jobs_8h_a006ab8f58480d92b29e18f391e38a671}\label{jobs_8h_a006ab8f58480d92b29e18f391e38a671}} 
 \index{jobs.h@{jobs.h}!ReadJobBinary@{ReadJobBinary}}
 \index{ReadJobBinary@{ReadJobBinary}!jobs.h@{jobs.h}}
@@ -220,6 +401,72 @@ True/\+False
 
 Read information about a job. 
 
+\mbox{\Hypertarget{jobs_8h_a77ce9aea583d353efcd962b2244bcedf}\label{jobs_8h_a77ce9aea583d353efcd962b2244bcedf}} 
+\index{jobs.h@{jobs.h}!RemoveAllJobs@{RemoveAllJobs}}
+\index{RemoveAllJobs@{RemoveAllJobs}!jobs.h@{jobs.h}}
+\doxysubsubsection{\texorpdfstring{RemoveAllJobs()}{RemoveAllJobs()}}
+{\footnotesize\ttfamily void Remove\+All\+Jobs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}} $\ast$$\ast$}]{h }\end{DoxyParamCaption})}
+
+
+
+Removes all nodes from a job list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Pointer to the head of the list \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{jobs_8h_a34a6dd05de6e72d57cfeaee6f76f4ef0}\label{jobs_8h_a34a6dd05de6e72d57cfeaee6f76f4ef0}} 
+\index{jobs.h@{jobs.h}!RemoveJob@{RemoveJob}}
+\index{RemoveJob@{RemoveJob}!jobs.h@{jobs.h}}
+\doxysubsubsection{\texorpdfstring{RemoveJob()}{RemoveJob()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}} $\ast$ Remove\+Job (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}} $\ast$}]{h,  }\item[{int}]{job\+Id }\end{DoxyParamCaption})}
+
+
+
+Removes a specif job from the job list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Pointer to the head of the list \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{jobs_8h_adb03f9095e53946a9233ec1ee7a5c3f6}\label{jobs_8h_adb03f9095e53946a9233ec1ee7a5c3f6}} 
+\index{jobs.h@{jobs.h}!RemoveJobOperation@{RemoveJobOperation}}
+\index{RemoveJobOperation@{RemoveJobOperation}!jobs.h@{jobs.h}}
+\doxysubsubsection{\texorpdfstring{RemoveJobOperation()}{RemoveJobOperation()}}
+{\footnotesize\ttfamily void Remove\+Job\+Operation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}} $\ast$}]{h,  }\item[{int}]{job\+Id,  }\item[{int}]{op\+Id }\end{DoxyParamCaption})}
+
+
+
+Removes a specif operation from the job operations list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Pointer to the head of the list \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{jobs_8h_aea32922971ff774bb621eef7a997deb1}\label{jobs_8h_aea32922971ff774bb621eef7a997deb1}} 
+\index{jobs.h@{jobs.h}!RemoveJobOperationTree@{RemoveJobOperationTree}}
+\index{RemoveJobOperationTree@{RemoveJobOperationTree}!jobs.h@{jobs.h}}
+\doxysubsubsection{\texorpdfstring{RemoveJobOperationTree()}{RemoveJobOperationTree()}}
+{\footnotesize\ttfamily void Remove\+Job\+Operation\+Tree (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{jobs_8h_a991563e5938296a0c928bbdbe51c498f}{Job\+Tree}} $\ast$}]{root,  }\item[{int}]{job\+Id,  }\item[{int}]{op\+Id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{jobs_8h_a6339022f94b64785f55deed6d02ee4c5}\label{jobs_8h_a6339022f94b64785f55deed6d02ee4c5}} 
+\index{jobs.h@{jobs.h}!RemoveJobTree@{RemoveJobTree}}
+\index{RemoveJobTree@{RemoveJobTree}!jobs.h@{jobs.h}}
+\doxysubsubsection{\texorpdfstring{RemoveJobTree()}{RemoveJobTree()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{jobs_8h_a991563e5938296a0c928bbdbe51c498f}{Job\+Tree}} $\ast$ Remove\+Job\+Tree (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{jobs_8h_a991563e5938296a0c928bbdbe51c498f}{Job\+Tree}} $\ast$}]{root,  }\item[{int}]{job\+Id }\end{DoxyParamCaption})}
+
+
+
+Removes a specif job from the job tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Pointer to the root of the tree \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{jobs_8h_a972e7a7dc535a25929c925f8381d7fdc}\label{jobs_8h_a972e7a7dc535a25929c925f8381d7fdc}} 
 \index{jobs.h@{jobs.h}!SaveJobBinary@{SaveJobBinary}}
 \index{SaveJobBinary@{SaveJobBinary}!jobs.h@{jobs.h}}
@@ -230,3 +477,74 @@ Read information about a job.
 
 Preserve data in file Writes all nodes in the List to a file. 
 
+\mbox{\Hypertarget{jobs_8h_ad5424ae3302b74b9b402c7369ef82abd}\label{jobs_8h_ad5424ae3302b74b9b402c7369ef82abd}} 
+\index{jobs.h@{jobs.h}!ShowAvgTimeJobOperations@{ShowAvgTimeJobOperations}}
+\index{ShowAvgTimeJobOperations@{ShowAvgTimeJobOperations}!jobs.h@{jobs.h}}
+\doxysubsubsection{\texorpdfstring{ShowAvgTimeJobOperations()}{ShowAvgTimeJobOperations()}}
+{\footnotesize\ttfamily void Show\+Avg\+Time\+Job\+Operations (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}} $\ast$}]{h,  }\item[{int}]{job\+Id }\end{DoxyParamCaption})}
+
+Calculates the average time necessary to complete a job operation, list operations and prints average. TODO\+: remove order dependency from operations in the job operations list
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Head of the jobs list \\
+\hline
+{\em job\+Id} & Job identifier \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{jobs_8h_a0394c24f2340289933d91e72c9826b68}\label{jobs_8h_a0394c24f2340289933d91e72c9826b68}} 
+\index{jobs.h@{jobs.h}!ShowJobOperations@{ShowJobOperations}}
+\index{ShowJobOperations@{ShowJobOperations}!jobs.h@{jobs.h}}
+\doxysubsubsection{\texorpdfstring{ShowJobOperations()}{ShowJobOperations()}}
+{\footnotesize\ttfamily void Show\+Job\+Operations (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}} $\ast$}]{h,  }\item[{int}]{job\+Id }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{jobs_8h_af7972db0c34c926e094c5a4ea9e1e124}\label{jobs_8h_af7972db0c34c926e094c5a4ea9e1e124}} 
+\index{jobs.h@{jobs.h}!ShowJobs@{ShowJobs}}
+\index{ShowJobs@{ShowJobs}!jobs.h@{jobs.h}}
+\doxysubsubsection{\texorpdfstring{ShowJobs()}{ShowJobs()}}
+{\footnotesize\ttfamily void Show\+Jobs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}} $\ast$}]{h }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{jobs_8h_a312801c7ae00c622ad1c1fa0a63ebc1f}\label{jobs_8h_a312801c7ae00c622ad1c1fa0a63ebc1f}} 
+\index{jobs.h@{jobs.h}!ShowJobsTreeInOrder@{ShowJobsTreeInOrder}}
+\index{ShowJobsTreeInOrder@{ShowJobsTreeInOrder}!jobs.h@{jobs.h}}
+\doxysubsubsection{\texorpdfstring{ShowJobsTreeInOrder()}{ShowJobsTreeInOrder()}}
+{\footnotesize\ttfamily void Show\+Jobs\+Tree\+In\+Order (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{jobs_8h_a991563e5938296a0c928bbdbe51c498f}{Job\+Tree}} $\ast$}]{root }\end{DoxyParamCaption})}
+
+Function to do inorder traversal of jobs bst.
+
+
+\begin{DoxyParams}{Parameters}
+{\em root} & Root of the tree \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{jobs_8h_ab11582334def3a4947e706aea01a98ed}\label{jobs_8h_ab11582334def3a4947e706aea01a98ed}} 
+\index{jobs.h@{jobs.h}!UpdateJobOperation@{UpdateJobOperation}}
+\index{UpdateJobOperation@{UpdateJobOperation}!jobs.h@{jobs.h}}
+\doxysubsubsection{\texorpdfstring{UpdateJobOperation()}{UpdateJobOperation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}} $\ast$ Update\+Job\+Operation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}} $\ast$}]{h,  }\item[{int}]{job\+Id,  }\item[{int}]{op\+Id,  }\item[{int}]{op\+Type,  }\item[{int}]{op\+Mach\+Id,  }\item[{int}]{op\+Time,  }\item[{bool}]{op\+Finished }\end{DoxyParamCaption})}
+
+Updates a specif operation from the job operations list.
+
+
+\begin{DoxyParams}{Parameters}
+{\em h} & Head of the list \\
+\hline
+{\em job\+Id} & Job identifier \\
+\hline
+{\em op\+Id} & Operation identifier \\
+\hline
+{\em op\+Type} & Operation type \\
+\hline
+{\em op\+Mach\+Id} & Machine identifier \\
+\hline
+{\em op\+Time} & Operation execution time \\
+\hline
+{\em op\+Finished} & Whether the operation is finished or not \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}

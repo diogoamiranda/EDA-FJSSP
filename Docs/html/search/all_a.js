@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['readjobbinary_0',['ReadJobBinary',['../jobs_8c.html#a13c20d1344612ecc34a027b829aa5da9',1,'ReadJobBinary(char *nomeFicheiro):&#160;jobs.c'],['../jobs_8h.html#a006ab8f58480d92b29e18f391e38a671',1,'ReadJobBinary(char *fileName):&#160;jobs.c']]],
-  ['readme_1',['README',['../md__r_e_a_d_m_e.html',1,'']]],
-  ['readme_2emd_2',['README.md',['../_r_e_a_d_m_e_8md.html',1,'']]],
-  ['removeoperation_3',['RemoveOperation',['../operations_8c.html#ad96fb03058f7a5d3dea0aaa42fc77008',1,'RemoveOperation(Operation *h, int id):&#160;operations.c'],['../operations_8h.html#ad96fb03058f7a5d3dea0aaa42fc77008',1,'RemoveOperation(Operation *h, int id):&#160;operations.c']]]
+  ['name_0',['name',['../structjob.html#a9f7b0183759a156db503bdf168fdbc0c',1,'job::name()'],['../structjob_tree.html#ad741acb0da16917a85e8128ba56ab882',1,'jobTree::name()'],['../structjob_file.html#a5cd02b1d88feca24bdea106846910b98',1,'jobFile::name()']]],
+  ['next_1',['next',['../structjob.html#a1097c071705775a7543ace96cdd9e6cc',1,'job::next()'],['../structmachine.html#ad385c34aa5dc45d4ea88c6fbf26c4a55',1,'machine::next()'],['../structoperation.html#ab403c7983277f4bdc95055502191bcdf',1,'operation::next()']]],
+  ['num_5fmachines_2',['NUM_MACHINES',['../plan__generator_8h.html#acf9523bbd2d74ac7ea4e6ccdb30fef6c',1,'plan_generator.h']]],
+  ['num_5ftimes_3',['NUM_TIMES',['../plan__generator_8h.html#a73381138460517321b6a9108dc3739b9',1,'plan_generator.h']]]
 ];

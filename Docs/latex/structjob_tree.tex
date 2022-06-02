@@ -1,0 +1,75 @@
+\hypertarget{structjob_tree}{}\doxysection{job\+Tree Struct Reference}
+\label{structjob_tree}\index{jobTree@{jobTree}}
+
+
+Dynamic structure (BST) to store a job.  
+
+
+
+
+{\ttfamily \#include $<$jobs.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{structjob_tree_a6b35e18e4b2edd17f93f10403e797ccb}{id}}
+\item 
+char \mbox{\hyperlink{structjob_tree_ad741acb0da16917a85e8128ba56ab882}{name}} \mbox{[}\mbox{\hyperlink{jobs_8h_ad19646e9515ebe01193e6fca0e0fbb0f}{JOB\+\_\+\+NAME\+\_\+\+MAX\+\_\+\+LENGTH}}\mbox{]}
+\item 
+bool \mbox{\hyperlink{structjob_tree_addf5a203375daf1cde99ca3794d825ed}{finished}}
+\item 
+struct \mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}} $\ast$ \mbox{\hyperlink{structjob_tree_aff29742d1332cfe6eecb60d8e5dd71e2}{operations}}
+\item 
+struct \mbox{\hyperlink{jobs_8h_a991563e5938296a0c928bbdbe51c498f}{Job\+Tree}} $\ast$ \mbox{\hyperlink{structjob_tree_acb8d94b0fb5690253fbb76eaa65fbca0}{left}}
+\item 
+struct \mbox{\hyperlink{jobs_8h_a991563e5938296a0c928bbdbe51c498f}{Job\+Tree}} $\ast$ \mbox{\hyperlink{structjob_tree_ab2554f5ee7ba0c83762071634463793b}{right}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Dynamic structure (BST) to store a job. 
+
+A job contains an identifier (@id), a name (@name), a boolean to check the state of the job(@finished) and a pointer($\ast$next). 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structjob_tree_addf5a203375daf1cde99ca3794d825ed}\label{structjob_tree_addf5a203375daf1cde99ca3794d825ed}} 
+\index{jobTree@{jobTree}!finished@{finished}}
+\index{finished@{finished}!jobTree@{jobTree}}
+\doxysubsubsection{\texorpdfstring{finished}{finished}}
+{\footnotesize\ttfamily bool job\+Tree\+::finished}
+
+\mbox{\Hypertarget{structjob_tree_a6b35e18e4b2edd17f93f10403e797ccb}\label{structjob_tree_a6b35e18e4b2edd17f93f10403e797ccb}} 
+\index{jobTree@{jobTree}!id@{id}}
+\index{id@{id}!jobTree@{jobTree}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily int job\+Tree\+::id}
+
+\mbox{\Hypertarget{structjob_tree_acb8d94b0fb5690253fbb76eaa65fbca0}\label{structjob_tree_acb8d94b0fb5690253fbb76eaa65fbca0}} 
+\index{jobTree@{jobTree}!left@{left}}
+\index{left@{left}!jobTree@{jobTree}}
+\doxysubsubsection{\texorpdfstring{left}{left}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{jobs_8h_a991563e5938296a0c928bbdbe51c498f}{Job\+Tree}}$\ast$ job\+Tree\+::left}
+
+\mbox{\Hypertarget{structjob_tree_ad741acb0da16917a85e8128ba56ab882}\label{structjob_tree_ad741acb0da16917a85e8128ba56ab882}} 
+\index{jobTree@{jobTree}!name@{name}}
+\index{name@{name}!jobTree@{jobTree}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily char job\+Tree\+::name\mbox{[}\mbox{\hyperlink{jobs_8h_ad19646e9515ebe01193e6fca0e0fbb0f}{JOB\+\_\+\+NAME\+\_\+\+MAX\+\_\+\+LENGTH}}\mbox{]}}
+
+\mbox{\Hypertarget{structjob_tree_aff29742d1332cfe6eecb60d8e5dd71e2}\label{structjob_tree_aff29742d1332cfe6eecb60d8e5dd71e2}} 
+\index{jobTree@{jobTree}!operations@{operations}}
+\index{operations@{operations}!jobTree@{jobTree}}
+\doxysubsubsection{\texorpdfstring{operations}{operations}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{operations_8h_a46c1f3c9eee509b8e3a2a4908ead5b8c}{Operation}}$\ast$ job\+Tree\+::operations}
+
+\mbox{\Hypertarget{structjob_tree_ab2554f5ee7ba0c83762071634463793b}\label{structjob_tree_ab2554f5ee7ba0c83762071634463793b}} 
+\index{jobTree@{jobTree}!right@{right}}
+\index{right@{right}!jobTree@{jobTree}}
+\doxysubsubsection{\texorpdfstring{right}{right}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{jobs_8h_a991563e5938296a0c928bbdbe51c498f}{Job\+Tree}}$\ast$ job\+Tree\+::right}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+EDA-\/\+FJSSP/\mbox{\hyperlink{jobs_8h}{jobs.\+h}}\end{DoxyCompactItemize}

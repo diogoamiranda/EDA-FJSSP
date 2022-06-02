@@ -16,65 +16,98 @@
 \DoxyCodeLine{19 }
 \DoxyCodeLine{20 \textcolor{preprocessor}{\#pragma region Constants}}
 \DoxyCodeLine{21 \textcolor{preprocessor}{\#define JOB\_NAME\_MAX\_LENGTH 50}}
-\DoxyCodeLine{22 \textcolor{preprocessor}{\#pragma endregion}}
-\DoxyCodeLine{23 }
-\DoxyCodeLine{24 \textcolor{preprocessor}{\#pragma region Structs}}
-\DoxyCodeLine{25 }
-\DoxyCodeLine{32 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structjob}{job}} \{}
-\DoxyCodeLine{33     \textcolor{keywordtype}{int} \mbox{\hyperlink{structjob_a14f2a8b63b37554fd774fefa8e75608e}{id}};}
-\DoxyCodeLine{34     \textcolor{keywordtype}{char} \mbox{\hyperlink{structjob_a9f7b0183759a156db503bdf168fdbc0c}{name}}[\mbox{\hyperlink{jobs_8h_ad19646e9515ebe01193e6fca0e0fbb0f}{JOB\_NAME\_MAX\_LENGTH}}];}
-\DoxyCodeLine{35     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structjob_a3998e7d9cf581454c59160e396989854}{finished}};}
-\DoxyCodeLine{36     \textcolor{keyword}{struct }\mbox{\hyperlink{structoperation}{Operation}}* \mbox{\hyperlink{structjob_a4eb4e372bda3a88438a435c3863c4f39}{operations}}; \textcolor{comment}{//pointer to the operations list}}
-\DoxyCodeLine{37     \textcolor{keyword}{struct }\mbox{\hyperlink{structjob}{Job}}* \mbox{\hyperlink{structjob_a1097c071705775a7543ace96cdd9e6cc}{next}}; \textcolor{comment}{//pointer to the next memory block/node of type Job}}
-\DoxyCodeLine{38 \} \mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}};}
-\DoxyCodeLine{39 }
-\DoxyCodeLine{46 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structjob_file}{jobFile}} \{}
-\DoxyCodeLine{47     \textcolor{keywordtype}{int} \mbox{\hyperlink{structjob_file_a763cc7e33863b60ec32ae93544672bf2}{id}};}
-\DoxyCodeLine{48     \textcolor{keywordtype}{char} \mbox{\hyperlink{structjob_file_a5cd02b1d88feca24bdea106846910b98}{name}}[\mbox{\hyperlink{jobs_8h_ad19646e9515ebe01193e6fca0e0fbb0f}{JOB\_NAME\_MAX\_LENGTH}}];}
-\DoxyCodeLine{49     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structjob_file_aff8cd3ca9e97706c690a5bbb4ee14559}{finished}};}
-\DoxyCodeLine{50 \}\mbox{\hyperlink{jobs_8h_a4b2d2732998f2ee9190d474da57912ed}{JobFile}};}
-\DoxyCodeLine{51 }
-\DoxyCodeLine{52 \textcolor{preprocessor}{\#pragma endregion}}
-\DoxyCodeLine{53 }
-\DoxyCodeLine{54 \textcolor{preprocessor}{\#pragma region FunctionSignatures}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#define LOAD\_PROCESS\_PLAN\_BYTES\_TO\_READ\_BY\_LINE 100}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#pragma region Structs}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{33 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structjob}{job}} \{}
+\DoxyCodeLine{34     \textcolor{keywordtype}{int} \mbox{\hyperlink{structjob_a14f2a8b63b37554fd774fefa8e75608e}{id}};}
+\DoxyCodeLine{35     \textcolor{keywordtype}{char} \mbox{\hyperlink{structjob_a9f7b0183759a156db503bdf168fdbc0c}{name}}[\mbox{\hyperlink{jobs_8h_ad19646e9515ebe01193e6fca0e0fbb0f}{JOB\_NAME\_MAX\_LENGTH}}];}
+\DoxyCodeLine{36     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structjob_a3998e7d9cf581454c59160e396989854}{finished}};}
+\DoxyCodeLine{37     \textcolor{keyword}{struct }\mbox{\hyperlink{structoperation}{Operation}}* \mbox{\hyperlink{structjob_a4eb4e372bda3a88438a435c3863c4f39}{operations}}; \textcolor{comment}{//pointer to the operations list}}
+\DoxyCodeLine{38     \textcolor{keyword}{struct }\mbox{\hyperlink{structjob}{Job}}* \mbox{\hyperlink{structjob_a1097c071705775a7543ace96cdd9e6cc}{next}}; \textcolor{comment}{//pointer to the next memory block/node of type Job}}
+\DoxyCodeLine{39 \} \mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}};}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{47 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structjob_tree}{jobTree}} \{}
+\DoxyCodeLine{48     \textcolor{keywordtype}{int} \mbox{\hyperlink{structjob_tree_a6b35e18e4b2edd17f93f10403e797ccb}{id}};}
+\DoxyCodeLine{49     \textcolor{keywordtype}{char} \mbox{\hyperlink{structjob_tree_ad741acb0da16917a85e8128ba56ab882}{name}}[\mbox{\hyperlink{jobs_8h_ad19646e9515ebe01193e6fca0e0fbb0f}{JOB\_NAME\_MAX\_LENGTH}}];}
+\DoxyCodeLine{50     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structjob_tree_addf5a203375daf1cde99ca3794d825ed}{finished}};}
+\DoxyCodeLine{51     \textcolor{keyword}{struct }\mbox{\hyperlink{structoperation}{Operation}}* \mbox{\hyperlink{structjob_tree_aff29742d1332cfe6eecb60d8e5dd71e2}{operations}}; \textcolor{comment}{//pointer to the operations list}}
+\DoxyCodeLine{52     \textcolor{keyword}{struct }\mbox{\hyperlink{structjob_tree}{JobTree}}* \mbox{\hyperlink{structjob_tree_acb8d94b0fb5690253fbb76eaa65fbca0}{left}}; \textcolor{comment}{//pointer to the left memory block/node of type Job}}
+\DoxyCodeLine{53     \textcolor{keyword}{struct }\mbox{\hyperlink{structjob_tree}{JobTree}}* \mbox{\hyperlink{structjob_tree_ab2554f5ee7ba0c83762071634463793b}{right}};\textcolor{comment}{//pointer to the right memory block/node of type Job}}
+\DoxyCodeLine{54 \} \mbox{\hyperlink{jobs_8h_a991563e5938296a0c928bbdbe51c498f}{JobTree}};}
 \DoxyCodeLine{55 }
-\DoxyCodeLine{56 \textcolor{comment}{// creates a new job(allocates memory)}}
-\DoxyCodeLine{57 \mbox{\hyperlink{structjob}{Job}}* \mbox{\hyperlink{jobs_8h_a51815384df8073c80a5dafc28c049265}{CreateJob}}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id}, \textcolor{keywordtype}{char}* name);}
-\DoxyCodeLine{58 }
-\DoxyCodeLine{59 \textcolor{comment}{// inserts job at the end of the job list}}
-\DoxyCodeLine{60 \mbox{\hyperlink{structjob}{Job}}* \mbox{\hyperlink{jobs_8h_ad0d014cdf46398a209ac7cb3b5db68da}{InsertJobEnd}}(\mbox{\hyperlink{structjob}{Job}}* h, \mbox{\hyperlink{structjob}{Job}}* n);}
-\DoxyCodeLine{61 }
-\DoxyCodeLine{62 \textcolor{comment}{// inserts new operations for a job}}
-\DoxyCodeLine{63 \mbox{\hyperlink{structjob}{Job}}* \mbox{\hyperlink{jobs_8h_a63b473116696747d1c7902c4415407f0}{InsertJobOperation}}(\mbox{\hyperlink{structjob}{Job}}* h, \mbox{\hyperlink{structoperation}{Operation}}* o, \textcolor{keywordtype}{int} jobId);}
-\DoxyCodeLine{64 }
-\DoxyCodeLine{65 \textcolor{comment}{// calculate a min time a job takes to complete}}
-\DoxyCodeLine{66 \textcolor{keywordtype}{float} \mbox{\hyperlink{jobs_8h_a28d624dbfe7968fa2a7d9b58a256225d}{CalculateMinTimeJob}}(\mbox{\hyperlink{structjob}{Job}}* h, \mbox{\hyperlink{structoperation}{Operation}}* hOp, \textcolor{keywordtype}{int} jobId);}
+\DoxyCodeLine{62 \textcolor{keyword}{typedef} \textcolor{keyword}{struct }\mbox{\hyperlink{structjob_file}{jobFile}} \{}
+\DoxyCodeLine{63     \textcolor{keywordtype}{int} \mbox{\hyperlink{structjob_file_a763cc7e33863b60ec32ae93544672bf2}{id}};}
+\DoxyCodeLine{64     \textcolor{keywordtype}{char} \mbox{\hyperlink{structjob_file_a5cd02b1d88feca24bdea106846910b98}{name}}[\mbox{\hyperlink{jobs_8h_ad19646e9515ebe01193e6fca0e0fbb0f}{JOB\_NAME\_MAX\_LENGTH}}];}
+\DoxyCodeLine{65     \textcolor{keywordtype}{bool} \mbox{\hyperlink{structjob_file_aff8cd3ca9e97706c690a5bbb4ee14559}{finished}};}
+\DoxyCodeLine{66 \}\mbox{\hyperlink{jobs_8h_a4b2d2732998f2ee9190d474da57912ed}{JobFile}};}
 \DoxyCodeLine{67 }
-\DoxyCodeLine{68 \textcolor{comment}{// calculate a max time a job takes to complete}}
-\DoxyCodeLine{69 \textcolor{keywordtype}{float} \mbox{\hyperlink{jobs_8h_a114af9067c6ebf0240009d7890e8f52a}{CalculateMaxTimeJob}}(\textcolor{keywordtype}{int} jobId);}
-\DoxyCodeLine{70 }
-\DoxyCodeLine{71 \textcolor{comment}{// calculate average amount of time required to complete an operation of a job}}
-\DoxyCodeLine{72 \textcolor{comment}{// float CalculateAvgTimeJobOperation(int jobId);}}
-\DoxyCodeLine{73 }
-\DoxyCodeLine{74 \textcolor{comment}{// calculate average amount of averages to complete an operation of a job}}
-\DoxyCodeLine{75 \textcolor{keywordtype}{float} \mbox{\hyperlink{jobs_8h_afaab9e9bd7fab93ad3df06368bd38462}{CalculateAvgTimeJobOperations}}(\textcolor{keywordtype}{int} jobId);}
-\DoxyCodeLine{76 }
-\DoxyCodeLine{77 \textcolor{comment}{// write job data to file}}
-\DoxyCodeLine{78 \textcolor{keywordtype}{bool} \mbox{\hyperlink{jobs_8h_a972e7a7dc535a25929c925f8381d7fdc}{SaveJobBinary}}(\textcolor{keywordtype}{char}* fileName, \mbox{\hyperlink{structjob}{Job}}* h);}
+\DoxyCodeLine{68 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 \textcolor{preprocessor}{\#pragma region FunctionSignatures}}
+\DoxyCodeLine{71 }
+\DoxyCodeLine{72 \textcolor{comment}{// creates a new job(allocates memory)}}
+\DoxyCodeLine{73 \mbox{\hyperlink{structjob}{Job}}* \mbox{\hyperlink{jobs_8h_a51815384df8073c80a5dafc28c049265}{CreateJob}}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id}, \textcolor{keywordtype}{char}* name);}
+\DoxyCodeLine{74 \mbox{\hyperlink{structjob_tree}{JobTree}}* \mbox{\hyperlink{jobs_8h_a83e7a08474652f24d4ee943f936727ac}{CreateJobTree}}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id}, \textcolor{keywordtype}{char}* name);}
+\DoxyCodeLine{75 }
+\DoxyCodeLine{76 \textcolor{comment}{// inserts job at the end of the job list}}
+\DoxyCodeLine{77 \mbox{\hyperlink{structjob}{Job}}* \mbox{\hyperlink{jobs_8h_ad0d014cdf46398a209ac7cb3b5db68da}{InsertJobEnd}}(\mbox{\hyperlink{structjob}{Job}}* h, \mbox{\hyperlink{structjob}{Job}}* n);}
+\DoxyCodeLine{78 \mbox{\hyperlink{structjob_tree}{JobTree}}* \mbox{\hyperlink{jobs_8h_a8d3f80f8d9528f413610a08dec396250}{InsertJobTree}}(\mbox{\hyperlink{structjob_tree}{JobTree}}* root, \mbox{\hyperlink{structjob_tree}{JobTree}}* n);}
 \DoxyCodeLine{79 }
-\DoxyCodeLine{80 \textcolor{comment}{// read file with data from a job}}
-\DoxyCodeLine{81 \mbox{\hyperlink{structjob}{Job}}* \mbox{\hyperlink{jobs_8h_a006ab8f58480d92b29e18f391e38a671}{ReadJobBinary}}(\textcolor{keywordtype}{char}* fileName);}
-\DoxyCodeLine{82 }
-\DoxyCodeLine{83 \textcolor{comment}{// delete all nodes from the job list}}
-\DoxyCodeLine{84 \textcolor{keywordtype}{void} \mbox{\hyperlink{jobs_8h_af0bc3d298049f4b854ea860e3947a961}{DeleteAllJobs}}(\mbox{\hyperlink{structjob}{Job}}** h);}
-\DoxyCodeLine{85 }
-\DoxyCodeLine{86 \textcolor{comment}{// checks if job exists }}
-\DoxyCodeLine{87 \textcolor{keywordtype}{bool} \mbox{\hyperlink{jobs_8h_a6d2de41ea5c22f994d72c35c961bbdf1}{JobExist}}(\mbox{\hyperlink{structjob}{Job}}* h, \textcolor{keywordtype}{int} \textcolor{keywordtype}{id});}
-\DoxyCodeLine{88 }
-\DoxyCodeLine{89 \textcolor{preprocessor}{\#pragma endregion}}
-\DoxyCodeLine{90 }
-\DoxyCodeLine{91 }
-\DoxyCodeLine{92 \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{93 }
+\DoxyCodeLine{80 \textcolor{comment}{// inserts new operations for a job at the beginning of the list}}
+\DoxyCodeLine{81 \mbox{\hyperlink{structjob}{Job}}* \mbox{\hyperlink{jobs_8h_afe9c00bb5378e50cef3ae60e8363aef9}{InsertJobOperationStart}}(\mbox{\hyperlink{structjob}{Job}}* h, \textcolor{keywordtype}{int} jobId, \textcolor{keywordtype}{int} opId, \textcolor{keywordtype}{int} opType, \textcolor{keywordtype}{int} machId, \textcolor{keywordtype}{int} time, \textcolor{keywordtype}{bool} finished);}
+\DoxyCodeLine{82 \mbox{\hyperlink{structjob_tree}{JobTree}}* \mbox{\hyperlink{jobs_8h_ac8e987328c86a08a8fad51668f7c6cc5}{InsertJobOperationTree}}(\mbox{\hyperlink{structjob_tree}{JobTree}}* root, \textcolor{keywordtype}{int} jobId, \textcolor{keywordtype}{int} opId, \textcolor{keywordtype}{int} opType, \textcolor{keywordtype}{int} machId, \textcolor{keywordtype}{int} time, \textcolor{keywordtype}{bool} finished);}
+\DoxyCodeLine{83 }
+\DoxyCodeLine{84 \textcolor{comment}{// calculates the min time a job takes to complete}}
+\DoxyCodeLine{85 \textcolor{keywordtype}{float} \mbox{\hyperlink{jobs_8h_a4347b4dc7efd7b1a61efab2606fc2ff7}{CalculateMinTimeJob}}(\mbox{\hyperlink{structjob}{Job}}* h, \textcolor{keywordtype}{int} jobId);}
+\DoxyCodeLine{86 }
+\DoxyCodeLine{87 \textcolor{comment}{// calculates the max time a job takes to complete}}
+\DoxyCodeLine{88 \textcolor{keywordtype}{float} \mbox{\hyperlink{jobs_8h_a051f503676d20a908404a60bd98d6755}{CalculateMaxTimeJob}}(\mbox{\hyperlink{structjob}{Job}}* h, \textcolor{keywordtype}{int} jobId);}
+\DoxyCodeLine{89 }
+\DoxyCodeLine{90 \textcolor{comment}{// calculates average amount of time required to complete a job operation}}
+\DoxyCodeLine{91 \textcolor{keywordtype}{void} \mbox{\hyperlink{jobs_8h_ad5424ae3302b74b9b402c7369ef82abd}{ShowAvgTimeJobOperations}}(\mbox{\hyperlink{structjob}{Job}}* h, \textcolor{keywordtype}{int} jobId);}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 \textcolor{comment}{// writes job data to file}}
+\DoxyCodeLine{94 \textcolor{keywordtype}{bool} \mbox{\hyperlink{jobs_8h_a972e7a7dc535a25929c925f8381d7fdc}{SaveJobBinary}}(\textcolor{keywordtype}{char}* fileName, \mbox{\hyperlink{structjob}{Job}}* h);}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96 \textcolor{comment}{// reads file with data from a job}}
+\DoxyCodeLine{97 \mbox{\hyperlink{structjob}{Job}}* \mbox{\hyperlink{jobs_8h_a006ab8f58480d92b29e18f391e38a671}{ReadJobBinary}}(\textcolor{keywordtype}{char}* fileName);}
+\DoxyCodeLine{98 }
+\DoxyCodeLine{99 \textcolor{comment}{// reads jobs, operations and machines from a file}}
+\DoxyCodeLine{100 \mbox{\hyperlink{structjob}{Job}}* \mbox{\hyperlink{jobs_8h_ada20884ef0d6daa98faa151f4cb3188d}{LoadProcessPlan}}(\textcolor{keywordtype}{char}* fileName);}
+\DoxyCodeLine{101 \mbox{\hyperlink{structjob_tree}{JobTree}}* \mbox{\hyperlink{jobs_8h_aee346fb4bd2db5390680d55286bb86a4}{LoadProcessPlanTree}}(\textcolor{keywordtype}{char}* fileName);}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 \textcolor{comment}{// removes all nodes from the job list}}
+\DoxyCodeLine{104 \textcolor{keywordtype}{void} \mbox{\hyperlink{jobs_8h_a77ce9aea583d353efcd962b2244bcedf}{RemoveAllJobs}}(\mbox{\hyperlink{structjob}{Job}}** h);}
+\DoxyCodeLine{105 }
+\DoxyCodeLine{106 \textcolor{comment}{// removes job from the job list}}
+\DoxyCodeLine{107 \mbox{\hyperlink{structjob}{Job}}* \mbox{\hyperlink{jobs_8h_a34a6dd05de6e72d57cfeaee6f76f4ef0}{RemoveJob}}(\mbox{\hyperlink{structjob}{Job}}* h, \textcolor{keywordtype}{int} jobId);}
+\DoxyCodeLine{108 }
+\DoxyCodeLine{109 \textcolor{comment}{// removes job from the job tree}}
+\DoxyCodeLine{110 \mbox{\hyperlink{structjob_tree}{JobTree}}* \mbox{\hyperlink{jobs_8h_a6339022f94b64785f55deed6d02ee4c5}{RemoveJobTree}}(\mbox{\hyperlink{structjob_tree}{JobTree}}* h, \textcolor{keywordtype}{int} jobId);}
+\DoxyCodeLine{111 }
+\DoxyCodeLine{112 \textcolor{comment}{// removes job operation}}
+\DoxyCodeLine{113 \textcolor{keywordtype}{void} \mbox{\hyperlink{jobs_8h_adb03f9095e53946a9233ec1ee7a5c3f6}{RemoveJobOperation}}(\mbox{\hyperlink{structjob}{Job}}* h, \textcolor{keywordtype}{int} jobId, \textcolor{keywordtype}{int} opId);}
+\DoxyCodeLine{114 \textcolor{keywordtype}{void} \mbox{\hyperlink{jobs_8h_aea32922971ff774bb621eef7a997deb1}{RemoveJobOperationTree}}(\mbox{\hyperlink{structjob_tree}{JobTree}}* root, \textcolor{keywordtype}{int} jobId, \textcolor{keywordtype}{int} opId);}
+\DoxyCodeLine{115 }
+\DoxyCodeLine{116 \textcolor{comment}{// updates job operation}}
+\DoxyCodeLine{117 \mbox{\hyperlink{structjob}{Job}}* \mbox{\hyperlink{jobs_8h_ab11582334def3a4947e706aea01a98ed}{UpdateJobOperation}}(\mbox{\hyperlink{structjob}{Job}}* h, \textcolor{keywordtype}{int} jobId, \textcolor{keywordtype}{int} opId, \textcolor{keywordtype}{int} opType, \textcolor{keywordtype}{int} opMachId, \textcolor{keywordtype}{int} opTime, \textcolor{keywordtype}{bool} opFinished);}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119 \textcolor{comment}{// checks if job exists }}
+\DoxyCodeLine{120 \textcolor{keywordtype}{bool} \mbox{\hyperlink{jobs_8h_a6d2de41ea5c22f994d72c35c961bbdf1}{JobExist}}(\mbox{\hyperlink{structjob}{Job}}* h, \textcolor{keywordtype}{int} \textcolor{keywordtype}{id});}
+\DoxyCodeLine{121 \textcolor{keywordtype}{bool} \mbox{\hyperlink{jobs_8h_a72c5c8538e0a72cb7b14d5b735102e8c}{JobExistTree}}(\mbox{\hyperlink{structjob_tree}{JobTree}}* root, \textcolor{keywordtype}{int} \textcolor{keywordtype}{id});}
+\DoxyCodeLine{122 }
+\DoxyCodeLine{123 \textcolor{keywordtype}{void} \mbox{\hyperlink{jobs_8h_a0394c24f2340289933d91e72c9826b68}{ShowJobOperations}}(\mbox{\hyperlink{structjob}{Job}}* h, \textcolor{keywordtype}{int} jobId);}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125 \textcolor{keywordtype}{void} \mbox{\hyperlink{jobs_8h_af7972db0c34c926e094c5a4ea9e1e124}{ShowJobs}}(\mbox{\hyperlink{structjob}{Job}}* h);}
+\DoxyCodeLine{126 }
+\DoxyCodeLine{127 \textcolor{keywordtype}{void} \mbox{\hyperlink{jobs_8h_a312801c7ae00c622ad1c1fa0a63ebc1f}{ShowJobsTreeInOrder}}(\mbox{\hyperlink{structjob_tree}{JobTree}}* root);}
+\DoxyCodeLine{128 \textcolor{preprocessor}{\#pragma endregion}}
+\DoxyCodeLine{129 }
+\DoxyCodeLine{130 }
+\DoxyCodeLine{131 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{132 }
 
 \end{DoxyCode}

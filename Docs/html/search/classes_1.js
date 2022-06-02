@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['machine_0',['machine',['../structmachine.html',1,'']]]
+  ['job_0',['job',['../structjob.html',1,'']]],
+  ['jobfile_1',['jobFile',['../structjob_file.html',1,'']]],
+  ['jobtree_2',['jobTree',['../structjob_tree.html',1,'']]]
 ];

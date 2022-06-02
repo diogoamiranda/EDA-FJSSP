@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['jobid_0',['jobId',['../structoperation.html#a161071ffe352317dd13ec6fd3aefe746',1,'operation']]]
+  ['jobid_0',['jobId',['../structcell_plan.html#a37e332e0e1a98e1b8b63c24f57804b49',1,'cellPlan']]]
 ];

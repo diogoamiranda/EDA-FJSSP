@@ -1,0 +1,187 @@
+\hypertarget{plan__generator_8h}{}\doxysection{EDA-\/\+FJSSP/plan\+\_\+generator.h File Reference}
+\label{plan__generator_8h}\index{EDA-\/FJSSP/plan\_generator.h@{EDA-\/FJSSP/plan\_generator.h}}
+
+
+Plan generator -\/ Definitions of Structs, Constants, and Function Signatures.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}operations.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}jobs.\+h\char`\"{}}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structcell_plan}{cell\+Plan}}
+\begin{DoxyCompactList}\small\item\em Structure to store a \mbox{\hyperlink{structcell_plan}{cell\+Plan}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{plan__generator_8h_acf9523bbd2d74ac7ea4e6ccdb30fef6c}{NUM\+\_\+\+MACHINES}}~8
+\item 
+\#define \mbox{\hyperlink{plan__generator_8h_a73381138460517321b6a9108dc3739b9}{NUM\+\_\+\+TIMES}}~100
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structcell_plan}{cell\+Plan}} \mbox{\hyperlink{plan__generator_8h_a7a576b8fea481223bfa64b80ccdafc48}{Cell\+Plan}}
+\begin{DoxyCompactList}\small\item\em Structure to store a \mbox{\hyperlink{structcell_plan}{cell\+Plan}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{plan__generator_8h_a7a97f4cd33bedfa57dcd7dd4321986c4}{Start\+Plan}} (\mbox{\hyperlink{plan__generator_8h_a7a576b8fea481223bfa64b80ccdafc48}{Cell\+Plan}} p\mbox{[}$\,$\mbox{]}\mbox{[}\mbox{\hyperlink{plan__generator_8h_a73381138460517321b6a9108dc3739b9}{NUM\+\_\+\+TIMES}}\mbox{]}, int job\+Id, int op\+Id, int op\+Type)
+\item 
+void \mbox{\hyperlink{plan__generator_8h_a52a2e5f5714ba57a114ddbde08bc2825}{Build\+Plan}} (\mbox{\hyperlink{plan__generator_8h_a7a576b8fea481223bfa64b80ccdafc48}{Cell\+Plan}} p\mbox{[}$\,$\mbox{]}\mbox{[}\mbox{\hyperlink{plan__generator_8h_a73381138460517321b6a9108dc3739b9}{NUM\+\_\+\+TIMES}}\mbox{]}, \mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}} $\ast$h)
+\item 
+bool \mbox{\hyperlink{plan__generator_8h_ab946ab379c38f5abb3b850d66d5f202c}{Occupy\+Cell}} (\mbox{\hyperlink{plan__generator_8h_a7a576b8fea481223bfa64b80ccdafc48}{Cell\+Plan}} p\mbox{[}$\,$\mbox{]}\mbox{[}\mbox{\hyperlink{plan__generator_8h_a73381138460517321b6a9108dc3739b9}{NUM\+\_\+\+TIMES}}\mbox{]}, int mach\+Id, int time, int job\+Id, int op\+Type, int op\+Id)
+\item 
+bool \mbox{\hyperlink{plan__generator_8h_a0c9d6fb0ff379fee46e59feffaaac728}{Occupy\+Cells}} (\mbox{\hyperlink{plan__generator_8h_a7a576b8fea481223bfa64b80ccdafc48}{Cell\+Plan}} p\mbox{[}$\,$\mbox{]}\mbox{[}\mbox{\hyperlink{plan__generator_8h_a73381138460517321b6a9108dc3739b9}{NUM\+\_\+\+TIMES}}\mbox{]}, int mach\+Id, int time, \mbox{\hyperlink{plan__generator_8h_a7a576b8fea481223bfa64b80ccdafc48}{Cell\+Plan}} $\ast$c)
+\item 
+void \mbox{\hyperlink{plan__generator_8h_a2f3e84a473c3cdbebe6c501027986ece}{Occupy\+Plan}} (\mbox{\hyperlink{plan__generator_8h_a7a576b8fea481223bfa64b80ccdafc48}{Cell\+Plan}} p\mbox{[}$\,$\mbox{]}\mbox{[}\mbox{\hyperlink{plan__generator_8h_a73381138460517321b6a9108dc3739b9}{NUM\+\_\+\+TIMES}}\mbox{]}, int mach\+Id, int time, int job\+Id, int op\+Type)
+\item 
+bool \mbox{\hyperlink{plan__generator_8h_aea2c3a339b70ca376905c38fdaa83785}{Save\+Plan}} (char $\ast$file\+Name, \mbox{\hyperlink{plan__generator_8h_a7a576b8fea481223bfa64b80ccdafc48}{Cell\+Plan}} p\mbox{[}$\,$\mbox{]}\mbox{[}\mbox{\hyperlink{plan__generator_8h_a73381138460517321b6a9108dc3739b9}{NUM\+\_\+\+TIMES}}\mbox{]})
+\item 
+void \mbox{\hyperlink{plan__generator_8h_a60865c6894e4d2e7dcea4b77c3d0bebf}{Show\+Plan}} (\mbox{\hyperlink{plan__generator_8h_a7a576b8fea481223bfa64b80ccdafc48}{Cell\+Plan}} p\mbox{[}$\,$\mbox{]}\mbox{[}\mbox{\hyperlink{plan__generator_8h_a73381138460517321b6a9108dc3739b9}{NUM\+\_\+\+TIMES}}\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Plan generator -\/ Definitions of Structs, Constants, and Function Signatures. 
+
+\begin{DoxyAuthor}{Author}
+diogo miranda 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2022 
+\end{DoxyDate}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{plan__generator_8h_acf9523bbd2d74ac7ea4e6ccdb30fef6c}\label{plan__generator_8h_acf9523bbd2d74ac7ea4e6ccdb30fef6c}} 
+\index{plan\_generator.h@{plan\_generator.h}!NUM\_MACHINES@{NUM\_MACHINES}}
+\index{NUM\_MACHINES@{NUM\_MACHINES}!plan\_generator.h@{plan\_generator.h}}
+\doxysubsubsection{\texorpdfstring{NUM\_MACHINES}{NUM\_MACHINES}}
+{\footnotesize\ttfamily \#define NUM\+\_\+\+MACHINES~8}
+
+\mbox{\Hypertarget{plan__generator_8h_a73381138460517321b6a9108dc3739b9}\label{plan__generator_8h_a73381138460517321b6a9108dc3739b9}} 
+\index{plan\_generator.h@{plan\_generator.h}!NUM\_TIMES@{NUM\_TIMES}}
+\index{NUM\_TIMES@{NUM\_TIMES}!plan\_generator.h@{plan\_generator.h}}
+\doxysubsubsection{\texorpdfstring{NUM\_TIMES}{NUM\_TIMES}}
+{\footnotesize\ttfamily \#define NUM\+\_\+\+TIMES~100}
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{plan__generator_8h_a7a576b8fea481223bfa64b80ccdafc48}\label{plan__generator_8h_a7a576b8fea481223bfa64b80ccdafc48}} 
+\index{plan\_generator.h@{plan\_generator.h}!CellPlan@{CellPlan}}
+\index{CellPlan@{CellPlan}!plan\_generator.h@{plan\_generator.h}}
+\doxysubsubsection{\texorpdfstring{CellPlan}{CellPlan}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structcell_plan}{cell\+Plan}} \mbox{\hyperlink{plan__generator_8h_a7a576b8fea481223bfa64b80ccdafc48}{Cell\+Plan}}}
+
+
+
+Structure to store a \mbox{\hyperlink{structcell_plan}{cell\+Plan}}. 
+
+A \mbox{\hyperlink{structcell_plan}{cell\+Plan}} contains an job identifier (@job\+Id), a operation type (@op\+Type), a operation identifier(@op\+Id). 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{plan__generator_8h_a52a2e5f5714ba57a114ddbde08bc2825}\label{plan__generator_8h_a52a2e5f5714ba57a114ddbde08bc2825}} 
+\index{plan\_generator.h@{plan\_generator.h}!BuildPlan@{BuildPlan}}
+\index{BuildPlan@{BuildPlan}!plan\_generator.h@{plan\_generator.h}}
+\doxysubsubsection{\texorpdfstring{BuildPlan()}{BuildPlan()}}
+{\footnotesize\ttfamily void Build\+Plan (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{plan__generator_8h_a7a576b8fea481223bfa64b80ccdafc48}{Cell\+Plan}}}]{p\mbox{[}$\,$\mbox{]}\mbox{[}\+NUM\+\_\+\+TIMES\mbox{]},  }\item[{\mbox{\hyperlink{jobs_8h_a4150e22449797dfc130512f171768a2b}{Job}} $\ast$}]{h }\end{DoxyParamCaption})}
+
+Build the plan by placing the respective operations.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Structure of a plane cell \\
+\hline
+{\em root} & Root of the job tree \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{plan__generator_8h_ab946ab379c38f5abb3b850d66d5f202c}\label{plan__generator_8h_ab946ab379c38f5abb3b850d66d5f202c}} 
+\index{plan\_generator.h@{plan\_generator.h}!OccupyCell@{OccupyCell}}
+\index{OccupyCell@{OccupyCell}!plan\_generator.h@{plan\_generator.h}}
+\doxysubsubsection{\texorpdfstring{OccupyCell()}{OccupyCell()}}
+{\footnotesize\ttfamily bool Occupy\+Cell (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{plan__generator_8h_a7a576b8fea481223bfa64b80ccdafc48}{Cell\+Plan}}}]{p\mbox{[}$\,$\mbox{]}\mbox{[}\+NUM\+\_\+\+TIMES\mbox{]},  }\item[{int}]{mach\+Id,  }\item[{int}]{time,  }\item[{int}]{job\+Id,  }\item[{int}]{op\+Type,  }\item[{int}]{op\+Id }\end{DoxyParamCaption})}
+
+Occupies a specific space on the plane.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Structure of a plane cell \\
+\hline
+{\em mach\+Id} & Machine identifier \\
+\hline
+{\em time} & Operation execution time \\
+\hline
+{\em job\+Id} & Job identifier \\
+\hline
+{\em op\+Type} & Operation type \\
+\hline
+{\em op\+Id} & Operation identifier \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{plan__generator_8h_a0c9d6fb0ff379fee46e59feffaaac728}\label{plan__generator_8h_a0c9d6fb0ff379fee46e59feffaaac728}} 
+\index{plan\_generator.h@{plan\_generator.h}!OccupyCells@{OccupyCells}}
+\index{OccupyCells@{OccupyCells}!plan\_generator.h@{plan\_generator.h}}
+\doxysubsubsection{\texorpdfstring{OccupyCells()}{OccupyCells()}}
+{\footnotesize\ttfamily bool Occupy\+Cells (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{plan__generator_8h_a7a576b8fea481223bfa64b80ccdafc48}{Cell\+Plan}}}]{p\mbox{[}$\,$\mbox{]}\mbox{[}\+NUM\+\_\+\+TIMES\mbox{]},  }\item[{int}]{mach\+Id,  }\item[{int}]{time,  }\item[{\mbox{\hyperlink{plan__generator_8h_a7a576b8fea481223bfa64b80ccdafc48}{Cell\+Plan}} $\ast$}]{c }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{plan__generator_8h_a2f3e84a473c3cdbebe6c501027986ece}\label{plan__generator_8h_a2f3e84a473c3cdbebe6c501027986ece}} 
+\index{plan\_generator.h@{plan\_generator.h}!OccupyPlan@{OccupyPlan}}
+\index{OccupyPlan@{OccupyPlan}!plan\_generator.h@{plan\_generator.h}}
+\doxysubsubsection{\texorpdfstring{OccupyPlan()}{OccupyPlan()}}
+{\footnotesize\ttfamily void Occupy\+Plan (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{plan__generator_8h_a7a576b8fea481223bfa64b80ccdafc48}{Cell\+Plan}}}]{p\mbox{[}$\,$\mbox{]}\mbox{[}\+NUM\+\_\+\+TIMES\mbox{]},  }\item[{int}]{mach\+Id,  }\item[{int}]{time,  }\item[{int}]{job\+Id,  }\item[{int}]{op\+Type }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{plan__generator_8h_aea2c3a339b70ca376905c38fdaa83785}\label{plan__generator_8h_aea2c3a339b70ca376905c38fdaa83785}} 
+\index{plan\_generator.h@{plan\_generator.h}!SavePlan@{SavePlan}}
+\index{SavePlan@{SavePlan}!plan\_generator.h@{plan\_generator.h}}
+\doxysubsubsection{\texorpdfstring{SavePlan()}{SavePlan()}}
+{\footnotesize\ttfamily bool Save\+Plan (\begin{DoxyParamCaption}\item[{char $\ast$}]{file\+Name,  }\item[{\mbox{\hyperlink{plan__generator_8h_a7a576b8fea481223bfa64b80ccdafc48}{Cell\+Plan}}}]{p\mbox{[}$\,$\mbox{]}\mbox{[}\+NUM\+\_\+\+TIMES\mbox{]} }\end{DoxyParamCaption})}
+
+Save plan to file.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Name} & \\
+\hline
+{\em p} & Structure of a plan cell \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{plan__generator_8h_a60865c6894e4d2e7dcea4b77c3d0bebf}\label{plan__generator_8h_a60865c6894e4d2e7dcea4b77c3d0bebf}} 
+\index{plan\_generator.h@{plan\_generator.h}!ShowPlan@{ShowPlan}}
+\index{ShowPlan@{ShowPlan}!plan\_generator.h@{plan\_generator.h}}
+\doxysubsubsection{\texorpdfstring{ShowPlan()}{ShowPlan()}}
+{\footnotesize\ttfamily void Show\+Plan (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{plan__generator_8h_a7a576b8fea481223bfa64b80ccdafc48}{Cell\+Plan}}}]{p\mbox{[}$\,$\mbox{]}\mbox{[}\+NUM\+\_\+\+TIMES\mbox{]} }\end{DoxyParamCaption})}
+
+Show all cells of a plan.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Structure of a plan cell. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{plan__generator_8h_a7a97f4cd33bedfa57dcd7dd4321986c4}\label{plan__generator_8h_a7a97f4cd33bedfa57dcd7dd4321986c4}} 
+\index{plan\_generator.h@{plan\_generator.h}!StartPlan@{StartPlan}}
+\index{StartPlan@{StartPlan}!plan\_generator.h@{plan\_generator.h}}
+\doxysubsubsection{\texorpdfstring{StartPlan()}{StartPlan()}}
+{\footnotesize\ttfamily void Start\+Plan (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{plan__generator_8h_a7a576b8fea481223bfa64b80ccdafc48}{Cell\+Plan}}}]{p\mbox{[}$\,$\mbox{]}\mbox{[}\+NUM\+\_\+\+TIMES\mbox{]},  }\item[{int}]{job\+Id,  }\item[{int}]{op\+Type,  }\item[{int}]{op\+Id }\end{DoxyParamCaption})}
+
+Start the plan with an initial structure.
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & Structure of a plane cell \\
+\hline
+{\em job\+Id} & Job identifier \\
+\hline
+{\em op\+Type} & Operation type \\
+\hline
+{\em op\+Id} & Operation identifier \\
+\hline
+\end{DoxyParams}

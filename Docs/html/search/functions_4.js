@@ -1,5 +1,9 @@
 var searchData=
 [
-  ['machineexist_0',['MachineExist',['../machines_8c.html#a93526861fb294979490d5ee6a4488c1a',1,'MachineExist(Machine *h, int id):&#160;machines.c'],['../machines_8h.html#a93526861fb294979490d5ee6a4488c1a',1,'MachineExist(Machine *h, int id):&#160;machines.c']]],
-  ['main_1',['main',['../main_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.c']]]
+  ['insertjobend_0',['InsertJobEnd',['../jobs_8c.html#ad0d014cdf46398a209ac7cb3b5db68da',1,'InsertJobEnd(Job *h, Job *n):&#160;jobs.c'],['../jobs_8h.html#ad0d014cdf46398a209ac7cb3b5db68da',1,'InsertJobEnd(Job *h, Job *n):&#160;jobs.c']]],
+  ['insertjoboperationstart_1',['InsertJobOperationStart',['../jobs_8c.html#afe9c00bb5378e50cef3ae60e8363aef9',1,'InsertJobOperationStart(Job *h, int jobId, int opId, int opType, int machId, int time, bool finished):&#160;jobs.c'],['../jobs_8h.html#afe9c00bb5378e50cef3ae60e8363aef9',1,'InsertJobOperationStart(Job *h, int jobId, int opId, int opType, int machId, int time, bool finished):&#160;jobs.c']]],
+  ['insertjoboperationtree_2',['InsertJobOperationTree',['../jobs_8c.html#ac8e987328c86a08a8fad51668f7c6cc5',1,'InsertJobOperationTree(JobTree *root, int jobId, int opId, int opType, int machId, int time, bool finished):&#160;jobs.c'],['../jobs_8h.html#ac8e987328c86a08a8fad51668f7c6cc5',1,'InsertJobOperationTree(JobTree *root, int jobId, int opId, int opType, int machId, int time, bool finished):&#160;jobs.c']]],
+  ['insertjobtree_3',['InsertJobTree',['../jobs_8c.html#a8d3f80f8d9528f413610a08dec396250',1,'InsertJobTree(JobTree *root, JobTree *n):&#160;jobs.c'],['../jobs_8h.html#a8d3f80f8d9528f413610a08dec396250',1,'InsertJobTree(JobTree *root, JobTree *n):&#160;jobs.c']]],
+  ['insertmachineend_4',['InsertMachineEnd',['../machines_8c.html#a8974d2e95ed5a3c6fbd935142c94664e',1,'InsertMachineEnd(Machine *h, Machine *n):&#160;machines.c'],['../machines_8h.html#a8974d2e95ed5a3c6fbd935142c94664e',1,'InsertMachineEnd(Machine *h, Machine *n):&#160;machines.c']]],
+  ['insertoperationend_5',['InsertOperationEnd',['../operations_8c.html#aca2d7da318931051fea3456a2e421d18',1,'InsertOperationEnd(Operation *h, Operation *n):&#160;operations.c'],['../operations_8h.html#aca2d7da318931051fea3456a2e421d18',1,'InsertOperationEnd(Operation *h, Operation *n):&#160;operations.c']]]
 ];
